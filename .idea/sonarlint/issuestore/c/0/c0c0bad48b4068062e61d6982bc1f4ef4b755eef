@@ -1,0 +1,6 @@
+
+7squid:S1118"Hide this public constructor.(©í£Ãùÿÿÿÿ
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©í£Ãùÿÿÿÿ
+Ysquid:S2147"DCombine this catch with the one at line 31, which has the same body.(Å¡ß
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

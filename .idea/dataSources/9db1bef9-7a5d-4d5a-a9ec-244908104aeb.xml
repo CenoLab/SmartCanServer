@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="autobrain_data@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="autobrain_data">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="adc_dc"/>
+    <schema id="4" parent="1" name="chglxt"/>
+    <schema id="5" parent="1" name="homework1"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="iot_forum"/>
+    <schema id="8" parent="1" name="jxc"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="sys"/>
+    <schema id="12" parent="1" name="yixue"/>
+    <table id="13" parent="2" name="LoginRequestMessage"/>
+    <column id="14" parent="13" name="msgCnt">
+      <Position>1</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="15" parent="13" name="iccid">
+      <Position>2</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="16" parent="13" name="imsi">
+      <Position>3</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="17" parent="13" name="imei">
+      <Position>4</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="18" parent="13" name="syncNum">
+      <Position>5</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="19" parent="13" name="TYPE">
+      <Position>6</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="20" parent="13" name="CONV">
+      <Position>7</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+  </database-model>
+</dataSource>

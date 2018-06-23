@@ -1,0 +1,5 @@
+
+jsquid:S1450"URemove the "config" field and declare it as a local variable in the relevant methods.(´ ÿˆ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+wsquid:S00116"aRename this field "DFS_SERVER_LISTEN_PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’È‹Þ
