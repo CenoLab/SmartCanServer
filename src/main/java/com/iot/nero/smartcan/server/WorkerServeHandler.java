@@ -1,7 +1,7 @@
 package com.iot.nero.smartcan.server;
 
 
-import com.iot.nero.smartcan.ABBootstrap;
+import com.iot.nero.smartcan.SmartCanBootstrap;
 import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.exceptions.PackageBrokenException;
 import com.iot.nero.smartcan.constant.CONSTANT;
@@ -67,8 +67,8 @@ public class WorkerServeHandler extends ServerHandler {
         FastClass fastClass = FastClass.create(clz);
         try {
             FastMethod fastMethod = fastClass.getMethod(
-                    ABBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getName(),
-                    ABBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getParameterTypes());
+                    SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getName(),
+                    SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getParameterTypes());
 
             fastMethod.invoke(fastClass.newInstance(), new Object[]{protocol, socketChannel});
 

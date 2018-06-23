@@ -15,7 +15,7 @@ import static com.iot.nero.smartcan.constant.CONSTANT.pInfo;
  * Date   2018/6/4
  * Time   下午12:48
  */
-public class ABServer extends NioServer implements IServer {
+public class CanServer extends NioServer implements IServer {
 
     Integer port = 1080;
 
@@ -23,7 +23,7 @@ public class ABServer extends NioServer implements IServer {
     final ServerSocketChannel serverSocketChannel;
     final Selector selector;
 
-    public ABServer(Integer port) throws IOException {
+    public CanServer(Integer port) throws IOException {
         this.port = port;
         this.serverSocketChannel = ServerSocketChannel.open();
         this.serverSocketChannel.socket().bind(new InetSocketAddress(port));
@@ -31,7 +31,7 @@ public class ABServer extends NioServer implements IServer {
 
         this.selector = Selector.open();
         SelectionKey selectionKey = this.serverSocketChannel.register(this.selector, SelectionKey.OP_ACCEPT);
-        selectionKey.attach(new ABServerAcceptor(this.serverSocketChannel, this.selector));
+        selectionKey.attach(new CanServerAcceptor(this.serverSocketChannel, this.selector));
 
     }
 
@@ -39,7 +39,7 @@ public class ABServer extends NioServer implements IServer {
     @Override
     public void start() {
         try {
-            pInfo("(LISTENING) AuroBrain Listening on Port: " + port);
+            pInfo("(LISTENING) SmartCanServer Listening on Port: " + port);
             this.run(this.selector);
         } catch (IOException e) {
             e.printStackTrace();

@@ -5,7 +5,7 @@ import com.iot.nero.smartcan.annotation.ServiceMethod;
 import com.iot.nero.smartcan.config.Config;
 import com.iot.nero.smartcan.config.ConfigLoader;
 import com.iot.nero.smartcan.constant.CONSTANT;
-import com.iot.nero.smartcan.server.ABServer;
+import com.iot.nero.smartcan.server.CanServer;
 import com.iot.nero.smartcan.server.IServer;
 import com.iot.nero.smartcan.utils.ClassUtil;
 
@@ -21,7 +21,7 @@ import java.util.Map;
  * Date   2018/6/4
  * Time   下午2:33
  */
-public class ABBootstrap {
+public class SmartCanBootstrap {
 
     private Integer DFS_SERVER_LISTEN_PORT = 1080;
 
@@ -61,7 +61,7 @@ public class ABBootstrap {
 
     public void runFileListener() throws IOException {
         initService();
-        IServer ndfsServer = new ABServer(DFS_SERVER_LISTEN_PORT);
+        IServer ndfsServer = new CanServer(DFS_SERVER_LISTEN_PORT);
         ndfsServer.start();
     }
 

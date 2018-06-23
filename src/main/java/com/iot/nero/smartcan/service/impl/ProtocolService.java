@@ -42,6 +42,8 @@ public class ProtocolService implements IProtocolService {
 
     private int createTable(Field[] fields, String table) {
         List<String> tableColumns = new ArrayList<>();
+
+        tableColumns.add("id varchar(64)");
         for (Field field : fields) {
             if (field.getType() != Integer.class &&
                     field.getType() != Long.class &&
@@ -57,6 +59,7 @@ public class ProtocolService implements IProtocolService {
                 tableColumns.add(column);
             }
         }
+        tableColumns.add("create_time timestamp default current_timestamp");
 
 
         try {

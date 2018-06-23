@@ -13,11 +13,11 @@ import java.nio.channels.SocketChannel;
  * Date   2018/6/5
  * Time   下午3:27
  */
-public class ABServerAcceptor implements Runnable {
+public class CanServerAcceptor implements Runnable {
     final ServerSocketChannel serverSocketChannel;
     final Selector selector;
 
-    public ABServerAcceptor(ServerSocketChannel serverSocketChannel, Selector selector) {
+    public CanServerAcceptor(ServerSocketChannel serverSocketChannel, Selector selector) {
         this.serverSocketChannel = serverSocketChannel;
         this.selector = selector;
     }

@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        ABBootstrap dfsBootstrap = new ABBootstrap();
+        SmartCanBootstrap dfsBootstrap = new SmartCanBootstrap();
         dfsBootstrap.start();
     }
 }

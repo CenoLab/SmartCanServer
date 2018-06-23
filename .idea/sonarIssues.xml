@@ -248,6 +248,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/annotation/Service.java">
           <value>
             <set />
@@ -729,6 +734,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/car/XTypeEnum.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/CanServer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/CanServerAcceptor.java">
           <value>
             <set />
           </value>
