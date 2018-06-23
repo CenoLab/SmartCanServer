@@ -5,37 +5,39 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class Running {
 
 	@NotNull
 	@Component(0)
-	public BreakPadelSwtichSts areakpadelswtich;
+	public BreakPadelSwtichSts breakpadelswtich;
 
 	@NotNull
 	@Component(1)
-	public Double battsoc;
+	public Double breakCircuitPressure;
 
 	@NotNull
 	@Component(2)
-	public Double vcu616driverange;
+	public Double battsoc;
 
 	@NotNull
 	@Component(3)
-	public Double oilleft;
+	public Double vcu616driverange;
 
 	@NotNull
 	@Component(4)
-	public Double longitudinalacceleration;
+	public Double oilleft;
 
 	@NotNull
 	@Component(5)
-	public Double longitudinaloffset;
+	public Double longitudinalacceleration;
 
 	@NotNull
 	@Component(6)
@@ -43,7 +45,7 @@ public class Running {
 
 	@NotNull
 	@Component(7)
-	public Double lateraloffset;
+	public Double higheracceleration;
 
 	@NotNull
 	@Component(8)
@@ -51,19 +53,19 @@ public class Running {
 
 	@NotNull
 	@Component(9)
-	public Double yawvelocityoffset;
-
-	@NotNull
-	@Component(10)
 	public Double steeringwheelrotationspeed;
 
 	@NotNull
-	@Component(11)
+	@Component(10)
 	public Double steeringwheelangle;
 
 	@NotNull
+	@Component(11)
+	public Double sassteerwheelrotspd;
+
+	@NotNull
 	@Component(12)
-	public VALIDACCELERATOR validacceleator;
+	public Double steerwheelcurpos;
 
 	@NotNull
 	@Component(13)
@@ -71,43 +73,43 @@ public class Running {
 
 	@NotNull
 	@Component(14)
-	public Integer totaloso;
+	public Double throttlePercentage;
 
 	@NotNull
 	@Component(15)
-	public VALIDWHEELSPEEDFL validwheelspeed;
+	public Integer totaloso;
 
 	@NotNull
 	@Component(16)
-	public Double wheelspeedfl;
+	public VALIDWHEELSPEEDFL validwheelspeed;
 
 	@NotNull
 	@Component(17)
-	public VALIDWHEELSPEEDFR validwheelfr;
+	public Double wheelspeedfl;
 
 	@NotNull
 	@Component(18)
-	public Double wheelspeedfr;
+	public VALIDWHEELSPEEDFR validwheelfr;
 
 	@NotNull
 	@Component(19)
-	public VALIDWHEELSPEEDRL validwheelspeedrl;
+	public Double wheelspeedfr;
 
 	@NotNull
 	@Component(20)
-	public Double wheelspeedrl;
+	public VALIDWHEELSPEEDRL validwheelspeedrl;
 
 	@NotNull
 	@Component(21)
-	public VALIDWHEELSPEEDRR validwheelrr;
+	public Double wheelspeedrl;
 
 	@NotNull
 	@Component(22)
-	public Double wheelspeedrr;
+	public VALIDWHEELSPEEDRR validwheelrr;
 
 	@NotNull
 	@Component(23)
-	public VALIDVEHICLESPEED validvehiclespeed;
+	public Double wheelspeedrr;
 
 	@NotNull
 	@Component(24)
@@ -116,6 +118,38 @@ public class Running {
 	@NotNull
 	@Component(25)
 	public Double motospeed;
+
+	@NotNull
+	@Component(26)
+	public Double motoTorque;
+
+	@NotNull
+	@Component(27)
+	public Double accaebaebstate;
+
+	@NotNull
+	@Component(28)
+	public Double rotation;
+
+	@NotNull
+	@Component(29)
+	public Double pitchangle;
+
+	@NotNull
+	@Component(30)
+	public Double rollangle;
+
+	@NotNull
+	@Component(31)
+	public Double azimuthangle;
+
+	@NotNull
+	@Component(32)
+	public byte[] timestamp;
+
+	@NotNull
+	@Component(33)
+	public Long syncNum;
 
 
 	public boolean equals(Object obj) {
@@ -134,26 +168,27 @@ public class Running {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65581);
+	public final static AsnType TYPE = Platoon.type(65578);
 
 	public final static CompositeConverter CONV;
 
 	static {
 		CONV = new AnnotationCompositeConverter(Running.class);
-		AsnConverter areakpadelswtichConverter = BreakPadelSwtichSts.CONV;
+		AsnConverter breakpadelswtichConverter = BreakPadelSwtichSts.CONV;
+		AsnConverter breakCircuitPressureConverter = DoubleConverter.INSTANCE;
 		AsnConverter battsocConverter = DoubleConverter.INSTANCE;
 		AsnConverter vcu616driverangeConverter = DoubleConverter.INSTANCE;
 		AsnConverter oilleftConverter = DoubleConverter.INSTANCE;
 		AsnConverter longitudinalaccelerationConverter = DoubleConverter.INSTANCE;
-		AsnConverter longitudinaloffsetConverter = DoubleConverter.INSTANCE;
 		AsnConverter lateralaccelerationConverter = DoubleConverter.INSTANCE;
-		AsnConverter lateraloffsetConverter = DoubleConverter.INSTANCE;
+		AsnConverter higheraccelerationConverter = DoubleConverter.INSTANCE;
 		AsnConverter yawvelocityConverter = DoubleConverter.INSTANCE;
-		AsnConverter yawvelocityoffsetConverter = DoubleConverter.INSTANCE;
 		AsnConverter steeringwheelrotationspeedConverter = DoubleConverter.INSTANCE;
 		AsnConverter steeringwheelangleConverter = DoubleConverter.INSTANCE;
-		AsnConverter validacceleatorConverter = VALIDACCELERATOR.CONV;
+		AsnConverter sassteerwheelrotspdConverter = DoubleConverter.INSTANCE;
+		AsnConverter steerwheelcurposConverter = DoubleConverter.INSTANCE;
 		AsnConverter acceleratorposConverter = DoubleConverter.INSTANCE;
+		AsnConverter throttlePercentageConverter = DoubleConverter.INSTANCE;
 		AsnConverter totalosoConverter = TotalODO.CONV;
 		AsnConverter validwheelspeedConverter = VALIDWHEELSPEEDFL.CONV;
 		AsnConverter wheelspeedflConverter = DoubleConverter.INSTANCE;
@@ -163,10 +198,17 @@ public class Running {
 		AsnConverter wheelspeedrlConverter = DoubleConverter.INSTANCE;
 		AsnConverter validwheelrrConverter = VALIDWHEELSPEEDRR.CONV;
 		AsnConverter wheelspeedrrConverter = DoubleConverter.INSTANCE;
-		AsnConverter validvehiclespeedConverter = VALIDVEHICLESPEED.CONV;
 		AsnConverter vehiclespeedConverter = DoubleConverter.INSTANCE;
 		AsnConverter motospeedConverter = DoubleConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { areakpadelswtichConverter, battsocConverter, vcu616driverangeConverter, oilleftConverter, longitudinalaccelerationConverter, longitudinaloffsetConverter, lateralaccelerationConverter, lateraloffsetConverter, yawvelocityConverter, yawvelocityoffsetConverter, steeringwheelrotationspeedConverter, steeringwheelangleConverter, validacceleatorConverter, acceleratorposConverter, totalosoConverter, validwheelspeedConverter, wheelspeedflConverter, validwheelfrConverter, wheelspeedfrConverter, validwheelspeedrlConverter, wheelspeedrlConverter, validwheelrrConverter, wheelspeedrrConverter, validvehiclespeedConverter, vehiclespeedConverter, motospeedConverter });
+		AsnConverter motoTorqueConverter = DoubleConverter.INSTANCE;
+		AsnConverter accaebaebstateConverter = DoubleConverter.INSTANCE;
+		AsnConverter rotationConverter = DoubleConverter.INSTANCE;
+		AsnConverter pitchangleConverter = DoubleConverter.INSTANCE;
+		AsnConverter rollangleConverter = DoubleConverter.INSTANCE;
+		AsnConverter azimuthangleConverter = DoubleConverter.INSTANCE;
+		AsnConverter timestampConverter = TimeStamp.CONV;
+		AsnConverter syncNumConverter = LongConverter.INSTANCE;
+		CONV.setComponentConverters(new AsnConverter[] { breakpadelswtichConverter, breakCircuitPressureConverter, battsocConverter, vcu616driverangeConverter, oilleftConverter, longitudinalaccelerationConverter, lateralaccelerationConverter, higheraccelerationConverter, yawvelocityConverter, steeringwheelrotationspeedConverter, steeringwheelangleConverter, sassteerwheelrotspdConverter, steerwheelcurposConverter, acceleratorposConverter, throttlePercentageConverter, totalosoConverter, validwheelspeedConverter, wheelspeedflConverter, validwheelfrConverter, wheelspeedfrConverter, validwheelspeedrlConverter, wheelspeedrlConverter, validwheelrrConverter, wheelspeedrrConverter, vehiclespeedConverter, motospeedConverter, motoTorqueConverter, accaebaebstateConverter, rotationConverter, pitchangleConverter, rollangleConverter, azimuthangleConverter, timestampConverter, syncNumConverter });
 	}
 
 

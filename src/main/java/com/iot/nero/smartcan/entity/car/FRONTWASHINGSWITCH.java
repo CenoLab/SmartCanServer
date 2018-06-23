@@ -10,6 +10,7 @@ import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.type.AsnType;
 import com.iot.nero.smartcan.entity.Platoon;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public enum FRONTWASHINGSWITCH {
 	inactive(0),
 	active(1);

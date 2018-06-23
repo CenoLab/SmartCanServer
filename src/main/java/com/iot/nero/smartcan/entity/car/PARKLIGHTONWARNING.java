@@ -5,11 +5,13 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
-
+import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public enum PARKLIGHTONWARNING {
 	inactive(0),
 	active(1);
@@ -44,7 +46,7 @@ public enum PARKLIGHTONWARNING {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65570);
+	public final static AsnType TYPE = Platoon.type(65569);
 
 	public final static AsnConverter CONV;
 

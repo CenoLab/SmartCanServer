@@ -5,13 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
-
-import com.iot.nero.smartcan.entity.Platoon;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartStrategyRequestMessage {
 
 	@NotNull
@@ -23,39 +24,24 @@ public class SmartStrategyRequestMessage {
 	public byte[] token;
 
 	@NotNull
+	@Size(min=8, max=8)
 	@Component(2)
-	public Double steering;
+	public byte[] vid;
 
 	@NotNull
 	@Component(3)
-	public Double throttle;
+	public DRIVEBEHAVIOR drivebehavior;
 
 	@NotNull
 	@Component(4)
-	public TransmissionState transmission;
+	public Double movingdiss;
 
 	@NotNull
 	@Component(5)
-	public ExteriorLights lights;
-
-	@NotNull
-	@Component(6)
-	public Double brakePedal;
-
-	@NotNull
-	@Component(7)
-	public HornStatus horn;
-
-	@NotNull
-	@Component(8)
-	public Position3D position;
-
-	@NotNull
-	@Component(9)
 	public byte[] timestamp;
 
 	@NotNull
-	@Component(10)
+	@Component(6)
 	public Long syncNum;
 
 
@@ -75,7 +61,7 @@ public class SmartStrategyRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65607);
+	public final static AsnType TYPE = Platoon.type(65608);
 
 	public final static CompositeConverter CONV;
 
@@ -83,16 +69,12 @@ public class SmartStrategyRequestMessage {
 		CONV = new AnnotationCompositeConverter(SmartStrategyRequestMessage.class);
 		AsnConverter msgCntConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
-		AsnConverter steeringConverter = SteeringWheelAngle.CONV;
-		AsnConverter throttleConverter = ThrottlePedal.CONV;
-		AsnConverter transmissionConverter = TransmissionState.CONV;
-		AsnConverter lightsConverter = ExteriorLights.CONV;
-		AsnConverter brakePedalConverter = BrakePedalStatus.CONV;
-		AsnConverter hornConverter = HornStatus.CONV;
-		AsnConverter positionConverter = Position3D.CONV;
+		AsnConverter vidConverter = OctetStringConverter.INSTANCE;
+		AsnConverter drivebehaviorConverter = DRIVEBEHAVIOR.CONV;
+		AsnConverter movingdissConverter = FLOAT.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, steeringConverter, throttleConverter, transmissionConverter, lightsConverter, brakePedalConverter, hornConverter, positionConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, vidConverter, drivebehaviorConverter, movingdissConverter, timestampConverter, syncNumConverter });
 	}
 
 

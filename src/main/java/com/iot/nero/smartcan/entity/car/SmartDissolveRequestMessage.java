@@ -5,13 +5,15 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import java.util.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartDissolveRequestMessage {
 
 	@NotNull
@@ -25,11 +27,11 @@ public class SmartDissolveRequestMessage {
 	@NotNull
 	@Size(min=8, max=8)
 	@Component(2)
-	public byte[] msgid;
+	public byte[] id;
 
 	@NotNull
 	@Component(3)
-	public byte[] time;
+	public byte[] endtime;
 
 	@NotNull
 	@Component(4)
@@ -41,14 +43,10 @@ public class SmartDissolveRequestMessage {
 
 	@NotNull
 	@Component(6)
-	public Position3D position;
-
-	@NotNull
-	@Component(7)
 	public byte[] timestamp;
 
 	@NotNull
-	@Component(8)
+	@Component(7)
 	public Long syncNum;
 
 
@@ -68,7 +66,7 @@ public class SmartDissolveRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65620);
+	public final static AsnType TYPE = Platoon.type(65621);
 
 	public final static CompositeConverter CONV;
 
@@ -76,14 +74,13 @@ public class SmartDissolveRequestMessage {
 		CONV = new AnnotationCompositeConverter(SmartDissolveRequestMessage.class);
 		AsnConverter msgCountConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
-		AsnConverter msgidConverter = OctetStringConverter.INSTANCE;
-		AsnConverter timeConverter = TimeStamp.CONV;
+		AsnConverter idConverter = OctetStringConverter.INSTANCE;
+		AsnConverter endtimeConverter = TimeStamp.CONV;
 		AsnConverter vehicleCountConverter = LongConverter.INSTANCE;
 		AsnConverter vehicleListConverter = VehicleList.CONV;
-		AsnConverter positionConverter = Position3D.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCountConverter, tokenConverter, msgidConverter, timeConverter, vehicleCountConverter, vehicleListConverter, positionConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCountConverter, tokenConverter, idConverter, endtimeConverter, vehicleCountConverter, vehicleListConverter, timestampConverter, syncNumConverter });
 	}
 
 

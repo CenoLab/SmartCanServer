@@ -5,13 +5,15 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
+import java.util.*;
 import javax.validation.constraints.*;
-
-import com.iot.nero.smartcan.entity.Platoon;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartRecognizeRequestMessage {
 
 	@NotNull
@@ -25,46 +27,22 @@ public class SmartRecognizeRequestMessage {
 	@NotNull
 	@Size(min=8, max=8)
 	@Component(2)
-	public byte[] recId;
+	public byte[] vid;
 
 	@NotNull
 	@Component(3)
-	public XTypeEnum xType;
+	public Vector<RecongnizeObject> recongnizeobject;
 
 	@NotNull
 	@Component(4)
-	public Double dist;
-
-	@NotNull
-	@Component(5)
-	public Double direct;
-
-	@NotNull
-	@Component(6)
-	public Double speed;
-
-	@NotNull
-	@Component(7)
-	public Double longAngle;
-
-	@NotNull
-	@Component(8)
-	public Double latAngle;
-
-	@NotNull
-	@Component(9)
-	public Double yawAngle;
-
-	@NotNull
-	@Component(10)
 	public Position3D position;
 
 	@NotNull
-	@Component(11)
+	@Component(5)
 	public byte[] timestamp;
 
 	@NotNull
-	@Component(12)
+	@Component(6)
 	public Long syncNum;
 
 
@@ -92,18 +70,12 @@ public class SmartRecognizeRequestMessage {
 		CONV = new AnnotationCompositeConverter(SmartRecognizeRequestMessage.class);
 		AsnConverter msgCntConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
-		AsnConverter recIdConverter = OctetStringConverter.INSTANCE;
-		AsnConverter xTypeConverter = XTypeEnum.CONV;
-		AsnConverter distConverter = FLOAT.CONV;
-		AsnConverter directConverter = FLOAT.CONV;
-		AsnConverter speedConverter = MovementSpeed.CONV;
-		AsnConverter longAngleConverter = ANGLE.CONV;
-		AsnConverter latAngleConverter = ANGLE.CONV;
-		AsnConverter yawAngleConverter = ANGLE.CONV;
+		AsnConverter vidConverter = OctetStringConverter.INSTANCE;
+		AsnConverter recongnizeobjectConverter = new VectorConverter(RecongnizeObject.CONV);
 		AsnConverter positionConverter = Position3D.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, recIdConverter, xTypeConverter, distConverter, directConverter, speedConverter, longAngleConverter, latAngleConverter, yawAngleConverter, positionConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, vidConverter, recongnizeobjectConverter, positionConverter, timestampConverter, syncNumConverter });
 	}
 
 

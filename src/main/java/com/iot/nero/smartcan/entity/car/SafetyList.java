@@ -6,11 +6,13 @@ package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
 import java.util.*;
-
+import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SafetyList {
 
 	public static void ber_encode(Vector<Safety> object, OutputStream out) throws IOException {
@@ -22,7 +24,7 @@ public class SafetyList {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65591);
+	public final static AsnType TYPE = Platoon.type(65587);
 
 	public final static AsnConverter CONV = new VectorConverter(Safety.CONV);
 

@@ -5,13 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
-
-import com.iot.nero.smartcan.entity.Platoon;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class Other {
 
 	@NotNull
@@ -25,6 +26,14 @@ public class Other {
 	@NotNull
 	@Component(2)
 	public AutoHorn autohorn;
+
+	@NotNull
+	@Component(3)
+	public Double isautodrive;
+
+	@NotNull
+	@Component(4)
+	public Long faultcode;
 
 
 	public boolean equals(Object obj) {
@@ -43,7 +52,7 @@ public class Other {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65594);
+	public final static AsnType TYPE = Platoon.type(65590);
 
 	public final static CompositeConverter CONV;
 
@@ -52,7 +61,9 @@ public class Other {
 		AsnConverter outsidetempConverter = DoubleConverter.INSTANCE;
 		AsnConverter handbrakeConverter = HANDBRAKE.CONV;
 		AsnConverter autohornConverter = AutoHorn.CONV;
-		CONV.setComponentConverters(new AsnConverter[] { outsidetempConverter, handbrakeConverter, autohornConverter });
+		AsnConverter isautodriveConverter = DoubleConverter.INSTANCE;
+		AsnConverter faultcodeConverter = LongConverter.INSTANCE;
+		CONV.setComponentConverters(new AsnConverter[] { outsidetempConverter, handbrakeConverter, autohornConverter, isautodriveConverter, faultcodeConverter });
 	}
 
 

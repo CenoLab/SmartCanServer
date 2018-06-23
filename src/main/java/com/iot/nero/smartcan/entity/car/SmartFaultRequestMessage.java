@@ -5,12 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartFaultRequestMessage {
 
 	@NotNull
@@ -22,20 +24,21 @@ public class SmartFaultRequestMessage {
 	public byte[] token;
 
 	@NotNull
+	@Size(min=8, max=8)
 	@Component(2)
-	public byte[] ftype;
+	public byte[] vid;
 
 	@NotNull
 	@Component(3)
-	public byte[] fcode;
+	public byte[] ftype;
 
 	@NotNull
 	@Component(4)
-	public Double ino;
+	public byte[] fcode;
 
 	@NotNull
 	@Component(5)
-	public Position3D positon;
+	public Double ino;
 
 	@NotNull
 	@Component(6)
@@ -62,7 +65,7 @@ public class SmartFaultRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65613);
+	public final static AsnType TYPE = Platoon.type(65614);
 
 	public final static CompositeConverter CONV;
 
@@ -70,13 +73,13 @@ public class SmartFaultRequestMessage {
 		CONV = new AnnotationCompositeConverter(SmartFaultRequestMessage.class);
 		AsnConverter msgCntConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
+		AsnConverter vidConverter = OctetStringConverter.INSTANCE;
 		AsnConverter ftypeConverter = FaultType.CONV;
 		AsnConverter fcodeConverter = FaultCode.CONV;
 		AsnConverter inoConverter = InnerNo.CONV;
-		AsnConverter positonConverter = Position3D.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, ftypeConverter, fcodeConverter, inoConverter, positonConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, vidConverter, ftypeConverter, fcodeConverter, inoConverter, timestampConverter, syncNumConverter });
 	}
 
 

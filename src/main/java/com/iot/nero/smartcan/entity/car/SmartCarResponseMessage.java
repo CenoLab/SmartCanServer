@@ -5,12 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartCarResponseMessage {
 
 	@NotNull
@@ -50,7 +52,7 @@ public class SmartCarResponseMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65597);
+	public final static AsnType TYPE = Platoon.type(65596);
 
 	public final static CompositeConverter CONV;
 

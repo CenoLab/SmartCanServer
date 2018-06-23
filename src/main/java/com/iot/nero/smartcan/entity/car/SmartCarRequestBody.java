@@ -5,13 +5,15 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import java.util.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartCarRequestBody {
 
 	@NotNull
@@ -23,8 +25,9 @@ public class SmartCarRequestBody {
 	public byte[] token;
 
 	@NotNull
+	@Size(min=8, max=8)
 	@Component(2)
-	public Boolean isautodrive;
+	public byte[] vid;
 
 	@NotNull
 	@Component(3)
@@ -63,7 +66,7 @@ public class SmartCarRequestBody {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65596);
+	public final static AsnType TYPE = Platoon.type(65592);
 
 	public final static CompositeConverter CONV;
 
@@ -71,13 +74,13 @@ public class SmartCarRequestBody {
 		CONV = new AnnotationCompositeConverter(SmartCarRequestBody.class);
 		AsnConverter msgCntConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
-		AsnConverter isautodriveConverter = BooleanConverter.INSTANCE;
+		AsnConverter vidConverter = OctetStringConverter.INSTANCE;
 		AsnConverter wipersConverter = WiperList.CONV;
 		AsnConverter lightsConverter = LightList.CONV;
 		AsnConverter runningsConverter = RunningList.CONV;
 		AsnConverter safetysConverter = SafetyList.CONV;
 		AsnConverter othersConverter = OthersList.CONV;
-		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, isautodriveConverter, wipersConverter, lightsConverter, runningsConverter, safetysConverter, othersConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, vidConverter, wipersConverter, lightsConverter, runningsConverter, safetysConverter, othersConverter });
 	}
 
 

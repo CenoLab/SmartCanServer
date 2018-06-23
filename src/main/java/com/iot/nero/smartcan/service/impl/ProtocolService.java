@@ -26,7 +26,6 @@ import java.util.Vector;
 @Service
 public class ProtocolService implements IProtocolService {
 
-
     private String driver = "com.mysql.jdbc.Driver";
     private String url = "jdbc:mysql://localhost:3306/autobrain_data";
     private String username = "root";
@@ -165,73 +164,287 @@ public class ProtocolService implements IProtocolService {
 
         // 返回响应
         writeToSocket((byte) 0xE1, outputStream, socketChannel);
+
     }
 
 
     @Override
     @ServiceMethod((byte) 0xC6)
     public void smartCan(Protocol protocol, SocketChannel socketChannel) throws IOException {
-        //
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartCarRequestBody smartCarRequestBody = SmartCarRequestBody.ber_decode(inputStream);
+
+
+        SmartCarResponseMessage smartCarResponseMessage = new SmartCarResponseMessage();
+        smartCarResponseMessage.syncNum = smartCarRequestBody.msgCnt + 1;
+        smartCarResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartCarResponseMessage.errorCode = new byte[]{0x01};
+        smartCarResponseMessage.msgcnt = smartCarRequestBody.msgCnt+1;
+        smartCarResponseMessage.msgStatus = true;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartCarResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xE6, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartCarRequestBody.class.getDeclaredFields();
+        String[] names = smartCarRequestBody.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xC7)
     public void stmartRecogrize(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartRecognizeRequestMessage smartRecognizeRequestMessage = SmartRecognizeRequestMessage.ber_decode(inputStream);
 
+
+        SmartRecognizeResponseMessage smartRecognizeResponseMessage = new SmartRecognizeResponseMessage();
+        smartRecognizeResponseMessage.syncNum = smartRecognizeRequestMessage.syncNum + 1;
+        smartRecognizeResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartRecognizeResponseMessage.errorCode = new byte[]{0x00};
+        smartRecognizeResponseMessage.msgStatus = true;
+        smartRecognizeResponseMessage.msgCnt = smartRecognizeRequestMessage.msgCnt+1;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartRecognizeResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xE7, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartRecognizeRequestMessage.class.getDeclaredFields();
+        String[] names = smartRecognizeRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xC8)
     public void smartStrategy(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartStrategyRequestMessage smartStrategyRequestMessage = SmartStrategyRequestMessage.ber_decode(inputStream);
 
+
+        SmartStrategyResponseMessage smartStrategyResponseMessage = new SmartStrategyResponseMessage();
+        smartStrategyResponseMessage.syncNum = smartStrategyRequestMessage.syncNum + 1;
+        smartStrategyResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartStrategyResponseMessage.errorCode = new byte[]{0x00};
+        smartStrategyResponseMessage.msgStatus = true;
+        smartStrategyResponseMessage.msgCnt = smartStrategyRequestMessage.msgCnt+1;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartStrategyResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xE8, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartStrategyRequestMessage.class.getDeclaredFields();
+        String[] names = smartStrategyRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xC9)
     public void smartControl(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartControlRequestMessage smartControlRequestMessage = SmartControlRequestMessage.ber_decode(inputStream);
 
+        SmartControlResponseMessage smartControlResponseMessage = new SmartControlResponseMessage();
+        smartControlResponseMessage.syncNum = smartControlRequestMessage.syncNum + 1;
+        smartControlResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartControlResponseMessage.errorCode = new byte[]{0x00};
+        smartControlResponseMessage.msgStatus = true;
+        smartControlResponseMessage.msgCnt = smartControlRequestMessage.msgCnt+1;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartControlResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xE9, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartControlRequestMessage.class.getDeclaredFields();
+        String[] names = smartControlRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xCA)
     public void smartControlFeed(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartCtrlFeedBackRequestMessage smartCtrlFeedBackRequestMessage = SmartCtrlFeedBackRequestMessage.ber_decode(inputStream);
 
+        SmartCtrlFeedBackResponseMessage smartCtrlFeedBackResponseMessage = new SmartCtrlFeedBackResponseMessage();
+        smartCtrlFeedBackResponseMessage.syncNum = smartCtrlFeedBackRequestMessage.syncNum + 1;
+        smartCtrlFeedBackResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartCtrlFeedBackResponseMessage.errorCode = new byte[]{0x00};
+        smartCtrlFeedBackResponseMessage.msgStatus = true;
+        smartCtrlFeedBackResponseMessage.msgCnt = smartCtrlFeedBackRequestMessage.msgCnt+1;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartCtrlFeedBackResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xEA, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartCtrlFeedBackRequestMessage.class.getDeclaredFields();
+        String[] names = smartCtrlFeedBackRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xCB)
     public void smartFault(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartFaultRequestMessage smartFaultRequestMessage = SmartFaultRequestMessage.ber_decode(inputStream);
 
+        SmartFaultResponseMessage smartFaultResponseMessage = new SmartFaultResponseMessage();
+        smartFaultResponseMessage.syncNum = smartFaultRequestMessage.syncNum + 1;
+        smartFaultResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartFaultResponseMessage.errorCode = new byte[]{0x00};
+        smartFaultResponseMessage.msgStatus = true;
+        smartFaultResponseMessage.msgCnt = smartFaultRequestMessage.msgCnt+1;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartFaultResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xEB, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartFaultRequestMessage.class.getDeclaredFields();
+        String[] names = smartFaultRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xCC)
     public void smartFormATeam(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartFromATeamRequestMessage smartFromATeamRequestMessage = SmartFromATeamRequestMessage.ber_decode(inputStream);
 
+        SmartFromATeamResponseMessage smartFromATeamResponseMessage = new SmartFromATeamResponseMessage();
+        smartFromATeamResponseMessage.syncNum = smartFromATeamRequestMessage.syncNum + 1;
+        smartFromATeamResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartFromATeamResponseMessage.errorCode = new byte[]{0x00};
+        smartFromATeamResponseMessage.msgStatus = true;
+        smartFromATeamResponseMessage.msgid  = new byte[]{0x00};
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartFromATeamResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xEC, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartFromATeamRequestMessage.class.getDeclaredFields();
+        String[] names = smartFromATeamRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xCD)
     public void smartFTeam(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartFTeamSuccessRequestMessage smartFTeamSuccessRequestMessage = SmartFTeamSuccessRequestMessage.ber_decode(inputStream);
 
+        SmartFTeamSuccessResponseMessage smartFTeamSuccessResponseMessage = new SmartFTeamSuccessResponseMessage();
+        smartFTeamSuccessResponseMessage.syncNum = smartFTeamSuccessRequestMessage.syncNum + 1;
+        smartFTeamSuccessResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartFTeamSuccessResponseMessage.errorCode = new byte[]{0x00};
+        smartFTeamSuccessResponseMessage.msgStatus = true;
+        smartFTeamSuccessResponseMessage.msgid  = new byte[]{0x00};
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartFTeamSuccessResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xED, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartFTeamSuccessRequestMessage.class.getDeclaredFields();
+        String[] names = smartFTeamSuccessRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xCE)
     public void smartDissolveTeam(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartDissolveRequestMessage smartDissolveRequestMessage = SmartDissolveRequestMessage.ber_decode(inputStream);
 
+        SmartDissolveResponseMessage smartDissolveResponseMessage = new SmartDissolveResponseMessage();
+        smartDissolveResponseMessage.syncNum = smartDissolveRequestMessage.syncNum + 1;
+        smartDissolveResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartDissolveResponseMessage.errorCode = new byte[]{0x00};
+        smartDissolveResponseMessage.msgStatus = true;
+        smartDissolveResponseMessage.msgid  = new byte[]{0x00};
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartDissolveResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xEB, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartDissolveRequestMessage.class.getDeclaredFields();
+        String[] names = smartDissolveRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xD0)
     public void smartTeam(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartTeamRequestMessage smartTeamRequestMessage = SmartTeamRequestMessage.ber_decode(inputStream);
 
+        SmartTeamResponseMessage smartTeamResponseMessage = new SmartTeamResponseMessage();
+        smartTeamResponseMessage.syncNum = smartTeamResponseMessage.syncNum + 1;
+        smartTeamResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartTeamResponseMessage.errorCode = new byte[]{0x00};
+        smartTeamResponseMessage.msgStatus =true;
+        smartTeamResponseMessage.msgid = new byte[]{0x00};
+        smartTeamResponseMessage.msgCount  = smartTeamRequestMessage.msgCount+1;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartTeamResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xF5, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartTeamRequestMessage.class.getDeclaredFields();
+        String[] names = smartTeamRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
     @Override
     @ServiceMethod((byte) 0xCF)
     public void smartPlatonning(Protocol protocol, SocketChannel socketChannel) throws IOException {
+        InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
+        SmartPlatonningRequestMessage smartPlatonningRequestMessage = SmartPlatonningRequestMessage.ber_decode(inputStream);
 
+        SmartPlatonningResponseMessage smartPlatonningResponseMessage = new SmartPlatonningResponseMessage();
+        smartPlatonningResponseMessage.syncNum = smartPlatonningRequestMessage.syncNum + 1;
+        smartPlatonningResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+        smartPlatonningResponseMessage.errorCode = new byte[]{0x00};
+        smartPlatonningResponseMessage.msgStatus = true;
+        smartPlatonningResponseMessage.msgid  = new byte[]{0x00};
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        smartPlatonningResponseMessage.ber_encode(outputStream);
+
+        // 返回响应
+        writeToSocket((byte) 0xEF, outputStream, socketChannel);
+
+        // 储存数据
+        Field[] fields = SmartPlatonningRequestMessage.class.getDeclaredFields();
+        String[] names = smartPlatonningRequestMessage.getClass().getName().split("\\.");
+        createTable(fields, names[names.length - 1]);
     }
 
 

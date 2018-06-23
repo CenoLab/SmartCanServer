@@ -5,10 +5,13 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public enum BreakPadelSwtichSts {
 	brakepedalnotactive(0),
 	brakepedalactive(1);
@@ -43,7 +46,7 @@ public enum BreakPadelSwtichSts {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65573);
+	public final static AsnType TYPE = Platoon.type(65572);
 
 	public final static AsnConverter CONV;
 

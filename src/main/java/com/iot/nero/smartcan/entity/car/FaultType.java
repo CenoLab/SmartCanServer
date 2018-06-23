@@ -5,11 +5,13 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
-
+import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class FaultType {
 
 	public static void ber_encode(byte[] object, OutputStream out) throws IOException {
@@ -21,7 +23,7 @@ public class FaultType {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65545);
+	public final static AsnType TYPE = Platoon.type(65544);
 
 	public final static AsnConverter CONV = OctetStringConverter.INSTANCE;
 

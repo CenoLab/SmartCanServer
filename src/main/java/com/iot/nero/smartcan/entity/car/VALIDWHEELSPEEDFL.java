@@ -5,11 +5,13 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
-
+import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public enum VALIDWHEELSPEEDFL {
 	valueok(0),
 	valueunreliable(1);
@@ -44,7 +46,7 @@ public enum VALIDWHEELSPEEDFL {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65576);
+	public final static AsnType TYPE = Platoon.type(65574);
 
 	public final static AsnConverter CONV;
 

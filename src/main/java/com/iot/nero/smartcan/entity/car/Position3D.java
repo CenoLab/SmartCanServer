@@ -9,21 +9,34 @@ import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class Position3D {
 
 	@NotNull
 	@Component(0)
-	public Double x;
+	public Double longitude;
 
 	@NotNull
 	@Component(1)
-	public Double y;
+	public Double latitude;
 
 	@NotNull
 	@Component(2)
-	public Double z;
+	public Double velocity;
+
+	@NotNull
+	@Component(3)
+	public Double yaw;
+
+	@NotNull
+	@Component(4)
+	public Double altitude;
+
+	@NotNull
+	@Component(5)
+	public byte[] gpsUtime;
 
 
 	public boolean equals(Object obj) {
@@ -42,16 +55,19 @@ public class Position3D {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65544);
+	public final static AsnType TYPE = Platoon.type(65543);
 
 	public final static CompositeConverter CONV;
 
 	static {
 		CONV = new AnnotationCompositeConverter(Position3D.class);
-		AsnConverter xConverter = DoubleConverter.INSTANCE;
-		AsnConverter yConverter = DoubleConverter.INSTANCE;
-		AsnConverter zConverter = DoubleConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { xConverter, yConverter, zConverter });
+		AsnConverter longitudeConverter = FLOAT.CONV;
+		AsnConverter latitudeConverter = FLOAT.CONV;
+		AsnConverter velocityConverter = FLOAT.CONV;
+		AsnConverter yawConverter = FLOAT.CONV;
+		AsnConverter altitudeConverter = FLOAT.CONV;
+		AsnConverter gpsUtimeConverter = TimeStamp.CONV;
+		CONV.setComponentConverters(new AsnConverter[] { longitudeConverter, latitudeConverter, velocityConverter, yawConverter, altitudeConverter, gpsUtimeConverter });
 	}
 
 

@@ -5,11 +5,13 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import javax.validation.constraints.*;
+import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
+import org.asnlab.asndt.runtime.type.AsnType;
+import org.asnlab.asndt.runtime.value.*;
 
 import com.iot.nero.smartcan.entity.Platoon;
-import org.asnlab.asndt.runtime.conv.*;
-import org.asnlab.asndt.runtime.type.AsnType;
-
 public enum TURNINGLAMPSWITCH {
 	inactive(0),
 	turnleft(1),
@@ -46,7 +48,7 @@ public enum TURNINGLAMPSWITCH {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65561);
+	public final static AsnType TYPE = Platoon.type(65560);
 
 	public final static AsnConverter CONV;
 

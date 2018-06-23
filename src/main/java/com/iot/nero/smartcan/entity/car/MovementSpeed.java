@@ -10,6 +10,7 @@ import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.type.AsnType;
 import com.iot.nero.smartcan.entity.Platoon;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class MovementSpeed {
 
 	public static void ber_encode(Double object, OutputStream out) throws IOException {

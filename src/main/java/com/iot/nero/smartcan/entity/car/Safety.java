@@ -5,12 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class Safety {
 
 	@NotNull
@@ -19,26 +21,22 @@ public class Safety {
 
 	@NotNull
 	@Component(1)
-	public ESPAEBactive espaebactive;
-
-	@NotNull
-	@Component(2)
 	public ESPOPERATING espoperating;
 
 	@NotNull
-	@Component(3)
+	@Component(2)
 	public TCSOPERATING tcsoperating;
 
 	@NotNull
-	@Component(4)
+	@Component(3)
 	public EPSSTA epssta;
 
 	@NotNull
-	@Component(5)
+	@Component(4)
 	public TCUTGSMode tcutgsmode;
 
 	@NotNull
-	@Component(6)
+	@Component(5)
 	public Integer tcucurrentgearposition;
 
 
@@ -58,20 +56,19 @@ public class Safety {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65590);
+	public final static AsnType TYPE = Platoon.type(65586);
 
 	public final static CompositeConverter CONV;
 
 	static {
 		CONV = new AnnotationCompositeConverter(Safety.class);
 		AsnConverter absoperatingConverter = ABSOPERATING.CONV;
-		AsnConverter espaebactiveConverter = ESPAEBactive.CONV;
 		AsnConverter espoperatingConverter = ESPOPERATING.CONV;
 		AsnConverter tcsoperatingConverter = TCSOPERATING.CONV;
 		AsnConverter epsstaConverter = EPSSTA.CONV;
 		AsnConverter tcutgsmodeConverter = TCUTGSMode.CONV;
 		AsnConverter tcucurrentgearpositionConverter = TCUCurrentGearPosition.CONV;
-		CONV.setComponentConverters(new AsnConverter[] { absoperatingConverter, espaebactiveConverter, espoperatingConverter, tcsoperatingConverter, epsstaConverter, tcutgsmodeConverter, tcucurrentgearpositionConverter });
+		CONV.setComponentConverters(new AsnConverter[] { absoperatingConverter, espoperatingConverter, tcsoperatingConverter, epsstaConverter, tcutgsmodeConverter, tcucurrentgearpositionConverter });
 	}
 
 

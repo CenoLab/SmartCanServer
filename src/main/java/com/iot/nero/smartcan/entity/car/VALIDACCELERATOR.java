@@ -5,11 +5,15 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import javax.validation.constraints.*;
 
-import org.asnlab.asndt.runtime.conv.*;
-import org.asnlab.asndt.runtime.type.AsnType;
 import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.conv.*;
+import org.asnlab.asndt.runtime.conv.annotation.*;
+import org.asnlab.asndt.runtime.type.AsnType;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public enum VALIDACCELERATOR {
 	valueok(0),
 	notused(1),
@@ -45,7 +49,7 @@ public enum VALIDACCELERATOR {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65574);
+	public final static AsnType TYPE = Platoon.type(65593);
 
 	public final static AsnConverter CONV;
 

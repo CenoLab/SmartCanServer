@@ -5,18 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
-
-import com.iot.nero.smartcan.entity.Platoon;
+import java.math.*;
+import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
+import org.asnlab.asndt.runtime.value.*;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-
+import com.iot.nero.smartcan.entity.Platoon;
 public class CollectConfigMessage {
 
 	@NotNull
@@ -51,7 +47,7 @@ public class CollectConfigMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65549);
+	public final static AsnType TYPE = Platoon.type(65548);
 
 	public final static CompositeConverter CONV;
 

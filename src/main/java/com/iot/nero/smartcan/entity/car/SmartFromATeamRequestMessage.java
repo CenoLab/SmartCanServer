@@ -5,13 +5,15 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import java.util.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartFromATeamRequestMessage {
 
 	@NotNull
@@ -23,28 +25,29 @@ public class SmartFromATeamRequestMessage {
 	public byte[] token;
 
 	@NotNull
+	@Size(min=8, max=8)
 	@Component(2)
-	public byte[] time;
+	public byte[] vid;
 
 	@NotNull
 	@Component(3)
-	public Long vehicleCount;
+	public byte[] requesttime;
 
 	@NotNull
 	@Component(4)
-	public Position3D startPosition;
+	public Long vehicleCount;
 
 	@NotNull
 	@Component(5)
-	public Position3D endPosition;
+	public Position3D startPosition;
 
 	@NotNull
 	@Component(6)
-	public Vector<byte[]> vehicleList;
+	public Position3D endPosition;
 
 	@NotNull
 	@Component(7)
-	public Position3D position;
+	public Vector<byte[]> vehicleList;
 
 	@NotNull
 	@Component(8)
@@ -71,7 +74,7 @@ public class SmartFromATeamRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65616);
+	public final static AsnType TYPE = Platoon.type(65617);
 
 	public final static CompositeConverter CONV;
 
@@ -79,15 +82,15 @@ public class SmartFromATeamRequestMessage {
 		CONV = new AnnotationCompositeConverter(SmartFromATeamRequestMessage.class);
 		AsnConverter msgCountConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
-		AsnConverter timeConverter = TimeStamp.CONV;
+		AsnConverter vidConverter = OctetStringConverter.INSTANCE;
+		AsnConverter requesttimeConverter = TimeStamp.CONV;
 		AsnConverter vehicleCountConverter = LongConverter.INSTANCE;
 		AsnConverter startPositionConverter = Position3D.CONV;
 		AsnConverter endPositionConverter = Position3D.CONV;
 		AsnConverter vehicleListConverter = VehicleList.CONV;
-		AsnConverter positionConverter = Position3D.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCountConverter, tokenConverter, timeConverter, vehicleCountConverter, startPositionConverter, endPositionConverter, vehicleListConverter, positionConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCountConverter, tokenConverter, vidConverter, requesttimeConverter, vehicleCountConverter, startPositionConverter, endPositionConverter, vehicleListConverter, timestampConverter, syncNumConverter });
 	}
 
 

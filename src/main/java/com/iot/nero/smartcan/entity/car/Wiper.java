@@ -5,12 +5,14 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class Wiper {
 
 	@NotNull
@@ -27,7 +29,7 @@ public class Wiper {
 
 	@NotNull
 	@Component(3)
-	public FRONTWASHINGSWITCH frontwashingswitch;
+	public WINWASHFLUID winWashFluid;
 
 
 	public boolean equals(Object obj) {
@@ -46,7 +48,7 @@ public class Wiper {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65559);
+	public final static AsnType TYPE = Platoon.type(65558);
 
 	public final static CompositeConverter CONV;
 
@@ -55,8 +57,8 @@ public class Wiper {
 		AsnConverter frontwiperwitchConverter = FRONTWIPERSWITCH.CONV;
 		AsnConverter frontwiperintermswitchConverter = FRONTWIPERINTERMSWITCH.CONV;
 		AsnConverter rearwiperConverter = REARWIPER.CONV;
-		AsnConverter frontwashingswitchConverter = FRONTWASHINGSWITCH.CONV;
-		CONV.setComponentConverters(new AsnConverter[] { frontwiperwitchConverter, frontwiperintermswitchConverter, rearwiperConverter, frontwashingswitchConverter });
+		AsnConverter winWashFluidConverter = WINWASHFLUID.CONV;
+		CONV.setComponentConverters(new AsnConverter[] { frontwiperwitchConverter, frontwiperintermswitchConverter, rearwiperConverter, winWashFluidConverter });
 	}
 
 

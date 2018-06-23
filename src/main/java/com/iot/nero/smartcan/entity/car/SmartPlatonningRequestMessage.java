@@ -5,13 +5,15 @@
 package com.iot.nero.smartcan.entity.car;
 
 import java.io.*;
+import java.math.*;
 import java.util.*;
 import javax.validation.constraints.*;
 import org.asnlab.asndt.runtime.conv.*;
 import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
-import com.iot.nero.smartcan.entity.Platoon;
+import org.asnlab.asndt.runtime.value.*;
 
+import com.iot.nero.smartcan.entity.Platoon;
 public class SmartPlatonningRequestMessage {
 
 	@NotNull
@@ -25,38 +27,34 @@ public class SmartPlatonningRequestMessage {
 	@NotNull
 	@Size(min=8, max=8)
 	@Component(2)
-	public byte[] msgid;
+	public byte[] id;
 
 	@NotNull
 	@Component(3)
-	public byte[] time;
-
-	@NotNull
-	@Component(4)
 	public Long vehicleCount;
 
 	@NotNull
-	@Component(5)
+	@Component(4)
 	public Vector<byte[]> vehicleList;
 
 	@NotNull
+	@Component(5)
+	public Double splatoonpeed;
+
+	@NotNull
 	@Component(6)
-	public Position3D position;
+	public Position3D platoonposition;
 
 	@NotNull
 	@Component(7)
-	public Double frontDistance;
+	public Double platoonlength;
 
 	@NotNull
 	@Component(8)
-	public Double speed;
-
-	@NotNull
-	@Component(9)
 	public byte[] timestamp;
 
 	@NotNull
-	@Component(10)
+	@Component(9)
 	public Long syncNum;
 
 
@@ -76,7 +74,7 @@ public class SmartPlatonningRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65622);
+	public final static AsnType TYPE = Platoon.type(65623);
 
 	public final static CompositeConverter CONV;
 
@@ -84,16 +82,15 @@ public class SmartPlatonningRequestMessage {
 		CONV = new AnnotationCompositeConverter(SmartPlatonningRequestMessage.class);
 		AsnConverter msgCountConverter = MsgCount.CONV;
 		AsnConverter tokenConverter = Token.CONV;
-		AsnConverter msgidConverter = OctetStringConverter.INSTANCE;
-		AsnConverter timeConverter = TimeStamp.CONV;
+		AsnConverter idConverter = OctetStringConverter.INSTANCE;
 		AsnConverter vehicleCountConverter = LongConverter.INSTANCE;
 		AsnConverter vehicleListConverter = VehicleList.CONV;
-		AsnConverter positionConverter = Position3D.CONV;
-		AsnConverter frontDistanceConverter = FLOAT.CONV;
-		AsnConverter speedConverter = FLOAT.CONV;
+		AsnConverter splatoonpeedConverter = FLOAT.CONV;
+		AsnConverter platoonpositionConverter = Position3D.CONV;
+		AsnConverter platoonlengthConverter = FLOAT.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCountConverter, tokenConverter, msgidConverter, timeConverter, vehicleCountConverter, vehicleListConverter, positionConverter, frontDistanceConverter, speedConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCountConverter, tokenConverter, idConverter, vehicleCountConverter, vehicleListConverter, splatoonpeedConverter, platoonpositionConverter, platoonlengthConverter, timestampConverter, syncNumConverter });
 	}
 
 
