@@ -733,6 +733,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/IProtocolService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java">
           <value>
             <set />
