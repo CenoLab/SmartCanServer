@@ -1,0 +1,5 @@
+
+squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Éğú¥øÿÿÿÿ
+@squid:S1172"+Remove this unused method parameter "data".(Ğ¶Æ’
+hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(“ÍÆÎ
+;squid:S1168"&Return an empty array instead of null.(¥¹ï

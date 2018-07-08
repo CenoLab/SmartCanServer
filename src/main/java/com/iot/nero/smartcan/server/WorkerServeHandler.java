@@ -60,13 +60,13 @@ public class WorkerServeHandler extends ServerHandler {
 
 
     @Override
-    public void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException {
+    public synchronized void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException {
 
         Object response;
-        Class<?> clz = Class.forName("com.iot.nero.middleware.dfs.index.service.impl.ProtocolService");
+        Class<?> clz = Class.forName("com.iot.nero.smartcan.service.impl.ProtocolService");
         FastClass fastClass = FastClass.create(clz);
         try {
-            FastMethod fastMethod = fastClass.getMethod(
+             FastMethod fastMethod = fastClass.getMethod(
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getName(),
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getParameterTypes());
 

@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/doc/drop_table.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/middleware/dfs/index/ABBootstrap.java">
           <value>
             <set />
@@ -253,6 +258,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/annotation/Service.java">
           <value>
             <set />
@@ -264,6 +274,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/constant/CONSTANT.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/core/Protocol.java">
           <value>
             <set />
           </value>
@@ -503,6 +518,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/car/SmartCanRequestBody.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/car/SmartCarRequestBody.java">
           <value>
             <set />
@@ -738,12 +758,87 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/ABSOPERATING.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/ANGLE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/BreakPadelSwtichSts.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/CollectConfigMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/EPSSTA.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/ESPOPERATING.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/EXTERIORLAMPSWITCH.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/ExteriorLights.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/ROLE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/SmartCanRequestBody.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/SmartCanResponseMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/SmartPlatonningRequestMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/SteeringWheelAngle.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/CanServer.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/CanServerAcceptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/ServerHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/WorkerServeHandler.java">
           <value>
             <set />
           </value>
@@ -758,7 +853,197 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/utils/dbtools/DataBase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/config/config.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/config/config.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/DFSBootstrap.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/annotation/Config.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/annotation/ConfigField.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/annotation/Reject.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/client/DFSClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/client/discovery/ServiceDiscovery.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/config/Config.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/config/ConfigLoader.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/constant/CONSTANT.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/constant/CompressionAlgorithm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/core/ChunkManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/core/IndexManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/entity/FileData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/entity/dataprotocol/ChunkProtocolFooter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/entity/node/DataNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/factory/ConfigFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/factory/FieldFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/server/ServerHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/server/WorkerServeHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/service/IFileService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/service/impl/FileService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/utils/ByteUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/utils/MD5Utils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/utils/algorithm/BPlusNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/main/java/com/iot/nero/middleware/dfs/data/utils/algorithm/BPlusTree.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/test/java/com/iot/nero/AppTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/test/java/com/iot/nero/middleware/dfs/data/core/ChunkManagerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/test/java/com/iot/nero/middleware/dfs/data/core/IndexManagerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/data/src/test/java/com/iot/nero/middleware/dfs/data/service/impl/FileServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/docs/design.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/index/src/main/java/com/iot/nero/middleware/dfs/index/core/FileIndexManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/test_data/header.list">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.regexp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="dbtable:/84cc33d5/9db1bef9-7a5d-4d5a-a9ec-244908104aeb/autobrain_data.Light">
           <value>
             <set />
           </value>

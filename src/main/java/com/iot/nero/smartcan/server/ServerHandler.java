@@ -22,7 +22,7 @@ public class ServerHandler implements Runnable, IHandler {
     final SocketChannel socketChannel;
     final SelectionKey selectionKey;
 
-    ByteBuffer input = ByteBuffer.allocate(1024);
+    ByteBuffer input = ByteBuffer.allocate(2<<20);
     byte[] receivedBytes;
 
     Response<Object> response;

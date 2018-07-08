@@ -1,6 +1,0 @@
-
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(€ã˘ó
-dsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áöÚ⁄
-esquid:S1206"PThis class overrides "equals()" and should therefore also override "hashCode()".(ç‹—„
-dsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô€å¢
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(à˚Âπ

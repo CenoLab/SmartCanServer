@@ -1,0 +1,36 @@
+
+Nsquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(Ìˆ¾ùÿÿÿÿ
+Usquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(ÄÙ–Éıÿÿÿÿ8£ÄÀ×Â,
+L
+squid:S106"9Replace this use of System.out or System.err by a logger.(ôş™q
+Isquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(ÇŒÇô
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(Á”‰ç
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(š¤½Âşÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
+Dsquid:S1481"*Remove this unused "value" local variable.(şÀ·ùÿÿÿÿ
+L
+squid:S106"9Replace this use of System.out or System.err by a logger.(š˜İ[
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒÉ“†şÿÿÿÿ
+Nsquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(Ìˆ¾ùÿÿÿÿ
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¡•ê
+dsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÇŒÇô
+Nsquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(ÄÙ–Éıÿÿÿÿ
+Fsquid:S1481",Remove this unused "coldesc" local variable.(“Ù²—üÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÈĞêŞøÿÿÿÿ
+dsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Â”µ„
+ƒsquid:S4165"oRemove this useless assignment; "preparedStatement" already holds the assigned value along all execution paths.(Ú«ó
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ûøÀüÿÿÿÿ
+psquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½ñ…¶ùÿÿÿÿ8Ã¼ÒÒÂ,
+ƒsquid:S4165"oRemove this useless assignment; "preparedStatement" already holds the assigned value along all execution paths.(Ú«ó
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒÉ“†şÿÿÿÿ
+L
+squid:S106"9Replace this use of System.out or System.err by a logger.(ôş™q
+Usquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(½ñ…¶ùÿÿÿÿ8Ã¼ÒÒÂ,
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ûøÀüÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ

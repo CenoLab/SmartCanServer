@@ -1,14 +1,0 @@
-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8³ÒŠÁ,
-asquid:S2147"ECombine this catch with the one at line 136, which has the same body.(çÃÜµ8Ôªù‰Á,
-squid:UselessImportCheck"VRemove this unused import 'com.sun.xml.internal.messaging.saaj.util.ByteOutputStream'.(õ˜×¦8ó¦ˆ‰Á,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß²†Á,
-gsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ÚøşÎ8ˆä‡Á,
-Isquid:S1481"-Remove this unused "response" local variable.(œ®Ñı8·Şç‡Á,
-Fsquid:S2116"%Use "Arrays.toString(array)" instead.(ßèëøÿÿÿÿ8Ëä€†Á,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ôªù‰Á,
-S
-squid:S106"9Replace this use of System.out or System.err by a logger.(®ò•`8¢™™‰Á,
-Qsquid:S1191"5Use classes from the Java API instead of Sun classes.(õ˜×¦8ïäù‡Á,
-Fsquid:S2116"%Use "Arrays.toString(array)" instead.(®äÚ®üÿÿÿÿ8Ôªù‰Á,

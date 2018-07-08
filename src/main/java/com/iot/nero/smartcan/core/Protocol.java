@@ -33,6 +33,7 @@ public class Protocol {
 
     public Protocol decode(byte[] data) throws PackageBrokenException {
 
+        System.out.print("received：");
         for (byte b : data) {
             System.out.print(" " + Integer.toHexString(b));
         }

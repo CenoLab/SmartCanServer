@@ -1,0 +1,9 @@
+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ž¬ï¤ûÿÿÿÿ8¹ÎõœÅ,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¨ôèÒ8³‚½Å,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¿ßÓÚÂ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¹ÎõœÅ,
+†squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ûãßúÿÿÿÿ8äöçœÅ,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ô“Ñùÿÿÿÿ8äöçœÅ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8äöçœÅ,
+`squid:S2147"DCombine this catch with the one at line 73, which has the same body.(ýàÑÎ8äöçœÅ,

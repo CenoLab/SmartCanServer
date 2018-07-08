@@ -20,9 +20,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DataBase {
 
     private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/";
-    private String username = "root";
-    private String pd = "";
+    private String url = "jdbc:mysql://123.150.131.187:3306/";
+    private String username = "autocar";
+    private String pd = "baby..520587";
 
     public DataBase(String driver, String url, String username, String pd) {
         this.driver = driver;
@@ -31,7 +31,7 @@ public class DataBase {
         this.pd = pd;
     }
 
-    public Integer createTable(String table, List<String> columns) throws SQLException, ClassNotFoundException {
+    public synchronized Integer createTable(String table, List<String> columns) throws SQLException, ClassNotFoundException {
         Connection conn = DBConnection.getConn(driver, url, username, pd);
 
         StringBuilder sqlSchemaStringBuilder = new StringBuilder();
@@ -43,11 +43,15 @@ public class DataBase {
             sqlSchemaStringBuilder.append(",");
         }
         sqlSchemaStringBuilder.delete(sqlSchemaStringBuilder.length() - 1, sqlSchemaStringBuilder.length());
-        sqlSchemaStringBuilder.append(")Engine=InnoDB");
+        sqlSchemaStringBuilder.append(")Engine=InnoDB;");
 
         PreparedStatement preparedStatement = null;
         int i = 0;
         try {
+            if(!sqlSchemaStringBuilder.toString().endsWith(";")){
+                sqlSchemaStringBuilder.append(";");
+            }
+            System.out.println(sqlSchemaStringBuilder.toString());
             preparedStatement = (PreparedStatement) conn.prepareStatement(sqlSchemaStringBuilder.toString());
             i = preparedStatement.executeUpdate();
         } finally {
@@ -59,7 +63,7 @@ public class DataBase {
         return i;
     }
 
-    public  Integer insert(String table, List<String> columns, Object... values) throws SQLException, ClassNotFoundException {
+    public synchronized Integer insert(String table, List<String> columns, List<Object> values) throws SQLException, ClassNotFoundException {
 
         Connection conn = DBConnection.getConn(driver, url, username, pd);
 
@@ -72,7 +76,7 @@ public class DataBase {
 
         StringBuilder valueStringBuilder = new StringBuilder();
         for (Object value : values) {
-            valueStringBuilder.append('?');
+            valueStringBuilder.append('\''+String.valueOf(value)+'\'');
             valueStringBuilder.append(',');
         }
         valueStringBuilder.delete(valueStringBuilder.length() - 1, valueStringBuilder.length());
@@ -84,13 +88,17 @@ public class DataBase {
         sqlSchemaStringBuilder.append(columnStringBuilder.toString());
         sqlSchemaStringBuilder.append(") values (");
         sqlSchemaStringBuilder.append(valueStringBuilder.toString());
-        sqlSchemaStringBuilder.append(')');
+        sqlSchemaStringBuilder.append(");");
 
         PreparedStatement preparedStatement = null;
         int i = 0;
         try {
+            if(!sqlSchemaStringBuilder.toString().endsWith(";")){
+                sqlSchemaStringBuilder.append(";");
+            }
+            System.out.println(sqlSchemaStringBuilder.toString());
             preparedStatement = (PreparedStatement) conn.prepareStatement(sqlSchemaStringBuilder.toString());
-            preparedStatement = putData(preparedStatement,values);
+            preparedStatement = putData(preparedStatement);
             i = preparedStatement.executeUpdate();
         } finally {
             if (preparedStatement != null) {
@@ -204,7 +212,7 @@ public class DataBase {
 
 
 
-    public  Integer update(List<String> columns, String table, Conditions conditions,Object ...values) throws SQLException, ClassNotFoundException {
+    public synchronized Integer update(List<String> columns, String table, Conditions conditions,Object ...values) throws SQLException, ClassNotFoundException {
         Connection conn = DBConnection.getConn(driver, url, username, pd);
 
         StringBuilder updateStringBuilder = new StringBuilder();

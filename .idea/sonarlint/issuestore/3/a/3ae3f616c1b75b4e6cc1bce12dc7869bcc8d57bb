@@ -1,0 +1,9 @@
+
+~squid:S00116"aRename this field "DFS_SERVER_LISTEN_PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’È‹Þ8¹Œ¤ÓÂ,
+‘"squid:ClassVariableVisibilityCheck"_Make autoBrainServiceMap a static final constant or non-public and provide accessors if needed.(’¥Ñp8õ•¹ÓÂ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¹Œ¤ÓÂ,
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(ì¾µ£8ÍÙ¸ÓÂ,
+Jsquid:S2386".Make member "autoBrainServiceMap" "protected".(ì¾µ£8õ•¹ÓÂ,
+qsquid:S1450"URemove the "config" field and declare it as a local variable in the relevant methods.(´ ÿˆ8¹Œ¤ÓÂ,
+Tsquid:S1444"9Make this "public static autoBrainServiceMap" field final(’¥Ñp8õ•¹ÓÂ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¹Œ¤ÓÂ,

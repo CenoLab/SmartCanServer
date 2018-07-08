@@ -1,8 +1,0 @@
-
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(“ÍÆÎ
-squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Éğú¥øÿÿÿÿ
-‰squid:UselessImportCheck"`Remove this unused import 'com.iot.nero.middleware.dfs.index.exceptions.PackageBrokenException'.(±ıì8ù–·†Á,
-@squid:S1172"+Remove this unused method parameter "data".(Ğ¶Æ’
-^squid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ù–·†Á,
-;squid:S1168"&Return an empty array instead of null.(¥¹ï
-~squid:UselessImportCheck"PRemove this unused import 'com.iot.nero.middleware.dfs.index.constant.CONSTANT'.( ¥äúÿÿÿÿ8ù–·†Á,

@@ -26,7 +26,7 @@ public interface IProtocolService {
      * @param protocol
      * @param socketChannel
      */
-    void logout(Protocol protocol,final SocketChannel socketChannel);
+    void logout(Protocol protocol,final SocketChannel socketChannel) throws IOException;
 
     /**
      * 心跳
