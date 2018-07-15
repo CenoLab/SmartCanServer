@@ -26,24 +26,39 @@ public class SmartControlRequestMessage {
 	public Double steering;
 
 	@Component(4)
-	public Double throttle;
+	public Double rotation;
 
 	@Component(5)
-	public TransmissionState transmission;
+	public Double speed;
 
 	@Component(6)
-	public ExteriorLights lights;
+	public Double time;
 
 	@Component(7)
-	public Double brakePedal;
+	public Double distance;
 
 	@Component(8)
-	public HornStatus horn;
+	public MODEL model;
 
 	@Component(9)
-	public byte[] timestamp;
+	public Double throttle;
 
 	@Component(10)
+	public TransmissionState transmission;
+
+	@Component(11)
+	public ExteriorLights light;
+
+	@Component(12)
+	public Double pressure;
+
+	@Component(13)
+	public HornStatus horn;
+
+	@Component(14)
+	public byte[] timestamp;
+
+	@Component(15)
 	public Long syncNum;
 
 
@@ -67,7 +82,7 @@ public class SmartControlRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65594);
+	public final static AsnType TYPE = Platoon.type(65595);
 
 	public final static CompositeConverter CONV;
 
@@ -77,14 +92,19 @@ public class SmartControlRequestMessage {
 		AsnConverter tokenConverter = Token.CONV;
 		AsnConverter vidConverter = OctetStringConverter.INSTANCE;
 		AsnConverter steeringConverter = DoubleConverter.INSTANCE;
+		AsnConverter rotationConverter = DoubleConverter.INSTANCE;
+		AsnConverter speedConverter = DoubleConverter.INSTANCE;
+		AsnConverter timeConverter = DoubleConverter.INSTANCE;
+		AsnConverter distanceConverter = DoubleConverter.INSTANCE;
+		AsnConverter modelConverter = MODEL.CONV;
 		AsnConverter throttleConverter = DoubleConverter.INSTANCE;
 		AsnConverter transmissionConverter = TransmissionState.CONV;
-		AsnConverter lightsConverter = ExteriorLights.CONV;
-		AsnConverter brakePedalConverter = DoubleConverter.INSTANCE;
+		AsnConverter lightConverter = ExteriorLights.CONV;
+		AsnConverter pressureConverter = DoubleConverter.INSTANCE;
 		AsnConverter hornConverter = HornStatus.CONV;
 		AsnConverter timestampConverter = TimeStamp.CONV;
 		AsnConverter syncNumConverter = LongConverter.INSTANCE;
-		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, vidConverter, steeringConverter, throttleConverter, transmissionConverter, lightsConverter, brakePedalConverter, hornConverter, timestampConverter, syncNumConverter });
+		CONV.setComponentConverters(new AsnConverter[] { msgCntConverter, tokenConverter, vidConverter, steeringConverter, rotationConverter, speedConverter, timeConverter, distanceConverter, modelConverter, throttleConverter, transmissionConverter, lightConverter, pressureConverter, hornConverter, timestampConverter, syncNumConverter });
 	}
 
 

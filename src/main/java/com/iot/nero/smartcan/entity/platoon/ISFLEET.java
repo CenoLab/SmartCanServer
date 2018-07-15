@@ -49,7 +49,7 @@ public enum ISFLEET {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65609);
+	public final static AsnType TYPE = Platoon.type(65610);
 
 	public final static AsnConverter CONV;
 

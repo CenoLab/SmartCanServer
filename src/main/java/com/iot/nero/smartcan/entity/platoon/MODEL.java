@@ -10,12 +10,17 @@ import org.asnlab.asndt.runtime.conv.annotation.*;
 import org.asnlab.asndt.runtime.type.AsnType;
 import org.asnlab.asndt.runtime.value.*;
 
-public enum BRAKELIGHTRIGHTACTIVE {
-	off(0),
-	on(1);
+public enum MODEL {
+	absent(0),
+	throttleonly(1),
+	precaution(2),
+	glide(3),
+	parkatposition(5),
+	time(6),
+	distance(7);
 
-	public static BRAKELIGHTRIGHTACTIVE valueOf(int value){
-		BRAKELIGHTRIGHTACTIVE[] values = values();
+	public static MODEL valueOf(int value){
+		MODEL[] values = values();
 		for(int i=0;i<values.length;i++){
 			if(values[i].value==value){
 				return values[i];
@@ -27,7 +32,7 @@ public enum BRAKELIGHTRIGHTACTIVE {
 
 	private int value;
 
-	private BRAKELIGHTRIGHTACTIVE(int value) {
+	private MODEL(int value) {
 		this.value = value;
 	}
 
@@ -43,17 +48,17 @@ public enum BRAKELIGHTRIGHTACTIVE {
 		TYPE.encode(this, EncodingRules.BASIC_ENCODING_RULES, CONV, out);
 	}
 
-	public static BRAKELIGHTRIGHTACTIVE ber_decode(InputStream in) throws IOException {
-		return (BRAKELIGHTRIGHTACTIVE)TYPE.decode(in, EncodingRules.BASIC_ENCODING_RULES, CONV);
+	public static MODEL ber_decode(InputStream in) throws IOException {
+		return (MODEL)TYPE.decode(in, EncodingRules.BASIC_ENCODING_RULES, CONV);
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65560);
+	public final static AsnType TYPE = Platoon.type(65594);
 
 	public final static AsnConverter CONV;
 
 	static {
-		CONV = new ReflectionEnumeratedConverter(BRAKELIGHTRIGHTACTIVE.class);
+		CONV = new ReflectionEnumeratedConverter(MODEL.class);
 	}
 
 

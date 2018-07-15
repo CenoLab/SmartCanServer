@@ -49,7 +49,7 @@ public class SmartCtrlFeedBackResponseMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65597);
+	public final static AsnType TYPE = Platoon.type(65598);
 
 	public final static CompositeConverter CONV;
 

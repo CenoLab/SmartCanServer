@@ -59,7 +59,7 @@ public class ProtocolService implements IProtocolService {
         selectColumns.add("uniqueid");
         selectColumns.add("token");
         Conditions conditions = new Conditions();
-        conditions.addCondition(new Condition("uniqueid","=",data.getInditicalCode()));
+        conditions.addCondition(new Condition("uniqueid","=","\'"+data.getInditicalCode()+"\'"));
         try {
             List<Map<String,Object>> result = dataBase.select(selectColumns,"car_info",conditions);
             if(!result.isEmpty()) {
@@ -88,7 +88,7 @@ public class ProtocolService implements IProtocolService {
         selectColumns.add("token");
 
         Conditions conditions = new Conditions();
-        conditions.addCondition(new Condition("uniqueid","=",bytesToString(data.getInditicalCode())));
+        conditions.addCondition(new Condition("uniqueid","=","\'"+bytesToString(data.getInditicalCode())+"\'"));
         try {
             Integer result = dataBase.update(selectColumns,"car_info",conditions,token);
             return result;
@@ -439,12 +439,10 @@ public class ProtocolService implements IProtocolService {
         columns.add("unique_id");
         columns.add("type");
         columns.add("message");
-        columns.add("create_time");
         List<Object> objs = new ArrayList<>();
         objs.add(bytesToString(data.getInditicalCode()));
         objs.add(type);
         objs.add(message);
-        objs.add(String.valueOf(System.currentTimeMillis()));
         try {
             dataBase.insert(LOG_TABLE_NAME,columns,objs);
         } catch (SQLException e) {

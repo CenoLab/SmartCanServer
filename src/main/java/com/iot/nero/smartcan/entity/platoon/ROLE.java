@@ -48,7 +48,7 @@ public enum ROLE {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65610);
+	public final static AsnType TYPE = Platoon.type(65611);
 
 	public final static AsnConverter CONV;
 

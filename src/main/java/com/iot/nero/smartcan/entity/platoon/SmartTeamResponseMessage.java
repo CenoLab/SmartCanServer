@@ -52,7 +52,7 @@ public class SmartTeamResponseMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65612);
+	public final static AsnType TYPE = Platoon.type(65613);
 
 	public final static CompositeConverter CONV;
 

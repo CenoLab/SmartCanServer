@@ -65,7 +65,7 @@ public class SmartCanBootstrap {
     }
 
 
-    public void runFileListener() throws IOException {
+    public void runListener() throws IOException {
         initTable();
         initService();
         IServer ndfsServer = new CanServer(DFS_SERVER_LISTEN_PORT);
@@ -93,7 +93,7 @@ public class SmartCanBootstrap {
         CONSTANT.printNdfsInfo();
         loadConfig();
         try {
-            runFileListener();
+            runListener();
         } catch (IOException e) {
             e.printStackTrace();
         }

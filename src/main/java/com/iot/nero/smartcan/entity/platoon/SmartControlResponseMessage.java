@@ -49,7 +49,7 @@ public class SmartControlResponseMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65595);
+	public final static AsnType TYPE = Platoon.type(65596);
 
 	public final static CompositeConverter CONV;
 

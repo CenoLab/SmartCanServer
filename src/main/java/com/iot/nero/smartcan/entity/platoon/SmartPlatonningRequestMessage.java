@@ -65,7 +65,7 @@ public class SmartPlatonningRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65607);
+	public final static AsnType TYPE = Platoon.type(65608);
 
 	public final static CompositeConverter CONV;
 

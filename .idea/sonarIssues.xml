@@ -803,6 +803,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/MODEL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/ROLE.java">
           <value>
             <set />

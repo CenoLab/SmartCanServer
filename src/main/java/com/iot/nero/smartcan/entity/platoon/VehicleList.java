@@ -36,7 +36,7 @@ public class VehicleList {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65600);
+	public final static AsnType TYPE = Platoon.type(65601);
 
 	public final static CompositeConverter CONV;
 

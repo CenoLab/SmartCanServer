@@ -52,7 +52,7 @@ public class SmartDissolveResponseMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65606);
+	public final static AsnType TYPE = Platoon.type(65607);
 
 	public final static CompositeConverter CONV;
 

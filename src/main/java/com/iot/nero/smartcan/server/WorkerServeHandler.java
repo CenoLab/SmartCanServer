@@ -93,7 +93,10 @@ public class WorkerServeHandler extends ServerHandler {
             try {
                 processAndHandle(readCount);
             } catch (IOException | IllegalAccessException | ClassNotFoundException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
+                input.clear();
+                state = READING;
+                selectionKey.interestOps(SelectionKey.OP_READ);
             } catch (PackageBrokenException e) {
                 System.out.println(e.getMessage());
                 input.clear();

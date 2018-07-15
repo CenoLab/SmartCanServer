@@ -11,12 +11,10 @@ import org.asnlab.asndt.runtime.type.AsnType;
 import org.asnlab.asndt.runtime.value.*;
 
 public enum TransmissionState {
-	one(1),
-	two(2),
-	three(3),
-	four(4),
-	five(5),
-	r(6);
+	p(1),
+	r(2),
+	n(3),
+	d(4);
 
 	public static TransmissionState valueOf(int value){
 		TransmissionState[] values = values();

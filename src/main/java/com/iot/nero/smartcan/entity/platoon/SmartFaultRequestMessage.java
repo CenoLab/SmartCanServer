@@ -58,7 +58,7 @@ public class SmartFaultRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65598);
+	public final static AsnType TYPE = Platoon.type(65599);
 
 	public final static CompositeConverter CONV;
 

@@ -65,7 +65,7 @@ public class SmartFromATeamRequestMessage {
 	}
 
 
-	public final static AsnType TYPE = Platoon.type(65601);
+	public final static AsnType TYPE = Platoon.type(65602);
 
 	public final static CompositeConverter CONV;
 
