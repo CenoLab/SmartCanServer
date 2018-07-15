@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/middleware.dfs.index.iml" filepath="$PROJECT_DIR$/middleware.dfs.index.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartCanServer.iml" filepath="$PROJECT_DIR$/smartCanServer.iml" />
     </modules>
   </component>
 </project>

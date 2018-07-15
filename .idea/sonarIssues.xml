@@ -283,6 +283,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/TokenPair.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/car/ABSOPERATING.java">
           <value>
             <set />
@@ -818,7 +823,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/SmartRecognizeRequestMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/entity/platoon/SteeringWheelAngle.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/exceptions/PackageBrokenException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/factory/ServiceFactory.java">
           <value>
             <set />
           </value>
@@ -849,6 +869,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/utils/ByteUtils.java">
           <value>
             <set />
           </value>
@@ -1029,6 +1054,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../iotcloud/middleware/ndfs/test_data/header.list">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../iotcloud/web_forum/src/main/java/com/iot/nero/web_forum/controller/ApiForum.java">
           <value>
             <set />
           </value>

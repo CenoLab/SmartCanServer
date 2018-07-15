@@ -6,7 +6,7 @@ package com.iot.nero.smartcan.exceptions;
  * Date   2018/6/18
  * Time   10:23 AM
  */
-public class PackageBrokenException extends Exception {
+public class PackageBrokenException extends RuntimeException {
     public PackageBrokenException() {
     }
 

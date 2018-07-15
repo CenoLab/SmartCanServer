@@ -3,14 +3,16 @@ package com.iot.nero.smartcan.service.impl;
 import com.iot.nero.smartcan.annotation.Service;
 import com.iot.nero.smartcan.annotation.ServiceMethod;
 import com.iot.nero.smartcan.core.Protocol;
+import com.iot.nero.smartcan.entity.TokenPair;
 import com.iot.nero.smartcan.entity.platoon.*;
 import com.iot.nero.smartcan.service.IProtocolService;
 import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import com.iot.nero.smartcan.constant.CONSTANT;
+import com.iot.nero.smartcan.utils.dbtools.entity.Condition;
+import com.iot.nero.smartcan.utils.dbtools.entity.Conditions;
 import org.asnlab.asndt.runtime.conv.CompositeConverter;
 import org.asnlab.asndt.runtime.type.AsnType;
 
-import javax.management.AttributeList;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -21,7 +23,9 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static com.iot.nero.smartcan.constant.CONSTANT.*;
 import static com.iot.nero.smartcan.utils.ByteUtils.bytesToString;
+import static com.iot.nero.smartcan.utils.ByteUtils.longToBytes;
 
 /**
  * Author neroyang
@@ -33,26 +37,78 @@ import static com.iot.nero.smartcan.utils.ByteUtils.bytesToString;
 @Service
 public class ProtocolService implements IProtocolService {
 
-
-    private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/autobrain_data";
-    private String username = "root";
-    private String pd = "baby..520587";
-
     static Long syncNum = 0L;
     static Long msgCnt = 0L;
-    byte[] token = new byte[]{(byte) 0xcc, (byte) 0xff, (byte) 0xed, (byte) 0xcf};
     int collectFrequency = 1000;
     int sendFrequency = 1000;
 
     private Protocol protocol;
 
-    private DataBase dataBase = new DataBase(driver, url, username, pd);
+    private DataBase dataBase = new DataBase(DB_DRIVER, DB_URL, DB_USERNAME, DB_PD);
+
+    private Map<String,String> tokenMap = new HashMap<>();
 
 
+    /**
+     * 获取token
+     * @param data
+     * @return
+     */
+    private TokenPair getToken(Protocol data){
+        List<String> selectColumns = new ArrayList<>();
+        selectColumns.add("uniqueid");
+        selectColumns.add("token");
+        Conditions conditions = new Conditions();
+        conditions.addCondition(new Condition("uniqueid","=",data.getInditicalCode()));
+        try {
+            List<Map<String,Object>> result = dataBase.select(selectColumns,"car_info",conditions);
+            if(!result.isEmpty()) {
+                for (Map<String, Object> map : result) {
+                    tokenMap.put(map.get("uniqueid").toString(), map.get("token").toString());
+                    return new TokenPair(map.get("uniqueid").toString(), map.get("token").toString());
+                }
+            }
+            return null;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 更新token
+     * @param data
+     * @param token
+     * @return
+     */
+    private Integer updateToken(Protocol data,String... token){
+        List<String> selectColumns = new ArrayList<>();
+        selectColumns.add("token");
+
+        Conditions conditions = new Conditions();
+        conditions.addCondition(new Condition("uniqueid","=",bytesToString(data.getInditicalCode())));
+        try {
+            Integer result = dataBase.update(selectColumns,"car_info",conditions,token);
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 创建数据表
+     * @param fields
+     * @param table
+     * @return
+     */
     private synchronized int createTable(Field[] fields, String table) {
         List<String> tableColumns = new ArrayList<>();
-        tableColumns.add("unique_id varchar(64)");
+        tableColumns.add("unique_id varchar(64) COLLATE utf8_general_ci");
         for (Field field : fields) {
             if (field.getType() != Integer.class &&
                     field.getType() != Long.class &&
@@ -92,7 +148,7 @@ public class ProtocolService implements IProtocolService {
                 }
             } else {
                 String column = "";
-                column = field.getName() + " varchar(512)";
+                column = field.getName() + " varchar(64) COLLATE utf8_general_ci";
                 tableColumns.add(column);
             }
         }
@@ -108,6 +164,83 @@ public class ProtocolService implements IProtocolService {
         return 0;
     }
 
+    /**
+     * 创建车队数据表
+     * @param fields
+     * @param columns
+     * @param table
+     * @return
+     */
+    private int createTeamTable(Field[] fields, List<String> columns, String table) {
+        List<String> tableColumns = new ArrayList<>();
+        tableColumns.add("unique_id varchar(64) COLLATE utf8_general_ci");
+        if(!columns.isEmpty()){
+            for(String column:columns){
+                tableColumns.add(column+" varchar(64) COLLATE utf8_general_ci");
+            }
+        }
+        for (Field field : fields) {
+            if (field.getType() != Integer.class &&
+                    field.getType() != Long.class &&
+                    field.getType() != Boolean.class &&
+                    field.getType() != Double.class &&
+                    field.getType() != byte.class &&
+                    field.getType() != byte[].class &&
+                    field.getType() != long.class &&
+                    field.getType() != int.class &&
+                    !field.getType().isEnum()
+                    ) { // 不是基础类型
+
+                if (field.getType() == AsnType.class) {
+
+                } else if (field.getType() == Object[].class) {
+
+                } else if (field.getType() == Object.class) {
+
+                } else if (field.getType() == CompositeConverter.class) {
+
+                } else if (field.getType() == Vector.class) {
+                    Type types=field.getGenericType();
+                    ParameterizedType pType= (ParameterizedType)types;//ParameterizedType是Type的子接口
+                    String[] names = pType.getActualTypeArguments()[0].getTypeName().split("\\.");
+                    try {
+                        Class<?> clz = Class.forName(pType.getActualTypeArguments()[0].getTypeName());
+                        createTable(clz.newInstance().getClass().getDeclaredFields(),names[names.length - 1]);
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    createTable(field.getType().getDeclaredFields(), field.getType().getSimpleName());
+                }
+            } else {
+                String column = "";
+                column = field.getName() + " varchar(64) COLLATE utf8_general_ci";
+                tableColumns.add(column);
+            }
+        }
+        tableColumns.add("create_time timestamp default current_timestamp");
+
+        try {
+            return dataBase.createTable(table, tableColumns);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    /**
+     * 写入数据到数据表
+     * @param fields
+     * @param table
+     * @param object
+     * @return
+     */
     private synchronized int insertTable(Field[] fields, Class<?> table,Object object) {
         List<String> tableColumns = new ArrayList<>();
         List<Object> datas = new ArrayList<>();
@@ -169,12 +302,7 @@ public class ProtocolService implements IProtocolService {
                     if(field.getType()==byte[].class){
                         datas.add(bytesToString((byte[]) field.get(object)));
                     }else{
-                        if(field.getName().contains("time")){
-                            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//这个是你要转成后的时间的格式
-                            String sd = sdf.format(new Date((Long) field.get(object)));   // 时间戳转换成时间
-                        }else {
-                            datas.add(String.valueOf(field.get(object)));
-                        }
+                        datas.add(String.valueOf(field.get(object)));
                     }
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
@@ -198,22 +326,141 @@ public class ProtocolService implements IProtocolService {
         return 0;
     }
 
-    private byte[] longToBytes(long v) {
+    /**
+     * 插入车队表
+     * @param fields
+     * @param table
+     * @param object
+     * @param values
+     * @return
+     */
+    private int insertTeamTable(Field[] fields, Class<?> table, Object object, Map<String, String> values) {
+        List<String> tableColumns = new ArrayList<>();
+        List<Object> datas = new ArrayList<>();
+        tableColumns.add("unique_id");
+        datas.add(bytesToString(protocol.getInditicalCode()));
+        for (Field field : fields) {
+            field.setAccessible(true);
 
-        byte[] writeBuffer = new byte[8];
+            if (field.getType() != Integer.class &&
+                    field.getType() != Long.class &&
+                    field.getType() != Boolean.class &&
+                    field.getType() != Double.class &&
+                    field.getType() != byte.class &&
+                    field.getType() != byte[].class &&
+                    field.getType() != long.class &&
+                    field.getType() != int.class &&
+                    !field.getType().isEnum()
+                    ) { // 不是基础类型
 
-        writeBuffer[0] = (byte) (v >>> 56);
-        writeBuffer[1] = (byte) (v >>> 48);
-        writeBuffer[2] = (byte) (v >>> 40);
-        writeBuffer[3] = (byte) (v >>> 32);
-        writeBuffer[4] = (byte) (v >>> 24);
-        writeBuffer[5] = (byte) (v >>> 16);
-        writeBuffer[6] = (byte) (v >>> 8);
-        writeBuffer[7] = (byte) (v >>> 0);
+                if (field.getType() == AsnType.class) {
 
-        return writeBuffer;
+                } else if (field.getType() == Object[].class) {
+
+                } else if (field.getType() == Object.class) {
+
+                } else if (field.getType() == CompositeConverter.class) {
+
+                } else if (field.getType() == Vector.class) {
+                    Type types=field.getGenericType();
+                    ParameterizedType pType= (ParameterizedType)types;//ParameterizedType是Type的子接口
+
+                    try {
+                        Class<?> clz = Class.forName(pType.getActualTypeArguments()[0].getTypeName());
+                        field.setAccessible(true);
+                        Vector vector = (Vector)field.get(object);
+                        for(int i = 0;i<pType.getActualTypeArguments().length;i++){
+                            insertTable(clz.newInstance().getClass().getDeclaredFields(),clz,vector.get(i));
+                        }
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    field.setAccessible(true);
+                    try {
+                        insertTable(field.getType().getDeclaredFields(), field.getType(),field.get(object));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else {
+                String column = "";
+                column = field.getName();
+                tableColumns.add(column);
+                try {
+                    if(field.getType()==byte[].class){
+                        datas.add(bytesToString((byte[]) field.get(object)));
+                    }else{
+                        datas.add(String.valueOf(field.get(object)));
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        if(!values.isEmpty()){
+            for(Map.Entry<String,String> entry:values.entrySet()){
+                tableColumns.add(entry.getKey());
+                datas.add(entry.getValue());
+            }
+        }
+
+        tableColumns.add("create_time");
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//这个是你要转成后的时间的格式
+        String sd = sdf.format(new Date(System.currentTimeMillis()));   // 时间戳转换成时间
+        datas.add(String.valueOf(sd));
+
+        try {
+            String[] names = table.getName().split("\\.");
+            return dataBase.insert(names[names.length-1], tableColumns,datas);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
     }
 
+
+    /**
+     * 日志记录
+     * @param data
+     * @param type
+     * @param message
+     */
+    private void serverLog(Protocol data,String type,String message) {
+        List<String> columns = new ArrayList<>();
+        columns.add("unique_id");
+        columns.add("type");
+        columns.add("message");
+        columns.add("create_time");
+        List<Object> objs = new ArrayList<>();
+        objs.add(bytesToString(data.getInditicalCode()));
+        objs.add(type);
+        objs.add(message);
+        objs.add(String.valueOf(System.currentTimeMillis()));
+        try {
+            dataBase.insert(LOG_TABLE_NAME,columns,objs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * socket 写回
+     * @param command
+     * @param outputStream
+     * @param socketChannel
+     * @throws IOException
+     */
     private void writeToSocket(byte command, ByteArrayOutputStream outputStream, final SocketChannel socketChannel) throws IOException {
 
         byte[] out = outputStream.toByteArray();
@@ -239,30 +486,62 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(data.dataUnit);
         LoginRequestMessage loginRequestMessage = LoginRequestMessage.ber_decode(inputStream);
 
+        String token = UUID.randomUUID().toString();
 
-        LoginResponseMessage loginResponseMessage = new LoginResponseMessage();
-        loginResponseMessage.syncNum = loginRequestMessage.syncNum + 1;
-        loginResponseMessage.token = token;
-        loginResponseMessage.msgCnt = loginRequestMessage.msgCnt + 1;
-        loginResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
-        loginResponseMessage.vid = loginRequestMessage.iccid;
-        loginResponseMessage.loginResult = true;
-        loginResponseMessage.errorCode = new byte[]{0x00};
-        Vector<CollectConfigMessage> collectConfs = new Vector<>();
-        CollectConfigMessage collectConfigMessage = new CollectConfigMessage();
+        TokenPair tokenPair = getToken(data);
+        if(tokenPair==null){
+            serverLog(data,LOG_TYPE_WARNING,LOG_MESSAGE_UNKNOWN_LOGIN_CAR);
+            LoginResponseMessage loginResponseMessage = new LoginResponseMessage();
+            loginResponseMessage.syncNum = loginRequestMessage.syncNum + 1;
+            loginResponseMessage.token = "NULL".getBytes();
+            loginResponseMessage.msgCnt = loginRequestMessage.msgCnt + 1;
+            loginResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+            loginResponseMessage.vid = loginRequestMessage.iccid;
+            loginResponseMessage.loginResult = true;
+            loginResponseMessage.errorCode = new byte[]{0x01};
+            Vector<CollectConfigMessage> collectConfs = new Vector<>();
+            CollectConfigMessage collectConfigMessage = new CollectConfigMessage();
 
-        collectConfigMessage.msgid = new byte[]{0x01};
-        collectConfigMessage.collectFrequency = collectFrequency;
-        collectConfigMessage.sendFrequency = sendFrequency;
+            collectConfigMessage.msgid = new byte[]{0x01};
+            collectConfigMessage.collectFrequency = collectFrequency;
+            collectConfigMessage.sendFrequency = sendFrequency;
 
-        collectConfs.add(collectConfigMessage);
-        loginResponseMessage.collectConfs = collectConfs;
+            collectConfs.add(collectConfigMessage);
+            loginResponseMessage.collectConfs = collectConfs;
 
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        loginResponseMessage.ber_encode(outputStream);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            loginResponseMessage.ber_encode(outputStream);
+            // 返回响应
+            writeToSocket((byte) 0xF1, outputStream, socketChannel);
+        }else{
+            // 此处更新数据库token
+            updateToken(data,token);
+            serverLog(data,LOG_TYPE_INFO,LOG_MESSAGE_LOGIN_CAR);
+            LoginResponseMessage loginResponseMessage = new LoginResponseMessage();
+            loginResponseMessage.syncNum = loginRequestMessage.syncNum + 1;
+            loginResponseMessage.token = token.getBytes();
+            loginResponseMessage.msgCnt = loginRequestMessage.msgCnt + 1;
+            loginResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
+            loginResponseMessage.vid = loginRequestMessage.iccid;
+            loginResponseMessage.loginResult = true;
+            loginResponseMessage.errorCode = new byte[]{0x00};
+            Vector<CollectConfigMessage> collectConfs = new Vector<>();
+            CollectConfigMessage collectConfigMessage = new CollectConfigMessage();
 
-        // 返回响应
-        writeToSocket((byte) 0xF1, outputStream, socketChannel);
+            collectConfigMessage.msgid = new byte[]{0x01};
+            collectConfigMessage.collectFrequency = collectFrequency;
+            collectConfigMessage.sendFrequency = sendFrequency;
+
+            collectConfs.add(collectConfigMessage);
+            loginResponseMessage.collectConfs = collectConfs;
+
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            loginResponseMessage.ber_encode(outputStream);
+
+            // 返回响应
+            writeToSocket((byte) 0xF1, outputStream, socketChannel);
+        }
+
 
         // 储存数据
         Field[] fields = LoginRequestMessage.class.getDeclaredFields();
@@ -272,6 +551,8 @@ public class ProtocolService implements IProtocolService {
         insertTable(fields,LoginRequestMessage.class,loginRequestMessage);
     }
 
+
+
     @Override
     @ServiceMethod((byte) 0x04)
     public void logout(Protocol data, final SocketChannel socketChannel) throws IOException {
@@ -280,6 +561,10 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(data.dataUnit);
         LogoutRequestMessage logoutRequestMessage = LogoutRequestMessage.ber_decode(inputStream);
 
+        String token = tokenMap.get(bytesToString(data.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(logoutRequestMessage.token))){
+            serverLog(data,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
 
         LogoutResponseMessage logoutResponseMessage = new LogoutResponseMessage();
         logoutResponseMessage.syncNum = logoutRequestMessage.syncNum + 1;
@@ -308,6 +593,10 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SyncRequestMessage syncRequestMessage = SyncRequestMessage.ber_decode(inputStream);
 
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(syncRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
 
         SyncResponseMessage syncResponseMessage = new SyncResponseMessage();
         syncResponseMessage.syncNum = syncRequestMessage.syncNum + 1;
@@ -338,6 +627,11 @@ public class ProtocolService implements IProtocolService {
         SmartCanRequestBody smartCarRequestBody = SmartCanRequestBody.ber_decode(inputStream);
 
 
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartCarRequestBody.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
         SmartCanResponseMessage smartCarResponseMessage = new SmartCanResponseMessage();
         smartCarResponseMessage.syncNum = smartCarRequestBody.msgCnt + 1;
         smartCarResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
@@ -365,6 +659,11 @@ public class ProtocolService implements IProtocolService {
 
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartRecognizeRequestMessage smartRecognizeRequestMessage = SmartRecognizeRequestMessage.ber_decode(inputStream);
+
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartRecognizeRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
 
 
         SmartRecognizeResponseMessage smartRecognizeResponseMessage = new SmartRecognizeResponseMessage();
@@ -396,6 +695,11 @@ public class ProtocolService implements IProtocolService {
         SmartStrategyRequestMessage smartStrategyRequestMessage = SmartStrategyRequestMessage.ber_decode(inputStream);
 
 
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartStrategyRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
         SmartStrategyResponseMessage smartStrategyResponseMessage = new SmartStrategyResponseMessage();
         smartStrategyResponseMessage.syncNum = smartStrategyRequestMessage.syncNum + 1;
         smartStrategyResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
@@ -423,6 +727,12 @@ public class ProtocolService implements IProtocolService {
 
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartControlRequestMessage smartControlRequestMessage = SmartControlRequestMessage.ber_decode(inputStream);
+
+
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartControlRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
 
         SmartControlResponseMessage smartControlResponseMessage = new SmartControlResponseMessage();
         smartControlResponseMessage.syncNum = smartControlRequestMessage.syncNum + 1;
@@ -452,6 +762,12 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartCtrlFeedBackRequestMessage smartCtrlFeedBackRequestMessage = SmartCtrlFeedBackRequestMessage.ber_decode(inputStream);
 
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartCtrlFeedBackRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
+
         SmartCtrlFeedBackResponseMessage smartCtrlFeedBackResponseMessage = new SmartCtrlFeedBackResponseMessage();
         smartCtrlFeedBackResponseMessage.syncNum = smartCtrlFeedBackRequestMessage.syncNum + 1;
         smartCtrlFeedBackResponseMessage.timestamp = longToBytes(System.currentTimeMillis());
@@ -478,6 +794,13 @@ public class ProtocolService implements IProtocolService {
         this.protocol = protocol;
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartFaultRequestMessage smartFaultRequestMessage = SmartFaultRequestMessage.ber_decode(inputStream);
+
+
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartFaultRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
 
         SmartFaultResponseMessage smartFaultResponseMessage = new SmartFaultResponseMessage();
         smartFaultResponseMessage.syncNum = smartFaultRequestMessage.syncNum + 1;
@@ -506,6 +829,15 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartFromATeamRequestMessage smartFromATeamRequestMessage = SmartFromATeamRequestMessage.ber_decode(inputStream);
 
+
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartFromATeamRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
+        // 车队id生成
+        String teamId = UUID.randomUUID().toString();
+
         SmartFromATeamResponseMessage smartFromATeamResponseMessage = new SmartFromATeamResponseMessage();
         smartFromATeamResponseMessage.syncNum = smartFromATeamRequestMessage.syncNum + 1;
         smartFromATeamResponseMessage.msgCount = smartFromATeamRequestMessage.msgCount + 1;
@@ -513,7 +845,9 @@ public class ProtocolService implements IProtocolService {
         smartFromATeamResponseMessage.errorCode = new byte[]{0x00};
         smartFromATeamResponseMessage.msgStatus = true;
         smartFromATeamResponseMessage.msgid = new byte[]{0x00};
-        smartFromATeamResponseMessage.id = new byte[]{0x00};
+
+        //车队id赋值
+        smartFromATeamResponseMessage.id = teamId.getBytes();
 
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -525,9 +859,17 @@ public class ProtocolService implements IProtocolService {
         // 储存数据
         Field[] fields = SmartFromATeamRequestMessage.class.getDeclaredFields();
         String[] names = smartFromATeamRequestMessage.getClass().getName().split("\\.");
-        createTable(fields, names[names.length - 1]);
-        insertTable(fields,SmartFromATeamRequestMessage.class,smartFromATeamRequestMessage);
+        List<String> columns = new ArrayList<>();
+        columns.add("id");
+
+        createTeamTable(fields,columns, names[names.length - 1]);
+
+        Map<String,String> values = new HashMap<>();
+        values.put("id",teamId);
+
+        insertTeamTable(fields,SmartFromATeamRequestMessage.class,smartFromATeamRequestMessage,values);
     }
+
 
     @Override
     @ServiceMethod((byte) 0xCD)
@@ -535,6 +877,12 @@ public class ProtocolService implements IProtocolService {
         this.protocol = protocol;
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartFTeamSuccessRequestMessage smartFTeamSuccessRequestMessage = SmartFTeamSuccessRequestMessage.ber_decode(inputStream);
+
+
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartFTeamSuccessRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
 
         SmartFTeamSuccessResponseMessage smartFTeamSuccessResponseMessage = new SmartFTeamSuccessResponseMessage();
         smartFTeamSuccessResponseMessage.syncNum = smartFTeamSuccessRequestMessage.syncNum + 1;
@@ -564,6 +912,11 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartDissolveRequestMessage smartDissolveRequestMessage = SmartDissolveRequestMessage.ber_decode(inputStream);
 
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartDissolveRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
         SmartDissolveResponseMessage smartDissolveResponseMessage = new SmartDissolveResponseMessage();
         smartDissolveResponseMessage.syncNum = smartDissolveRequestMessage.syncNum + 1;
         smartDissolveResponseMessage.msgCount = smartDissolveRequestMessage.msgCount + 1;
@@ -592,6 +945,11 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartTeamRequestMessage smartTeamRequestMessage = SmartTeamRequestMessage.ber_decode(inputStream);
 
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartTeamRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
         SmartTeamResponseMessage smartTeamResponseMessage = new SmartTeamResponseMessage();
         smartTeamResponseMessage.syncNum = smartTeamRequestMessage.syncNum + 1;
         smartTeamResponseMessage.msgCount = smartTeamRequestMessage.msgCount + 1;
@@ -619,6 +977,12 @@ public class ProtocolService implements IProtocolService {
         this.protocol = protocol;
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         SmartPlatonningRequestMessage smartPlatonningRequestMessage = SmartPlatonningRequestMessage.ber_decode(inputStream);
+
+        String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
+        if(token==null || token.equals(bytesToString(smartPlatonningRequestMessage.token))){
+            serverLog(protocol,LOG_TYPE_WARNING,LOG_MESSAGE_TOKEN_LOGIN_INCORRECT);
+        }
+
         SmartPlatonningResponseMessage smartPlatonningResponseMessage = new SmartPlatonningResponseMessage();
         smartPlatonningResponseMessage.syncNum = smartPlatonningRequestMessage.syncNum + 1;
         smartPlatonningResponseMessage.msgCount = smartPlatonningRequestMessage.msgCount + 1;
@@ -626,6 +990,7 @@ public class ProtocolService implements IProtocolService {
         smartPlatonningResponseMessage.errorCode = new byte[]{0x00};
         smartPlatonningResponseMessage.msgStatus = true;
         smartPlatonningResponseMessage.msgid = new byte[]{0x00};
+
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         smartPlatonningResponseMessage.ber_encode(outputStream);
@@ -639,7 +1004,6 @@ public class ProtocolService implements IProtocolService {
         createTable(fields, names[names.length - 1]);
         insertTable(fields,SmartPlatonningRequestMessage.class,smartPlatonningRequestMessage);
     }
-
 
 }
 

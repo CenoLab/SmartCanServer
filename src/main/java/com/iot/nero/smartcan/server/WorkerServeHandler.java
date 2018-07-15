@@ -5,6 +5,8 @@ import com.iot.nero.smartcan.SmartCanBootstrap;
 import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.exceptions.PackageBrokenException;
 import com.iot.nero.smartcan.constant.CONSTANT;
+import com.iot.nero.smartcan.factory.ServiceFactory;
+import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import net.sf.cglib.reflect.FastClass;
 import net.sf.cglib.reflect.FastMethod;
 
@@ -66,11 +68,12 @@ public class WorkerServeHandler extends ServerHandler {
         Class<?> clz = Class.forName("com.iot.nero.smartcan.service.impl.ProtocolService");
         FastClass fastClass = FastClass.create(clz);
         try {
+
              FastMethod fastMethod = fastClass.getMethod(
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getName(),
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getParameterTypes());
 
-            fastMethod.invoke(fastClass.newInstance(), new Object[]{protocol, socketChannel});
+            fastMethod.invoke(ServiceFactory.getService(fastClass), new Object[]{protocol, socketChannel});
 
         }catch (NullPointerException e){
             this.selectionKey.interestOps(SelectionKey.OP_READ);
@@ -92,7 +95,10 @@ public class WorkerServeHandler extends ServerHandler {
             } catch (IOException | IllegalAccessException | ClassNotFoundException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
                 e.printStackTrace();
             } catch (PackageBrokenException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
+                input.clear();
+                state = READING;
+                selectionKey.interestOps(SelectionKey.OP_READ);
             }
         }
     }

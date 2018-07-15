@@ -1,6 +1,8 @@
 
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ıÙ–ÖÂ,
-Fsquid:S2116"%Use "Arrays.toString(array)" instead.(‹Û¯Ùøÿÿÿÿ8Ó«–Å,
-Isquid:S1481"-Remove this unused "response" local variable.(œ®Ñı8ıÙ–ÖÂ,
-`squid:S2147"DCombine this catch with the one at line 92, which has the same body.(çÃÜµ8ıÙ–ÖÂ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ô³ÔÂ,
+Fsquid:S2116"%Use "Arrays.toString(array)" instead.(‹Û¯Ùøÿÿÿÿ8³¥ÅóÈ,
+¾%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(”İæıÿÿÿÿ8³¥ÅóÈ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8³¥ÅóÈ,
+Isquid:S1481"-Remove this unused "response" local variable.(œ®Ñı8³¥ÅóÈ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8³¥ÅóÈ,
+¾%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(º”¯Øıÿÿÿÿ8³¥ÅóÈ,

@@ -1,17 +1,19 @@
 
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(õšÜ8¸õÓˆÁ,
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(õšÜ8Æ’ÊˆÁ,
-"squid:ClassVariableVisibilityCheck"WMake commandUnit a static final constant or non-public and provide accessors if needed.( ø´éûÿÿÿÿ8†€¶†Á,
-Œ"squid:ClassVariableVisibilityCheck"TMake dataUnit a static final constant or non-public and provide accessors if needed.(•ªîÕıÿÿÿÿ8†€¶†Á,
-Csquid:S1905"'Remove this unnecessary cast to "byte".(¹¢í8Â¶É†Á,
-‘"squid:ClassVariableVisibilityCheck"YMake inditicalCode a static final constant or non-public and provide accessors if needed.(Ô‚·£øÿÿÿÿ8†€¶†Á,
-"squid:ClassVariableVisibilityCheck"UMake checkCode a static final constant or non-public and provide accessors if needed.(ƒÍµ½ùÿÿÿÿ8†€¶†Á,
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8‡‹×Â,
-”"squid:ClassVariableVisibilityCheck"aMake dataUnitEncryptMethod a static final constant or non-public and provide accessors if needed.(î×¸®8†€¶†Á,
 Y
 squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ùÉŠ×Â,
-Š"squid:ClassVariableVisibilityCheck"WMake startSymbol a static final constant or non-public and provide accessors if needed.(ÑÙ¥Ó8ÑĞµ†Á,
+Œ"squid:ClassVariableVisibilityCheck"TMake dataUnit a static final constant or non-public and provide accessors if needed.(•ªîÕıÿÿÿÿ8†€¶†Á,
+‘"squid:ClassVariableVisibilityCheck"YMake inditicalCode a static final constant or non-public and provide accessors if needed.(Ô‚·£øÿÿÿÿ8†€¶†Á,
+”"squid:ClassVariableVisibilityCheck"aMake dataUnitEncryptMethod a static final constant or non-public and provide accessors if needed.(î×¸®8†€¶†Á,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(õšÜ8Æ’ÊˆÁ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(°ÿ«–8—Üˆ¼Ç,
+"squid:ClassVariableVisibilityCheck"UMake checkCode a static final constant or non-public and provide accessors if needed.(ƒÍµ½ùÿÿÿÿ8†€¶†Á,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(õšÜ8¸õÓˆÁ,
 "squid:ClassVariableVisibilityCheck"ZMake dataUnitLength a static final constant or non-public and provide accessors if needed.(¢ÿ˜ö8†€¶†Á,
+"squid:ClassVariableVisibilityCheck"WMake commandUnit a static final constant or non-public and provide accessors if needed.( ø´éûÿÿÿÿ8†€¶†Á,
+Š"squid:ClassVariableVisibilityCheck"WMake startSymbol a static final constant or non-public and provide accessors if needed.(ÑÙ¥Ó8ÑĞµ†Á,
+Csquid:S1905"'Remove this unnecessary cast to "byte".(¹¢í8Â¶É†Á,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8‡‹×Â,

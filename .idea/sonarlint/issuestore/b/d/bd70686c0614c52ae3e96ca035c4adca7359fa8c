@@ -1,0 +1,7 @@
+
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(£˜½™ùÿÿÿÿ8³¥ÅóÈ,
+€squid:S1845"_Rename field "TYPE" to prevent any misunderstanding/clash with field "type" defined on line 20.(£˜½™ùÿÿÿÿ8³¥ÅóÈ,
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡šòÚ8³¥ÅóÈ,
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷¡è8³¥ÅóÈ,
+lsquid:S1206"PThis class overrides "equals()" and should therefore also override "hashCode()".(ÜÑã8³¥ÅóÈ,
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ˆûå¹8³¥ÅóÈ,
