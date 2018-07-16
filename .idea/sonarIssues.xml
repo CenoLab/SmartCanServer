@@ -28,6 +28,186 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/serverCore/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/CompressionAlgorithm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/ABSOPERATING.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/AutoHorn.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/BRAKELIGHTLEFTACTIVE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/BRAKELIGHTRIGHTACTIVE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/BreakPadelSwtichSts.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/CollectConfigMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/EPSSTA.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/ESPAEBactive.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/ESPOPERATING.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/EXTERIORLAMPSWITCH.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/ExteriorLights.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/FOGLAMPSWITCH.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/FRONTWIPERSWITCH.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/HANDBRAKE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/HIGHBEAMINDICATOR.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/HornStatus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/ISFLEET.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/Light.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/MODEL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/Other.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/Platoon.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/ROLE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/SmartCanRequestBody.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/SmartStrategyRequestMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/Token.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/TransmissionState.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/VehicleList.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/XTypeEnum.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/impl/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
           <value>
             <set />
@@ -963,12 +1143,92 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/plugin/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/plugin/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/utils/ByteUtils.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/utils/JarUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/utils/dbtools/DataBase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/target/classes/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/target/classes/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/OnMessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/OnSmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/impl/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/plugin/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/plugin/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/test/java/com/iot/nero/AppTest.java">
           <value>
             <set />
           </value>

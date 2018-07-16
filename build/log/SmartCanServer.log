@@ -6,30 +6,19 @@
                                                           
 智能网联车数据采集 Server-0.1.3
 www.cenocloud.com All Right Reserved
-[Mon Jul 16 16:23:33 CST 2018] (Config) /Users/neroyang/project/autocarnew/build/config/config.properties
+[Mon Jul 16 17:47:35 CST 2018] (Config) /Users/neroyang/project/autocarnew/build/config/config.properties
 create table if not  exists SmartCanServerLog(unique_id varchar(64) COLLATE utf8_general_ci,type varchar(64) COLLATE utf8_general_ci,message varchar(64) COLLATE utf8_general_ci,create_time timestamp default current_timestamp)Engine=InnoDB;
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[login]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[logout]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[heartBeat]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartCan]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[stmartRecogrize]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartStrategy]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartControl]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartControlFeed]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartFault]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartFormATeam]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartFTeam]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartDissolveTeam]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartTeam]
-[Mon Jul 16 16:23:33 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartPlatonning]
-java.net.BindException: Address already in use
-	at java.base/sun.nio.ch.Net.bind0(Native Method)
-	at java.base/sun.nio.ch.Net.bind(Net.java:433)
-	at java.base/sun.nio.ch.Net.bind(Net.java:425)
-	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:225)
-	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
-	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)
-	at com.iot.nero.smartcan.server.CanServer.<init>(CanServer.java:29)
-	at com.iot.nero.smartcan.SmartCanBootstrap.runListener(SmartCanBootstrap.java:64)
-	at com.iot.nero.smartcan.SmartCanBootstrap.start(SmartCanBootstrap.java:92)
-	at com.iot.nero.smartcan.App.main(App.java:16)
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartControl]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartCan]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartPlatonning]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartControlFeed]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartStrategy]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[stmartRecogrize]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[login]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[logout]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[heartBeat]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartFault]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartFormATeam]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartFTeam]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartDissolveTeam]
+[Mon Jul 16 17:47:35 CST 2018] (Service) [com.iot.nero.smartcan.service.impl.ProtocolService]->[smartTeam]

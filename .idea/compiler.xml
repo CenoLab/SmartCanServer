@@ -7,10 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="middleware.dfs.index" />
+        <module name="serverCore" />
+        <module name="testPlugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="middleware.dfs.index" target="1.7" />
+      <module name="serverCore" target="1.7" />
+      <module name="smartCanServer" target="1.5" />
+      <module name="testPlugin" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

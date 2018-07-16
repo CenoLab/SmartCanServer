@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="asnrt">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/asnrt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/serverCore/lib/asnrt.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
