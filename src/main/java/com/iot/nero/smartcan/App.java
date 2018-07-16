@@ -14,10 +14,5 @@ public class App
     {
         SmartCanBootstrap dfsBootstrap = new SmartCanBootstrap();
         dfsBootstrap.start();
-
-        ServiceLoader<SmartFaultListener> loaders = ServiceLoader.load(SmartFaultListener.class);
-        for (SmartFaultListener in : loaders) {
-            in.onFault(null);
-        }
     }
 }

@@ -8,7 +8,6 @@
         </element>
         <element id="module-output" name="smartCanServer" />
       </element>
-      <element id="library" level="project" name="asnrt" />
       <element id="library" level="project" name="Maven: io.protostuff:protostuff-api:1.4.0" />
       <element id="library" level="project" name="Maven: cglib:cglib:3.2.6" />
       <element id="library" level="project" name="Maven: org.ow2.asm:asm:6.0" />

@@ -6,6 +6,10 @@ import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.exceptions.PackageBrokenException;
 import com.iot.nero.smartcan.constant.CONSTANT;
 import com.iot.nero.smartcan.factory.ServiceFactory;
+import com.iot.nero.smartcan.spi.OnMessageReceivedListener;
+import com.iot.nero.smartcan.spi.OnSmartFaultListener;
+import com.iot.nero.smartcan.spi.impl.MessageReceivedListener;
+import com.iot.nero.smartcan.spi.impl.SmartFaultListener;
 import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import net.sf.cglib.reflect.FastClass;
 import net.sf.cglib.reflect.FastMethod;
@@ -15,6 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
+import java.util.ServiceLoader;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -72,6 +77,13 @@ public class WorkerServeHandler extends ServerHandler {
              FastMethod fastMethod = fastClass.getMethod(
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getName(),
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getParameterTypes());
+
+            ServiceLoader<OnMessageReceivedListener> messageReceivedListenerServiceLoader = ServiceLoader.load(OnMessageReceivedListener.class);
+            // 调用 SPI
+            for (OnMessageReceivedListener onMessageReceivedListener : messageReceivedListenerServiceLoader) {
+                onMessageReceivedListener.OnMessageReceived(protocol);
+            }
+
 
             fastMethod.invoke(ServiceFactory.getService(fastClass), new Object[]{protocol, socketChannel});
 

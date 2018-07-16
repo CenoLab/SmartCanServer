@@ -7,6 +7,8 @@ import com.iot.nero.smartcan.entity.TokenPair;
 import com.iot.nero.smartcan.entity.platoon.*;
 import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.service.IProtocolService;
+import com.iot.nero.smartcan.spi.OnSmartFaultListener;
+import com.iot.nero.smartcan.spi.impl.SmartFaultListener;
 import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import com.iot.nero.smartcan.constant.CONSTANT;
 import com.iot.nero.smartcan.utils.dbtools.entity.Condition;
@@ -56,6 +58,10 @@ public class ProtocolService implements IProtocolService {
     private Map<String, String> tokenMap = new HashMap<>();
 
     ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+
+
+    ServiceLoader<OnSmartFaultListener> smartFaultListenerServiceLoader = ServiceLoader.load(OnSmartFaultListener.class);
+
 
     public ProtocolService() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
     }
@@ -928,6 +934,10 @@ public class ProtocolService implements IProtocolService {
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         final SmartFaultRequestMessage smartFaultRequestMessage = SmartFaultRequestMessage.ber_decode(inputStream);
 
+        // 调用 SPI
+        for (OnSmartFaultListener onSmartFaultListener : smartFaultListenerServiceLoader) {
+            onSmartFaultListener.onFault(smartFaultRequestMessage);
+        }
 
         String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));
         if (token == null || token.equals(bytesToString(smartFaultRequestMessage.token))) {
