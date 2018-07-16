@@ -39,7 +39,7 @@ public class WorkerServeHandler extends ServerHandler {
     }
 
     @Override
-    public void read() throws IOException {
+    public synchronized void read() throws IOException {
         int readCount = socketChannel.read(this.input);
         if (readCount > 0) {
             this.state = PROCESSING;
@@ -89,7 +89,7 @@ public class WorkerServeHandler extends ServerHandler {
             this.readCount = readCount;
         }
 
-        public void run() {
+        public synchronized void run() {
             try {
                 processAndHandle(readCount);
             } catch (IOException | IllegalAccessException | ClassNotFoundException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {

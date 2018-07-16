@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact name="smartCanServer">
-    <output-path>$PROJECT_DIR$/classes/artifacts/smartCanServer</output-path>
+    <output-path>$PROJECT_DIR$/build/core/</output-path>
     <root id="root">
       <element id="archive" name="middleware.dfs.index.jar">
         <element id="directory" name="META-INF">

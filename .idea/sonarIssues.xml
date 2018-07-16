@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build/bin/scServer.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/config/config.properties">
           <value>
             <set />
@@ -34,6 +39,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/META-INF/services/com.iot.nero.smartcan.spi.MessagePush">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener">
           <value>
             <set />
           </value>
@@ -918,7 +933,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/OnMessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/OnSmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/EmailPusher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/SmartFaultListener.java">
           <value>
             <set />
           </value>

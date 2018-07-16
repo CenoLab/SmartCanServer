@@ -1,6 +1,6 @@
 package com.iot.nero.smartcan;
 
-import com.iot.nero.smartcan.spi.MessagePush;
+import com.iot.nero.smartcan.spi.impl.SmartFaultListener;
 
 import java.util.ServiceLoader;
 
@@ -15,10 +15,9 @@ public class App
         SmartCanBootstrap dfsBootstrap = new SmartCanBootstrap();
         dfsBootstrap.start();
 
-        ServiceLoader<MessagePush> loaders = ServiceLoader.load(MessagePush.class);
-
-        for (MessagePush in : loaders) {
-            in.push("ss");
+        ServiceLoader<SmartFaultListener> loaders = ServiceLoader.load(SmartFaultListener.class);
+        for (SmartFaultListener in : loaders) {
+            in.onFault(null);
         }
     }
 }

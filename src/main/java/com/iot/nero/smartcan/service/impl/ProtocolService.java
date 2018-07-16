@@ -2,7 +2,6 @@ package com.iot.nero.smartcan.service.impl;
 
 import com.iot.nero.smartcan.annotation.Service;
 import com.iot.nero.smartcan.annotation.ServiceMethod;
-import com.iot.nero.smartcan.config.ConfigLoader;
 import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.entity.TokenPair;
 import com.iot.nero.smartcan.entity.platoon.*;
@@ -24,6 +23,8 @@ import java.nio.channels.SocketChannel;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static com.iot.nero.smartcan.constant.CONSTANT.*;
 import static com.iot.nero.smartcan.utils.ByteUtils.bytesToString;
@@ -53,6 +54,8 @@ public class ProtocolService implements IProtocolService {
             ConfigFactory.getConfig().getDbPwd());
 
     private Map<String,String> tokenMap = new HashMap<>();
+
+    ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
     public ProtocolService() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
     }
@@ -309,7 +312,13 @@ public class ProtocolService implements IProtocolService {
                 tableColumns.add(column);
                 try {
                     if(field.getType()==byte[].class){
-                        datas.add(bytesToString((byte[]) field.get(object)));
+                        if(field.getName().equals("timestamp")){
+                            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//这个是你要转成后的时间的格式
+                            String sd = sdf.format(new Date(Long.valueOf(bytesToString((byte[]) field.get(object)))));   // 时间戳转换成时间
+                            datas.add(String.valueOf(sd));
+                        }else {
+                            datas.add(bytesToString((byte[]) field.get(object)));
+                        }
                     }else{
                         datas.add(String.valueOf(field.get(object)));
                     }
@@ -402,7 +411,13 @@ public class ProtocolService implements IProtocolService {
                 tableColumns.add(column);
                 try {
                     if(field.getType()==byte[].class){
-                        datas.add(bytesToString((byte[]) field.get(object)));
+                        if(field.getName().equals("timestamp")){
+                            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//这个是你要转成后的时间的格式
+                            String sd = sdf.format(new Date(Long.valueOf(bytesToString((byte[]) field.get(object)))));   // 时间戳转换成时间
+                            datas.add(String.valueOf(sd));
+                        }else {
+                            datas.add(bytesToString((byte[]) field.get(object)));
+                        }
                     }else{
                         datas.add(String.valueOf(field.get(object)));
                     }
