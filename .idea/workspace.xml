@@ -7,43 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25100650-1e26-43a0-9aec-4ae91eed1305" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/bin/scServer.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/config/config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/OnMessageReceivedListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/OnSmartFaultListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/SmartFaultListener.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/ant-1.9.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/ant-launcher-1.9.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/asm-6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/asnrt.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/cglib-3.2.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/middleware.dfs.index.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/mysql-connector-java-5.1.35.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/parent-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/protostuff-api-1.4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/protostuff-collectionschema-1.4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/protostuff-core-1.4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/protostuff-runtime-1.4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/snappy-java-1.1.7.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/smartCanServer/validation-api-2.0.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/MessagePush.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/EmailPusher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/spi/impl/SmsPusher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/spi/MessagePush.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/spi/impl/EmailPusher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/spi/impl/SmsPusher.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/META-INF/services/com.iot.nero.smartcan.spi.MessagePush" afterPath="$PROJECT_DIR$/src/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/App.class" afterPath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler$Processor.class" afterPath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler$Processor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService.class" afterPath="$PROJECT_DIR$/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/smartCanServer.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/smartCanServer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/WorkerServeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/server/WorkerServeHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java" afterPath="$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,10 +50,68 @@
       <file leaf-file-name="ProtocolService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="469" column="13" lean-forward="true" selection-start-line="469" selection-start-column="13" selection-end-line="469" selection-end-column="13" />
+            <state relative-caret-position="405">
+              <caret line="1200" column="1" lean-forward="false" selection-start-line="1200" selection-start-column="1" selection-end-line="1200" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#20644#20840#0" expanded="true" />
+                <element signature="e#20839#20840#0" expanded="true" />
+                <element signature="e#22217#22402#0" expanded="true" />
+                <element signature="e#22401#22402#0" expanded="true" />
+                <element signature="e#23934#24113#0" expanded="true" />
+                <element signature="e#24112#24113#0" expanded="true" />
+                <element signature="e#24683#24883#0" expanded="true" />
+                <element signature="e#24882#24883#0" expanded="true" />
+                <element signature="e#25666#25847#0" expanded="true" />
+                <element signature="e#25846#25847#0" expanded="true" />
+                <element signature="e#26427#26631#0" expanded="true" />
+                <element signature="e#26630#26631#0" expanded="true" />
+                <element signature="e#27390#27567#0" expanded="true" />
+                <element signature="e#27566#27567#0" expanded="true" />
+                <element signature="e#28153#28357#0" expanded="true" />
+                <element signature="e#28356#28357#0" expanded="true" />
+                <element signature="e#29282#29461#0" expanded="true" />
+                <element signature="e#29460#29461#0" expanded="true" />
+                <element signature="e#30087#30291#0" expanded="true" />
+                <element signature="e#30290#30291#0" expanded="true" />
+                <element signature="e#31307#31504#0" expanded="true" />
+                <element signature="e#31503#31504#0" expanded="true" />
+                <element signature="e#32124#32328#0" expanded="true" />
+                <element signature="e#32327#32328#0" expanded="true" />
+                <element signature="e#33329#33524#0" expanded="true" />
+                <element signature="e#33523#33524#0" expanded="true" />
+                <element signature="e#34139#34343#0" expanded="true" />
+                <element signature="e#34342#34343#0" expanded="true" />
+                <element signature="e#35331#35524#0" expanded="true" />
+                <element signature="e#35523#35524#0" expanded="true" />
+                <element signature="e#36162#36366#0" expanded="true" />
+                <element signature="e#36365#36366#0" expanded="true" />
+                <element signature="e#37420#37623#0" expanded="true" />
+                <element signature="e#37622#37623#0" expanded="true" />
+                <element signature="e#38227#38431#0" expanded="true" />
+                <element signature="e#38430#38431#0" expanded="true" />
+                <element signature="e#39394#39583#0" expanded="true" />
+                <element signature="e#39582#39583#0" expanded="true" />
+                <element signature="e#40207#40411#0" expanded="true" />
+                <element signature="e#40410#40411#0" expanded="true" />
+                <element signature="e#41746#42059#0" expanded="true" />
+                <element signature="e#42058#42059#0" expanded="true" />
+                <element signature="e#42692#42896#0" expanded="true" />
+                <element signature="e#42895#42896#0" expanded="true" />
+                <element signature="e#44020#44223#0" expanded="true" />
+                <element signature="e#44222#44223#0" expanded="true" />
+                <element signature="e#44845#45049#0" expanded="true" />
+                <element signature="e#45048#45049#0" expanded="true" />
+                <element signature="e#46117#46312#0" expanded="true" />
+                <element signature="e#46311#46312#0" expanded="true" />
+                <element signature="e#46910#47114#0" expanded="true" />
+                <element signature="e#47113#47114#0" expanded="true" />
+                <element signature="e#48126#48313#0" expanded="true" />
+                <element signature="e#48312#48313#0" expanded="true" />
+                <element signature="e#48941#49145#0" expanded="true" />
+                <element signature="e#49144#49145#0" expanded="true" />
+                <element signature="e#50242#50441#0" expanded="true" />
+                <element signature="e#50440#50441#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -371,70 +393,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="smartcan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="middleware.dfs.index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="autocarnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartcan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="middleware.dfs.index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="autocarnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartcan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1024,12 +982,12 @@
       <workItem from="1530501270440" duration="16000" />
       <workItem from="1531012427697" duration="24572000" />
       <workItem from="1531188420588" duration="5178000" />
-      <workItem from="1531449296675" duration="23192000" />
+      <workItem from="1531449296675" duration="24452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107494000" />
+    <option name="totallyTimeSpent" value="108754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -1587,10 +1545,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="469" column="13" lean-forward="true" selection-start-line="469" selection-start-column="13" selection-end-line="469" selection-end-column="13" />
+        <state relative-caret-position="405">
+          <caret line="1200" column="1" lean-forward="false" selection-start-line="1200" selection-start-column="1" selection-end-line="1200" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#20644#20840#0" expanded="true" />
+            <element signature="e#20839#20840#0" expanded="true" />
+            <element signature="e#22217#22402#0" expanded="true" />
+            <element signature="e#22401#22402#0" expanded="true" />
+            <element signature="e#23934#24113#0" expanded="true" />
+            <element signature="e#24112#24113#0" expanded="true" />
+            <element signature="e#24683#24883#0" expanded="true" />
+            <element signature="e#24882#24883#0" expanded="true" />
+            <element signature="e#25666#25847#0" expanded="true" />
+            <element signature="e#25846#25847#0" expanded="true" />
+            <element signature="e#26427#26631#0" expanded="true" />
+            <element signature="e#26630#26631#0" expanded="true" />
+            <element signature="e#27390#27567#0" expanded="true" />
+            <element signature="e#27566#27567#0" expanded="true" />
+            <element signature="e#28153#28357#0" expanded="true" />
+            <element signature="e#28356#28357#0" expanded="true" />
+            <element signature="e#29282#29461#0" expanded="true" />
+            <element signature="e#29460#29461#0" expanded="true" />
+            <element signature="e#30087#30291#0" expanded="true" />
+            <element signature="e#30290#30291#0" expanded="true" />
+            <element signature="e#31307#31504#0" expanded="true" />
+            <element signature="e#31503#31504#0" expanded="true" />
+            <element signature="e#32124#32328#0" expanded="true" />
+            <element signature="e#32327#32328#0" expanded="true" />
+            <element signature="e#33329#33524#0" expanded="true" />
+            <element signature="e#33523#33524#0" expanded="true" />
+            <element signature="e#34139#34343#0" expanded="true" />
+            <element signature="e#34342#34343#0" expanded="true" />
+            <element signature="e#35331#35524#0" expanded="true" />
+            <element signature="e#35523#35524#0" expanded="true" />
+            <element signature="e#36162#36366#0" expanded="true" />
+            <element signature="e#36365#36366#0" expanded="true" />
+            <element signature="e#37420#37623#0" expanded="true" />
+            <element signature="e#37622#37623#0" expanded="true" />
+            <element signature="e#38227#38431#0" expanded="true" />
+            <element signature="e#38430#38431#0" expanded="true" />
+            <element signature="e#39394#39583#0" expanded="true" />
+            <element signature="e#39582#39583#0" expanded="true" />
+            <element signature="e#40207#40411#0" expanded="true" />
+            <element signature="e#40410#40411#0" expanded="true" />
+            <element signature="e#41746#42059#0" expanded="true" />
+            <element signature="e#42058#42059#0" expanded="true" />
+            <element signature="e#42692#42896#0" expanded="true" />
+            <element signature="e#42895#42896#0" expanded="true" />
+            <element signature="e#44020#44223#0" expanded="true" />
+            <element signature="e#44222#44223#0" expanded="true" />
+            <element signature="e#44845#45049#0" expanded="true" />
+            <element signature="e#45048#45049#0" expanded="true" />
+            <element signature="e#46117#46312#0" expanded="true" />
+            <element signature="e#46311#46312#0" expanded="true" />
+            <element signature="e#46910#47114#0" expanded="true" />
+            <element signature="e#47113#47114#0" expanded="true" />
+            <element signature="e#48126#48313#0" expanded="true" />
+            <element signature="e#48312#48313#0" expanded="true" />
+            <element signature="e#48941#49145#0" expanded="true" />
+            <element signature="e#49144#49145#0" expanded="true" />
+            <element signature="e#50242#50441#0" expanded="true" />
+            <element signature="e#50440#50441#0" expanded="true" />
           </folding>
         </state>
       </provider>
