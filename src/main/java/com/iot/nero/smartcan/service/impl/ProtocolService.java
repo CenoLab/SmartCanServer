@@ -2,9 +2,11 @@ package com.iot.nero.smartcan.service.impl;
 
 import com.iot.nero.smartcan.annotation.Service;
 import com.iot.nero.smartcan.annotation.ServiceMethod;
+import com.iot.nero.smartcan.config.ConfigLoader;
 import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.entity.TokenPair;
 import com.iot.nero.smartcan.entity.platoon.*;
+import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.service.IProtocolService;
 import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import com.iot.nero.smartcan.constant.CONSTANT;
@@ -39,14 +41,21 @@ public class ProtocolService implements IProtocolService {
 
     static Long syncNum = 0L;
     static Long msgCnt = 0L;
-    int collectFrequency = 1000;
-    int sendFrequency = 1000;
+    int collectFrequency = ConfigFactory.getConfig().getCollectFrequency();
+    int sendFrequency = ConfigFactory.getConfig().getSendFrequency();
 
     private Protocol protocol;
 
-    private DataBase dataBase = new DataBase(DB_DRIVER, DB_URL, DB_USERNAME, DB_PD);
+    private DataBase dataBase = new DataBase(
+            ConfigFactory.getConfig().getDbDriver(),
+            ConfigFactory.getConfig().getDbUrl(),
+            ConfigFactory.getConfig().getDbUsername(),
+            ConfigFactory.getConfig().getDbPwd());
 
     private Map<String,String> tokenMap = new HashMap<>();
+
+    public ProtocolService() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
+    }
 
 
     /**
@@ -444,10 +453,18 @@ public class ProtocolService implements IProtocolService {
         objs.add(type);
         objs.add(message);
         try {
-            dataBase.insert(LOG_TABLE_NAME,columns,objs);
+            dataBase.insert(ConfigFactory.getConfig().getLogTableName(),columns,objs);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
