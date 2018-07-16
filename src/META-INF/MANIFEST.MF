@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
-Class-Path: asnrt.jar protostuff-api-1.4.0.jar cglib-3.2.6.jar asm-6.0
- .jar protostuff-collectionschema-1.4.0.jar ant-1.9.6.jar protostuff-r
- untime-1.4.0.jar parent-1.0-SNAPSHOT.jar snappy-java-1.1.7.2.jar prot
- ostuff-core-1.4.0.jar validation-api-2.0.1.Final.jar ant-launcher-1.9
- .6.jar mysql-connector-java-5.1.35.jar
+Class-Path: asnrt.jar protostuff-api-1.4.0.jar protostuff-core-1.4.0.j
+ ar parent-1.0-SNAPSHOT.jar asm-6.0.jar ant-launcher-1.9.6.jar protost
+ uff-runtime-1.4.0.jar mysql-connector-java-5.1.35.jar snappy-java-1.1
+ .7.2.jar ant-1.9.6.jar validation-api-2.0.1.Final.jar protostuff-coll
+ ectionschema-1.4.0.jar cglib-3.2.6.jar
 Main-Class: com.iot.nero.smartcan.App
 

@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact name="smartCanServer:jar">
+    <output-path>$PROJECT_DIR$/build/core</output-path>
+    <root id="root">
+      <element id="archive" name="smartCanServer.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="smartCanServer" />
+      </element>
+      <element id="library" level="project" name="asnrt" />
+      <element id="library" level="project" name="Maven: io.protostuff:protostuff-api:1.4.0" />
+      <element id="library" level="project" name="Maven: io.protostuff:protostuff-core:1.4.0" />
+      <element id="library" level="project" name="Maven: com.iot.nero:parent:1.0-SNAPSHOT" />
+      <element id="library" level="project" name="Maven: org.ow2.asm:asm:6.0" />
+      <element id="library" level="project" name="Maven: org.apache.ant:ant-launcher:1.9.6" />
+      <element id="library" level="project" name="Maven: io.protostuff:protostuff-runtime:1.4.0" />
+      <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.35" />
+      <element id="library" level="project" name="Maven: org.xerial.snappy:snappy-java:1.1.7.2" />
+      <element id="library" level="project" name="Maven: org.apache.ant:ant:1.9.6" />
+      <element id="library" level="project" name="Maven: javax.validation:validation-api:2.0.1.Final" />
+      <element id="library" level="project" name="Maven: io.protostuff:protostuff-collectionschema:1.4.0" />
+      <element id="library" level="project" name="Maven: cglib:cglib:3.2.6" />
+    </root>
+  </artifact>
+</component>

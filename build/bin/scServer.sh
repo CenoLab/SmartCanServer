@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function findServer(){
-    dataNodePid=`ps -ef | grep middleware.dfs.index |  grep -v "grep" | awk '{print $2}'`
+    dataNodePid=`ps -ef | grep smartCanServer |  grep -v "grep" | awk '{print $2}'`
     for id in $dataNodePid
     do
 	    echo "find $id"
@@ -14,7 +14,7 @@ function stopServer(){
 }
 
 function startServer(){
-    nohup sudo java -jar core/middleware.dfs.index.jar > log/SmartCanServer.log &
+    nohup sudo java -jar core/smartCanServer.jar > log/SmartCanServer.log &
 }
 
 function startService(){
