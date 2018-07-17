@@ -354,10 +354,10 @@ public class DataBase {
     public  Integer tick() throws SQLException, ClassNotFoundException {
         Connection conn = DBConnection.getConn(driver, url, username, pd);
 
-
+        pInfo("(SQL) "+"select 1;");
         try( PreparedStatement preparedStatement = (PreparedStatement) conn.prepareStatement("select 1;");
         ResultSet rs = preparedStatement.executeQuery()){
-            pInfo("(SQL) "+"select 1;");
+
         }
 
         return 1;
