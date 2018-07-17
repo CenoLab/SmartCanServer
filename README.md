@@ -61,7 +61,7 @@ plugin.path = plugin
   ### 插件包名规范
   #### 包名：com.iot.nero.smartcan.plugin.impl
   ### 插件类名规范
-  #### 类名：MessageReceivedListener   (收到消息)
+  #### 收到消息扩展点 类名：MessageReceivedListener   (收到消息)
   #### 示例：
   ```java
   public class MessageReceivedListener implements OnMessageReceivedListener {
@@ -73,7 +73,7 @@ plugin.path = plugin
       }
   }
   ```
-  #### 类名：SmartFaultListener        (异常)
+  #### 异常扩展点 类名：SmartFaultListener        (异常)
   #### 示例：
   
   ```java
@@ -84,6 +84,87 @@ plugin.path = plugin
       }
   }
   ```
+  
+  #### 解码扩展点 类名：MessageDecodeListener        (解码)
+  #### 示例：
+    
+  ```java
+    public class MessageDecodeListener implements OnMessageDecodeListener {
+    
+        @Override
+        public void onLogin(LoginRequestMessage loginRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onLogout(LogoutRequestMessage logoutRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onHeartBeat(HeartbeatMessage heartbeatMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartCan(SmartCanRequestBody smartCanRequestBody, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartRecogrize(SmartRecognizeRequestMessage smartRecognizeRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartStrategy(SmartStrategyRequestMessage smartStrategyRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartControl(SmartControlRequestMessage smartControlRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartControlFeed(SmartCtrlFeedBackRequestMessage smartCtrlFeedBackRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartFault(SmartFaultRequestMessage smartFaultRequestMessage, SocketChannel socketChannel) throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    
+        }
+    
+        @Override
+        public void onSmartFormATeam(SmartFromATeamRequestMessage smartFromATeamRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartFTeam(SmartFTeamSuccessRequestMessage smartFTeamSuccessRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartDissolveTeam(SmartDissolveRequestMessage smartDissolveRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartTeam(SmartTeamRequestMessage smartTeamRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    
+        @Override
+        public void onSmartPlatonning(SmartPlatonningRequestMessage smartPlatonningRequestMessage, SocketChannel socketChannel) throws IOException {
+    
+        }
+    }
+
+  ```
+  #### 此扩展点可以在后期做一些客户端身份识别，同步决策或者数据分析，故障预测等...
+  
   
   ## 部署
   ### 插件读取目录在config/config.properties中配置，默认读取plugin目录

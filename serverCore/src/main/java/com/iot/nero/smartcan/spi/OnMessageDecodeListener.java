@@ -1,6 +1,5 @@
 package com.iot.nero.smartcan.spi;
 
-import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.entity.platoon.*;
 import sun.plugin2.message.HeartbeatMessage;
 
