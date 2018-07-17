@@ -7,4 +7,32 @@
 ## 3. 脚手架工程
 ### 参考该目录内 testPlugin 项目
 ## 4. 插件开发示例
-###
+### 插件包名规范
+#### 包名：com.iot.nero.smartcan.plugin.impl
+### 插件类名规范
+#### 类名：MessageReceivedListener   (收到消息)
+#### 示例：
+```java
+public class MessageReceivedListener implements OnMessageReceivedListener {
+    @Override
+    public void OnMessageReceived(Protocol protocol) {
+        
+        System.out.println("this from plugin2 message received");
+        
+    }
+}
+```
+#### 类名：SmartFaultListener        (异常)
+#### 示例：
+```java
+public class SmartFaultListener implements OnSmartFaultListener {
+    @Override
+    public void onFault(SmartFaultRequestMessage smartFaultRequestMessage) {
+        System.out.println("this from plugin2 smart fault");
+    }
+}
+```
+
+## 部署
+### 插件读取目录在config/config.properties中配置，默认读取plugin目录
+###  将打包好的jar包直接丢在plugin读取目录即可
