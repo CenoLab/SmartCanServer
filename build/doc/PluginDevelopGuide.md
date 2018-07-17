@@ -1,10 +1,25 @@
 # SmartCanServer V2.1.0 插件开发手册
+
+#### 杨兴锋
+
+#### 2018-7-17
+
+#### V1.0
+
+____
+
+
+
 ## 1. 为什么要插件化开发:
+
 ### 1. 将系统核心与业务代码解耦，降低开发，维护成本。
+
 ## 2. 插件可以做什么:
 ### 1. 比如做异常处理：告警推送，异常记录等等...
 ### 2. 比如做实时数据分析：故障预测，流计算等等...
+
 ## 3. 脚手架工程
+
 ### 参考该目录内 testPlugin 项目
 ## 4. 插件开发示例
 ### 插件包名规范
@@ -24,6 +39,7 @@ public class MessageReceivedListener implements OnMessageReceivedListener {
 ```
 #### 类名：SmartFaultListener        (异常)
 #### 示例：
+
 ```java
 public class SmartFaultListener implements OnSmartFaultListener {
     @Override
@@ -35,4 +51,5 @@ public class SmartFaultListener implements OnSmartFaultListener {
 
 ## 部署
 ### 插件读取目录在config/config.properties中配置，默认读取plugin目录
+
 ###  将打包好的jar包直接丢在plugin读取目录即可
