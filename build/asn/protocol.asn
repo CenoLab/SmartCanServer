@@ -1,0 +1,627 @@
+ProtocolNew DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+	
+MsgCount ::= INTEGER
+ResponseErrorCode ::=  OCTET STRING(SIZE(1))	--响应错误码 8位
+
+TimeStamp ::= OCTET STRING(SIZE(4))			--时间戳  32位
+Token ::= OCTET STRING(SIZE(8))
+
+
+FLOAT ::= REAL
+ANGLE ::= REAL(-360.0..360.0)
+
+Position3D::=SEQUENCE{
+	longitude FLOAT,
+	latitude FLOAT,
+	velocity FLOAT,
+	yaw FLOAT,
+	altitude FLOAT,
+	gpsUtime TimeStamp
+}
+
+
+FaultType::=OCTET STRING(SIZE(8))
+FaultCode::=OCTET STRING(SIZE(8))
+InnerNo::=REAL
+
+-- 硬件设备登入请求
+LoginRequestMessage ::= SEQUENCE {
+    msgCnt MsgCount,                -- 流水号
+    iccid OCTET STRING OPTIONAL,    -- SIM卡的 ICCID 号 IMSI, IMEI 三选一即可.
+    imsi OCTET STRING OPTIONAL,
+    imei OCTET STRING OPTIONAL,
+    syncNum INTEGER
+}
+
+-- 频率设置
+CollectConfigMessage::=SEQUENCE{
+    msgid OCTET STRING(SIZE(8)),           -- 消息标识
+    collectFrequency INTEGER(0..1000000),  -- 采集频率 毫秒
+    sendFrequency INTEGER(0..1000000)      -- 发送频率 毫秒
+}
+
+-- 服务端登入响应
+LoginResponseMessage ::= SEQUENCE {
+    msgCnt MsgCount,
+    vid OCTET STRING(SIZE(8)),      -- 车辆id
+    loginResult BOOLEAN,            -- true: 登录成功
+    token OCTET STRING (SIZE(8)),   -- 如果登录成功,则此token有效
+    errorCode ResponseErrorCode,
+    collectConfs SEQUENCE OF CollectConfigMessage,
+    timestamp TimeStamp,
+    syncNum INTEGER
+}
+
+
+--心跳检测
+SyncRequestMessage ::= SEQUENCE{
+	token Token,
+	msgcnt MsgCount,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 心跳响应 
+SyncResponseMessage::=SEQUENCE{
+	syncResult BOOLEAN,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 车辆登出
+LogoutRequestMessage::=SEQUENCE{
+	msgCount MsgCount,
+	token Token,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+-- 登出响应
+LogoutResponseMessage::=SEQUENCE{
+	logoutResult BOOLEAN,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+
+-- 车身数据集
+SmartCarRequestBody ::= SEQUENCE {
+	msgCnt MsgCount, 		
+	token Token, 
+	vid OCTET STRING(SIZE(8)),
+	wipers  WiperList, 
+	lights LightList,
+	runnings  RunningList,
+	safetys  SafetyList,
+	others OthersList
+}
+
+WiperList ::=SEQUENCE(SIZE(1..32))OF Wiper
+Wiper ::=SEQUENCE{
+	frontwiperwitch FRONTWIPERSWITCH,
+	frontwiperintermswitch FRONTWIPERINTERMSWITCH,
+	rearwiper REARWIPER,
+	winWashFluid WINWASHFLUID
+}
+
+FRONTWIPERSWITCH ::= ENUMERATED { 
+	off(0),
+	auto(1),
+	low(2),
+	high(3),
+	mist(4)
+}
+
+FRONTWIPERINTERMSWITCH ::=INTEGER(0..7)
+REARWIPER ::= ENUMERATED {
+	inactive (0),
+	active(1) 
+}
+
+WINWASHFLUID ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+
+LightList ::=SEQUENCE(SIZE(1..32))OF Light
+Light ::=SEQUENCE{
+	turninglampswitch TURNINGLAMPSWITCH, 
+	exexteriorlampswitch EXTERIORLAMPSWITCH, 
+	foglampswitch FOGLAMPSWITCH, 
+	telltalefrontfoglight TELLTALEFRONTFOGLIGHT, 
+	telltalerearfoglight TELLTALEREARFOGLIGHT,
+	lowbeamingicator LOWBEAMINDICATOR, 
+	highbeamindiator HIGHBEAMINDICATOR, 
+	brakelightright BRAKELIGHTRIGHTACTIVE, 
+	brakelightleftactive BRAKELIGHTLEFTACTIVE, 
+	parklightonwarning PARKLIGHTONWARNING  
+}
+
+TURNINGLAMPSWITCH ::= ENUMERATED {
+	inactive(0),
+	turnleft(1),
+	turnright(2),
+	error(3)
+}
+EXTERIORLAMPSWITCH ::= ENUMERATED { 
+	off(0),
+	auto(1),
+	park(2),
+	lowbeam(3)
+}
+FOGLAMPSWITCH ::= ENUMERATED {
+	inactive(0),
+	rearfog(1),
+	frontfog(2),
+	bothactive(3)
+}
+TELLTALEFRONTFOGLIGHT ::= ENUMERATED {
+	inactive (0),
+	active(1)
+}
+TELLTALEREARFOGLIGHT ::= ENUMERATED {
+	inactive (0),
+	active(1)
+}
+LOWBEAMINDICATOR ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+HIGHBEAMINDICATOR ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+BRAKELIGHTRIGHTACTIVE ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+BRAKELIGHTLEFTACTIVE ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+PARKLIGHTONWARNING ::= ENUMERATED {
+	inactive(0),
+	active(1)
+}
+
+RunningList ::=SEQUENCE(SIZE(1..32))OF Running
+Running ::=SEQUENCE{
+	breakpadelswtich BreakPadelSwtichSts,
+	breakCircuitPressure REAL(0..255),
+    battsoc REAL(0..100),
+	vcu616driverange REAL(0..6553.5),
+	oilleft REAL(0..100),
+	longitudinalacceleration REAL(-25..25),
+	lateralacceleration REAL(-25..25),
+	higheracceleration REAL(-25..25),
+	yawvelocity REAL(-2.5..2.5),
+	steeringwheelrotationspeed REAL(0..1016),
+	steeringwheelangle REAL(-780..780),
+	sassteerwheelrotspd REAL(0..1024),
+	steerwheelcurpos REAL(-720..720),
+	acceleratorpos REAL(0..100),
+	throttlePercentage REAL(0..100),
+	totaloso TotalODO,
+	validwheelspeed VALIDWHEELSPEEDFL,
+	wheelspeedfl REAL(0..300),
+	validwheelfr VALIDWHEELSPEEDFR,
+	wheelspeedfr REAL(0..300),
+	validwheelspeedrl VALIDWHEELSPEEDRL,
+	wheelspeedrl REAL(0..300),
+	validwheelrr VALIDWHEELSPEEDRR,
+	wheelspeedrr REAL(0..300),
+	vehiclespeed REAL(0..300),
+	motospeed REAL(0..16383.5),
+	motoTorque REAL(-300..300),
+	accaebaebstate REAL(0..4),
+	rotation REAL(-360..360),
+	pitchangle REAL(-90..90),
+	rollangle REAL(-90..90),
+	azimuthangle REAL(-180..180),
+	timestamp TimeStamp,
+	syncNum INTEGER
+	
+}
+
+BreakPadelSwtichSts ::= ENUMERATED {
+	brakepedalnotactive(0),
+	brakepedalactive(1)
+}
+
+VALIDACCELERATOR ::= ENUMERATED {
+	valueok(0),
+	notused(1),
+	valueunreliable(2)
+}
+	
+TotalODO ::=INTEGER(0..16777215)
+VALIDWHEELSPEEDFL ::= ENUMERATED {
+	valueok(0),
+	valueunreliable(1)
+}
+
+VALIDWHEELSPEEDFR ::= ENUMERATED {
+	valueok(0),
+	valueunreliable(1)
+}
+	
+VALIDWHEELSPEEDRL ::= ENUMERATED {
+	valueok(0),
+	valueunreliable(1)
+}
+	
+VALIDWHEELSPEEDRR ::= ENUMERATED {
+	valueok(0),
+	valueunreliable(1)
+}
+
+VALIDVEHICLESPEED ::= ENUMERATED {
+	valueok(0),
+	notused(1),
+	valueunreliable(2)
+}
+
+SafetyList ::=SEQUENCE(SIZE(1..32))OF Safety
+Safety ::=SEQUENCE{
+	absoperating ABSOPERATING,
+	-- espaebactive ESPAEBactive,
+	espoperating ESPOPERATING,
+	tcsoperating TCSOPERATING,
+	epssta EPSSTA,
+	tcutgsmode TCUTGSMode,
+	tcucurrentgearposition TCUCurrentGearPosition
+}
+ ABSOPERATING ::= ENUMERATED {
+	inactive(0),
+	active(1)
+}
+ESPAEBactive ::= ENUMERATED {
+	inactive(0),
+	active(1)
+}
+ESPOPERATING ::= ENUMERATED {
+	inactive(0),
+	active(1)
+}
+TCSOPERATING ::= ENUMERATED {
+	inactive(0),
+	active(1)
+}
+EPSSTA ::= ENUMERATED {
+	readiness(0),
+	normal(1),
+	fault(2),
+	void(3)
+}
+TCUTGSMode ::= ENUMERATED {
+	 normal(0),
+	 winter(1),
+	 performance(2),
+	 econonmy(3), 
+	 invalid(4)
+}
+TCUCurrentGearPosition ::=INTEGER(0..4) 
+OthersList ::=SEQUENCE(SIZE(1..32))OF Other
+Other ::=SEQUENCE{
+ 	outsidetemp REAL(-40..70),
+ 	handbrake HANDBRAKE,
+	autohorn AutoHorn,
+	isautodrive REAL(0..4),
+	faultcode INTEGER,
+}
+
+HANDBRAKE ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+AutoHorn ::= ENUMERATED {
+	off(0),
+	on(1)
+}
+
+
+-- 车身状态响应
+SmartCarResponseMessage::=SEQUENCE{
+	msgcnt MsgCount,
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+
+-- 感知数据集上传 
+-- 感知类型
+XTypeEnum ::= ENUMERATED{
+	people(0), --行人
+	car(1),		--车辆
+	isolationBelt(2), --隔离带
+	others(3) --其他
+}
+SmartRecognizeRequestMessage ::= SEQUENCE{
+	msgCnt MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	recongnizeobject SEQUENCE OF RecongnizeObject,
+	position Position3D,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+RecongnizeObject::=SEQUENCE{
+    id OCTET STRING(SIZE(8)),
+	type XTypeEnum, 
+	x FLOAT,
+	y FLOAT,
+	speedx FLOAT,
+	speedy FLOAT,
+	width FLOAT,
+	length FLOAT,
+	heigth FLOAT,
+	longAngle ANGLE,
+	latAngle ANGLE,
+	yawAngle ANGLE
+}
+
+
+SmartRecognizeResponseMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+
+-- 智能车决策数据集
+SteeringWheelAngle ::= REAL(-1080.0..1080.0)
+ThrottlePedal::=REAL
+TransmissionState::=ENUMERATED{
+	one(1),
+	two(2),
+	three(3),
+	four(4),
+	five(5),
+	r(6)
+}
+ExteriorLights ::= ENUMERATED{
+	on(1),
+	off(0)
+}
+BrakePedalStatus ::= REAL
+HornStatus ::= ENUMERATED{
+	off(0),
+	on(1)
+}
+
+SmartStrategyRequestMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	drivebehavior DRIVEBEHAVIOR,
+	movingdiss FLOAT,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+DRIVEBEHAVIOR::=ENUMERATED{
+    INMIDDLE(0),
+	INLEFT(1),
+	INRIGHT(2),
+	LEFTTOMIDDLE(3),
+	MIDDLETOLEFT(4),
+	RIGHTTOMIDDLE(5),
+	MIDDLETORIGHT(6)
+}
+
+SmartStrategyResponseMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+-- 控制数据集
+SmartControlRequestMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	steering SteeringWheelAngle,
+	throttle ThrottlePedal,
+	transmission TransmissionState,
+	lights ExteriorLights,
+	brakePedal BrakePedalStatus,
+	horn HornStatus,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+SmartControlResponseMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+-- 控制反馈数据集
+SmartCtrlFeedBackRequestMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	steering SteeringWheelAngle,
+	throttle ThrottlePedal,
+	transmission TransmissionState,
+	lights ExteriorLights,
+	brakePedal BrakePedalStatus,
+	horn HornStatus,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+SmartCtrlFeedBackResponseMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+-- 故障数据集
+SmartFaultRequestMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	ftype FaultType,
+	fcode FaultCode,
+	ino InnerNo,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+                             
+SmartFaultResponseMessage::=SEQUENCE{
+	msgCnt MsgCount,
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+VehicleList::=SEQUENCE OF OCTET STRING
+
+-- 车队创建请求数据集
+SmartFromATeamRequestMessage::=SEQUENCE{
+	msgCount MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	requesttime TimeStamp,
+	vehicleCount INTEGER,
+	startPosition Position3D,
+	endPosition Position3D,
+	vehicleList VehicleList,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+--  车队创建请求响应
+SmartFromATeamResponseMessage::=SEQUENCE{
+	msgCount MsgCount,
+	msgid OCTET STRING(SIZE(8)),
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 车队创建成功数据集上传
+
+SmartFTeamSuccessRequestMessage::=SEQUENCE{
+	msgCount MsgCount,
+	token Token,
+	id OCTET STRING(SIZE(8)), --车队id
+	creattime TimeStamp,
+	vehicleCount INTEGER,
+	vehicleList VehicleList,
+	position Position3D,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 车队创建成功数据集上传消息响应
+SmartFTeamSuccessResponseMessage::=SEQUENCE{
+	msgCount MsgCount,
+	msgid OCTET STRING(SIZE(8)),
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 智能车车队解散数据集上传请求
+SmartDissolveRequestMessage::=SEQUENCE{
+	msgCount MsgCount,
+	token Token,
+	id OCTET STRING(SIZE(8)),   --车队id
+	endtime TimeStamp,
+	vehicleCount INTEGER,
+	vehicleList VehicleList,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+-- 解散响应
+SmartDissolveResponseMessage::=SEQUENCE{
+	msgCount MsgCount,
+	msgid OCTET STRING(SIZE(8)),
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 车队状态数据集请求
+SmartPlatonningRequestMessage::=SEQUENCE{
+	msgCount MsgCount,
+	token Token,
+	id OCTET STRING(SIZE(8)),
+	vehicleCount INTEGER,
+	vehicleList VehicleList,
+	splatoonpeed FLOAT,
+	platoonposition Position3D,
+	platoonlength FLOAT,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+-- 车队状态数据集响应
+SmartPlatonningResponseMessage::=SEQUENCE{
+	msgCount MsgCount,
+	msgid OCTET STRING(SIZE(8)),
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+-- 车队内车辆状态信息数据集
+ISFLEET ::= ENUMERATED{
+	no(0),
+	yes(1),
+	yesbutunnormal(2)
+}
+
+ROLE ::= ENUMERATED{
+	leader(1),
+	follower(2)
+}
+
+SmartTeamRequestMessage::=SEQUENCE{
+	msgCount MsgCount,
+	token Token,
+	vid OCTET STRING(SIZE(8)),
+	isfleet ISFLEET,
+	id OCTET STRING(SIZE(8)),
+	role ROLE,
+	vehiclenum INTEGER,
+	frontdistance FLOAT,
+	speed FLOAT,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+-- 车队内车辆状态信息数据集响应
+SmartTeamResponseMessage::=SEQUENCE{
+	msgCount MsgCount,
+	msgid OCTET STRING(SIZE(8)),
+	msgStatus BOOLEAN,
+	errorCode ResponseErrorCode,
+	timestamp TimeStamp,
+	syncNum INTEGER
+}
+
+
+END
