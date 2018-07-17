@@ -3,6 +3,8 @@ package com.iot.nero.smartcan.spi.impl;
 import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.spi.OnMessageReceivedListener;
 
+import static com.iot.nero.smartcan.constant.CONSTANT.pInfo;
+
 /**
  * Author neroyang
  * Email  nerosoft@outlook.com
@@ -12,6 +14,6 @@ import com.iot.nero.smartcan.spi.OnMessageReceivedListener;
 public class MessageReceivedListener implements OnMessageReceivedListener {
     @Override
     public void OnMessageReceived(Protocol protocol) {
-        System.out.println("message received");
+        pInfo("(SPI) message received");
     }
 }

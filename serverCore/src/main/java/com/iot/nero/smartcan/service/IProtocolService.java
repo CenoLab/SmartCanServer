@@ -3,6 +3,7 @@ package com.iot.nero.smartcan.service;
 import com.iot.nero.smartcan.core.Protocol;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.channels.SocketChannel;
 
 /**
@@ -82,7 +83,7 @@ public interface IProtocolService {
      * @param socketChannel
      * @throws IOException
      */
-    void smartFault(Protocol protocol, final SocketChannel socketChannel) throws IOException;
+    void smartFault(Protocol protocol, final SocketChannel socketChannel) throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException;
 
     /**
      * 创建车队

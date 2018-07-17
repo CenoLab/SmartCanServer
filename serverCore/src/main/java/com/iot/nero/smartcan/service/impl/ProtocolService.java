@@ -8,19 +8,15 @@ import com.iot.nero.smartcan.entity.platoon.*;
 import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.service.IProtocolService;
 import com.iot.nero.smartcan.spi.OnSmartFaultListener;
+import com.iot.nero.smartcan.utils.JarUtils;
 import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import com.iot.nero.smartcan.utils.dbtools.entity.Condition;
 import com.iot.nero.smartcan.utils.dbtools.entity.Conditions;
 import org.asnlab.asndt.runtime.conv.CompositeConverter;
 import org.asnlab.asndt.runtime.type.AsnType;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
+import java.io.*;
+import java.lang.reflect.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.sql.SQLException;
@@ -930,7 +926,7 @@ public class ProtocolService implements IProtocolService {
 
     @Override
     @ServiceMethod((byte) 0xCB)
-    public void smartFault(final Protocol protocol, final SocketChannel socketChannel) throws IOException {
+    public void smartFault(final Protocol protocol, final SocketChannel socketChannel) throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         this.protocol = protocol;
         InputStream inputStream = new ByteArrayInputStream(protocol.dataUnit);
         final SmartFaultRequestMessage smartFaultRequestMessage = SmartFaultRequestMessage.ber_decode(inputStream);
@@ -938,6 +934,24 @@ public class ProtocolService implements IProtocolService {
         // 调用 SPI
         for (OnSmartFaultListener onSmartFaultListener : smartFaultListenerServiceLoader) {
             onSmartFaultListener.onFault(smartFaultRequestMessage);
+        }
+
+        File file = new File(System.getProperty("user.dir") + "/" + ConfigFactory.getConfig().getPluginPath());
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File plugin : files) {
+                if (plugin.isFile() && plugin.getName().endsWith("jar")) {
+                    Class<?> faultClass = JarUtils.getClass(plugin.getAbsolutePath(),
+                            "com.iot.nero.smartcan.plugin.impl.SmartFaultListener"
+                    );
+                    Method[] method = faultClass.getMethods();
+                    for (Method m : method) {
+                        if (m.getName().contains("onFault")) {
+                            m.invoke(faultClass.newInstance(), smartFaultRequestMessage);
+                        }
+                    }
+                }
+            }
         }
 
         String token = tokenMap.get(bytesToString(protocol.getInditicalCode()));

@@ -3,6 +3,7 @@ package com.iot.nero.smartcan;
 import com.iot.nero.smartcan.annotation.Service;
 import com.iot.nero.smartcan.annotation.ServiceMethod;
 import com.iot.nero.smartcan.constant.CONSTANT;
+import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.server.CanServer;
 import com.iot.nero.smartcan.server.IServer;
@@ -13,6 +14,7 @@ import com.iot.nero.smartcan.utils.dbtools.DataBase;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.SQLException;
 import java.util.*;
@@ -51,22 +53,15 @@ public class SmartCanBootstrap {
     }
 
 
-    public void runListener() throws IOException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        //initTable();
+    public void runListener() throws IOException, IllegalAccessException, NoSuchMethodException, InstantiationException, InvocationTargetException {
+        initTable();
 
         initPlugin();
 
-
-        ServiceLoader<OnMessageReceivedListener> messageReceivedListenerServiceLoader = ServiceLoader.load(OnMessageReceivedListener.class);
-        // 调用 SPI
-        for (OnMessageReceivedListener onMessageReceivedListener : messageReceivedListenerServiceLoader) {
-            onMessageReceivedListener.OnMessageReceived(null);
-        }
-
-        //initService();
-        //DFS_SERVER_LISTEN_PORT = ConfigFactory.getConfig().getPort();
-        //IServer ndfsServer = new CanServer(DFS_SERVER_LISTEN_PORT);
-        //ndfsServer.start();
+        initService();
+        DFS_SERVER_LISTEN_PORT = ConfigFactory.getConfig().getPort();
+        IServer ndfsServer = new CanServer(DFS_SERVER_LISTEN_PORT);
+        ndfsServer.start();
     }
 
     /**
@@ -74,16 +69,18 @@ public class SmartCanBootstrap {
      */
     private void initPlugin() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
         String pluginPath = System.getProperty("user.dir") + "/"+ConfigFactory.getConfig().getPluginPath();
-        pInfo("（PLUGIN）"+pluginPath);
+        pInfo("(PLUGIN) "+pluginPath);
         // 扫描插件
         File file = new File(pluginPath);
         if(file.isDirectory()){
             File [] files = file.listFiles();
             for(File plugin:files){
                 if(plugin.isFile() && plugin.getName().endsWith("jar")){
-                    pInfo("（PLUGIN）"+FIND_PLUGIN+plugin.getName());
-                    Object messageReceivedListener = JarUtils.loadJar(plugin.getAbsolutePath(), "com.iot.nero.smartcan.spi.impl.MessageReceivedListener") ;
-                    Object smartFaultListener = JarUtils.loadJar(plugin.getAbsolutePath(), "com.iot.nero.smartcan.spi.impl.SmartFaultListener") ;
+                    pInfo("(PLUGIN) "+FIND_PLUGIN+plugin.getName());
+                    Object messageReceivedListener = JarUtils.loadJar(plugin.getAbsolutePath(), "com.iot.nero.smartcan.plugin.impl.MessageReceivedListener");
+                    pInfo("(EXTENSION) "+messageReceivedListener);
+                    Object smartFaultListener = JarUtils.loadJar(plugin.getAbsolutePath(), "com.iot.nero.smartcan.plugin.impl.SmartFaultListener");
+                    pInfo("(EXTENSION) "+smartFaultListener);
                 }
             }
         }else {
@@ -92,11 +89,13 @@ public class SmartCanBootstrap {
     }
 
     private void initTable() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
+
         DataBase dataBase = new DataBase(
                 ConfigFactory.getConfig().getDbDriver(),
                 ConfigFactory.getConfig().getDbUrl(),
                 ConfigFactory.getConfig().getDbUsername(),
                 ConfigFactory.getConfig().getDbPwd());
+
         List<String> columns = new ArrayList<>();
         columns.add("unique_id varchar(64) COLLATE utf8_general_ci");
         columns.add("type varchar(64) COLLATE utf8_general_ci");
@@ -124,6 +123,8 @@ public class SmartCanBootstrap {
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
     }

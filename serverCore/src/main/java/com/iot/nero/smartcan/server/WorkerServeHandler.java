@@ -5,13 +5,18 @@ import com.iot.nero.smartcan.SmartCanBootstrap;
 import com.iot.nero.smartcan.constant.CONSTANT;
 import com.iot.nero.smartcan.core.Protocol;
 import com.iot.nero.smartcan.exceptions.PackageBrokenException;
+import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.factory.ServiceFactory;
 import com.iot.nero.smartcan.spi.OnMessageReceivedListener;
+import com.iot.nero.smartcan.utils.JarUtils;
 import net.sf.cglib.reflect.FastClass;
 import net.sf.cglib.reflect.FastMethod;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.InetAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
@@ -63,27 +68,47 @@ public class WorkerServeHandler extends ServerHandler {
 
 
     @Override
-    public synchronized void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException {
+    public synchronized void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
         Object response;
         Class<?> clz = Class.forName("com.iot.nero.smartcan.service.impl.ProtocolService");
         FastClass fastClass = FastClass.create(clz);
         try {
 
-             FastMethod fastMethod = fastClass.getMethod(
+            FastMethod fastMethod = fastClass.getMethod(
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getName(),
                     SmartCanBootstrap.autoBrainServiceMap.get(protocol.getCommandUnit()[0]).getParameterTypes());
 
             ServiceLoader<OnMessageReceivedListener> messageReceivedListenerServiceLoader = ServiceLoader.load(OnMessageReceivedListener.class);
+
             // 调用 SPI
             for (OnMessageReceivedListener onMessageReceivedListener : messageReceivedListenerServiceLoader) {
                 onMessageReceivedListener.OnMessageReceived(protocol);
             }
 
+            File file = new File(System.getProperty("user.dir") + "/" + ConfigFactory.getConfig().getPluginPath());
+            if (file.isDirectory()) {
+                File[] files = file.listFiles();
+                for (File plugin : files) {
+                    if (plugin.isFile() && plugin.getName().endsWith("jar")) {
+                        Class<?> receivedClass = JarUtils.getClass(plugin.getAbsolutePath(),
+                                "com.iot.nero.smartcan.plugin.impl.MessageReceivedListener"
+                        );
+
+                        Method[] method = receivedClass.getMethods();
+
+                        for (Method m : method) {
+                            if (m.getName().contains("OnMessageReceived")) {
+                                m.invoke(clz.newInstance(), protocol);
+                            }
+                        }
+                    }
+                }
+            }
 
             fastMethod.invoke(ServiceFactory.getService(fastClass), new Object[]{protocol, socketChannel});
 
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             this.selectionKey.interestOps(SelectionKey.OP_READ);
             this.state = READING;
         }

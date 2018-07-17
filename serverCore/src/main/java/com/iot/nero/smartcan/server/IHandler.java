@@ -15,6 +15,6 @@ public interface IHandler {
 
     void readProcess() throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException, ClassNotFoundException, PackageBrokenException;
 
-    void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException;
+    void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
 
 }

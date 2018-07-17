@@ -1,7 +1,9 @@
 package com.iot.nero.smartcan.server;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.URL;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -28,6 +30,7 @@ public class CanServer extends NioServer implements IServer {
         this.serverSocketChannel = ServerSocketChannel.open();
         this.serverSocketChannel.socket().bind(new InetSocketAddress(port));
         this.serverSocketChannel.configureBlocking(false);
+
 
         this.selector = Selector.open();
         SelectionKey selectionKey = this.serverSocketChannel.register(this.selector, SelectionKey.OP_ACCEPT);

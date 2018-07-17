@@ -1,9 +1,14 @@
 package com.iot.nero.smartcan.utils;
 
+import com.iot.nero.smartcan.core.Protocol;
+import com.iot.nero.smartcan.spi.classloader.SPIClassLoader;
+
 import java.io.File;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Author neroyang
@@ -12,31 +17,42 @@ import java.net.URLClassLoader;
  * Time   6:23 PM
  */
 public class JarUtils {
-    protected static Method addURL = null ;
-    static{
-        try {
-            addURL = URLClassLoader.class.getDeclaredMethod("addURL", new Class[] { URL.class }) ;
-            addURL.setAccessible(true);
-        } catch (Exception e) {
-        }
-    }
+
+    static Map<String, Class<?>> clzMap = new HashMap<>();
+
 
     /**
      * 动态加载Jar包到内存中
-     * */
+     */
     public static Object loadJar(String jarFile, String className) {
         try {
-            File file = new File( jarFile );
+            File file = new File(jarFile);
             if (!file.exists()) {
                 throw new RuntimeException(jarFile + "不存在");
             }
-            addURL.invoke(ClassLoader.getSystemClassLoader(), new Object[] { file.toURI().toURL() });
-            return Class.forName( className ,false , ClassLoader.getSystemClassLoader() ).newInstance();
+
+            try {
+                try (URLClassLoader loader = new URLClassLoader(new URL[]{file.toURI().toURL()}, Thread.currentThread().getContextClassLoader())) {
+                    Class<?> clazz = loader.loadClass(className);
+
+                    Class<?> cls = clzMap.get(jarFile + className);
+                    if (cls == null) {
+                        clzMap.put(jarFile + className, clazz);
+                        return clazz.newInstance();
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-
         }
         return null;
+    }
+
+
+    public static Class<?> getClass(String jarFile, String className) throws IllegalAccessException, InstantiationException {
+        Class<?> cls = clzMap.get(jarFile + className);
+        return cls;
     }
 }

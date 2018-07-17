@@ -48,6 +48,6 @@ public class CONSTANT {
     public static final String LOG_MESSAGE_TOKEN_LOGIN_INCORRECT = "错误的token";
 
     public static final String PLUGIN_PATH_ERROR = "错误的插件路径";
-    public static final String FIND_PLUGIN = "发现插件：";
+    public static final String FIND_PLUGIN = "find plugin：";
 
 }

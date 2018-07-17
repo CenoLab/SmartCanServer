@@ -83,12 +83,12 @@ public class ServerHandler implements Runnable, IHandler {
     }
 
     @Override
-    public void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException {
+    public void writeProcess() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         // need override
     }
 
 
-    void write() throws IOException, ClassNotFoundException, InvocationTargetException {
+    void write() throws IOException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         this.writeProcess();
         this.selectionKey.interestOps(SelectionKey.OP_READ);
         this.state = READING;

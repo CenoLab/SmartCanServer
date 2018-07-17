@@ -13,7 +13,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build/bin/scServer.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/build/doc/PluginDevelopGuide.md">
           <value>
             <set />
           </value>
@@ -44,6 +54,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/CONSTANT.java">
           <value>
             <set />
           </value>
@@ -193,7 +208,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/CanServer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/ServerHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/WorkerServeHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/classloader/SPIClassLoader.java">
           <value>
             <set />
           </value>
@@ -204,6 +239,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/impl/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/JarUtils.java">
           <value>
             <set />
           </value>
@@ -1194,6 +1234,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/plugin/SmartFaultListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
           <value>
             <set />
           </value>
