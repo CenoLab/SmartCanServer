@@ -90,7 +90,7 @@ public class SmartCanBootstrap {
 
     private void initTable() throws NoSuchMethodException, InstantiationException, IllegalAccessException, IOException {
 
-        DataBase dataBase = new DataBase(
+        final DataBase dataBase = new DataBase(
                 ConfigFactory.getConfig().getDbDriver(),
                 ConfigFactory.getConfig().getDbUrl(),
                 ConfigFactory.getConfig().getDbUsername(),
@@ -109,6 +109,19 @@ public class SmartCanBootstrap {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+                try {
+                    dataBase.tick();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 200000 , ConfigFactory.getConfig().getDbTickInterval());
 
     }
 

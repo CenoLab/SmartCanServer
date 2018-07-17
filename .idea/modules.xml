@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/pushPlugin/pushPlugin.iml" filepath="$PROJECT_DIR$/pushPlugin/pushPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/serverCore/serverCore.iml" filepath="$PROJECT_DIR$/serverCore/serverCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/smartCanServer.iml" filepath="$PROJECT_DIR$/smartCanServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/testPlugin/testPlugin.iml" filepath="$PROJECT_DIR$/testPlugin/testPlugin.iml" />

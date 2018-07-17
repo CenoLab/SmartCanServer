@@ -1,6 +1,7 @@
 package com.iot.nero.smartcan.utils.dbtools;
 
 
+import com.iot.nero.CONSTANT;
 import com.iot.nero.smartcan.utils.dbtools.connection.DBConnection;
 import com.iot.nero.smartcan.utils.dbtools.entity.Condition;
 import com.iot.nero.smartcan.utils.dbtools.entity.Conditions;
@@ -12,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static com.iot.nero.smartcan.constant.CONSTANT.pInfo;
 
 /**
  * Author neroyang
@@ -53,7 +56,7 @@ public class DataBase {
             if(!sqlSchemaStringBuilder.toString().endsWith(";")){
                 sqlSchemaStringBuilder.append(";");
             }
-            System.out.println(sqlSchemaStringBuilder.toString());
+            pInfo("(SQL) "+sqlSchemaStringBuilder.toString());
             preparedStatement = (PreparedStatement) conn.prepareStatement(sqlSchemaStringBuilder.toString());
             i = preparedStatement.executeUpdate();
         } finally {
@@ -98,7 +101,7 @@ public class DataBase {
             if(!sqlSchemaStringBuilder.toString().endsWith(";")){
                 sqlSchemaStringBuilder.append(";");
             }
-            System.out.println(sqlSchemaStringBuilder.toString());
+            pInfo("(SQL) "+sqlSchemaStringBuilder.toString());
             preparedStatement = (PreparedStatement) conn.prepareStatement(sqlSchemaStringBuilder.toString());
             preparedStatement = putData(preparedStatement);
             i = preparedStatement.executeUpdate();
@@ -121,7 +124,7 @@ public class DataBase {
         ResultSet reDesc = null;
         List<String> columns = new ArrayList<>();
         try {
-            System.out.println(descStringBuilder.toString());
+            pInfo("(SQL) "+descStringBuilder.toString());
             preparedStatementDesc = conn.prepareStatement(descStringBuilder.toString());
             reDesc = preparedStatementDesc.executeQuery();
             int coldesc = reDesc.getMetaData().getColumnCount();
@@ -158,7 +161,7 @@ public class DataBase {
         ResultSet rs = null;
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
         try {
-            System.out.println(selectStringBuilder.toString());
+            pInfo("(SQL) "+selectStringBuilder.toString());
             preparedStatement = (PreparedStatement) conn.prepareStatement(selectStringBuilder.toString());
             rs = preparedStatement.executeQuery();
             List<String> columns = desc(table);
@@ -196,7 +199,7 @@ public class DataBase {
         ResultSet rs = null;
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
         try {preparedStatement = (PreparedStatement) conn.prepareStatement(selectStringBuilder.toString());
-            System.out.println(selectStringBuilder.toString());
+            pInfo("(SQL) "+selectStringBuilder.toString());
             rs = preparedStatement.executeQuery();
             makeData(result,rs,columns);
         } finally {
@@ -234,7 +237,7 @@ public class DataBase {
         PreparedStatement preparedStatement = null;
         Integer i = 0;
         try {
-            System.out.println(updateStringBuilder.toString());
+            pInfo("(SQL) "+updateStringBuilder.toString());
             preparedStatement = (PreparedStatement) conn.prepareStatement(updateStringBuilder.toString());
             preparedStatement = putData(preparedStatement,values);
             i = preparedStatement.executeUpdate();
@@ -346,7 +349,23 @@ public class DataBase {
         return data;
     }
 
+
+
+    public  Integer tick() throws SQLException, ClassNotFoundException {
+        Connection conn = DBConnection.getConn(driver, url, username, pd);
+
+
+        try( PreparedStatement preparedStatement = (PreparedStatement) conn.prepareStatement("select 1;");
+        ResultSet rs = preparedStatement.executeQuery()){
+            pInfo("(SQL) "+"select 1;");
+        }
+
+        return 1;
+    }
+
     public void close() throws SQLException {
         DBConnection.close(this.url);
     }
+
+
 }

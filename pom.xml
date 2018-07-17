@@ -16,6 +16,7 @@
     <modules>
         <module>testPlugin</module>
         <module>serverCore</module>
+        <module>pushPlugin</module>
     </modules>
 
     <properties>

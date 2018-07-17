@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build/config/config.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build/doc/PluginDevelopGuide.md">
           <value>
             <set />
@@ -34,6 +39,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/MessageReceivedListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
           <value>
             <set />
           </value>
@@ -58,12 +83,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/config/Config.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/CONSTANT.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/CompressionAlgorithm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/core/Protocol.java">
           <value>
             <set />
           </value>
@@ -208,6 +243,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/exceptions/InvalidHostNameException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/CanServer.java">
           <value>
             <set />
@@ -244,6 +284,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/JarUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/DataBase.java">
           <value>
             <set />
           </value>

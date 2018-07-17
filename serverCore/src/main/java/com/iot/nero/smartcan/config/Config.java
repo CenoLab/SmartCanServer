@@ -35,6 +35,9 @@ public class Config {
     @ConfigField("db.sql.pwd")
     private String dbPwd;
 
+    @ConfigField("db.sql.tickInterval")
+    private Integer dbTickInterval;
+
 
     @ConfigField("sys.can.collectFrequency")
     private Integer collectFrequency = 1080;
@@ -50,7 +53,7 @@ public class Config {
     public Config() {
     }
 
-    public Config(String host, Integer port, String logTableName, String dbDriver, String dbUrl, String dbUsername, String dbPwd, Integer collectFrequency, Integer sendFrequency, String pluginPath) {
+    public Config(String host, Integer port, String logTableName, String dbDriver, String dbUrl, String dbUsername, String dbPwd, Integer dbTickInterval, Integer collectFrequency, Integer sendFrequency, String pluginPath) {
         this.host = host;
         this.port = port;
         this.logTableName = logTableName;
@@ -58,6 +61,7 @@ public class Config {
         this.dbUrl = dbUrl;
         this.dbUsername = dbUsername;
         this.dbPwd = dbPwd;
+        this.dbTickInterval = dbTickInterval;
         this.collectFrequency = collectFrequency;
         this.sendFrequency = sendFrequency;
         this.pluginPath = pluginPath;
@@ -119,12 +123,12 @@ public class Config {
         this.dbPwd = dbPwd;
     }
 
-    public String getPluginPath() {
-        return pluginPath;
+    public Integer getDbTickInterval() {
+        return dbTickInterval;
     }
 
-    public void setPluginPath(String pluginPath) {
-        this.pluginPath = pluginPath;
+    public void setDbTickInterval(Integer dbTickInterval) {
+        this.dbTickInterval = dbTickInterval;
     }
 
     public Integer getCollectFrequency() {
@@ -143,6 +147,14 @@ public class Config {
         this.sendFrequency = sendFrequency;
     }
 
+    public String getPluginPath() {
+        return pluginPath;
+    }
+
+    public void setPluginPath(String pluginPath) {
+        this.pluginPath = pluginPath;
+    }
+
     @Override
     public String toString() {
         return "Config{" +
@@ -153,6 +165,7 @@ public class Config {
                 ", dbUrl='" + dbUrl + '\'' +
                 ", dbUsername='" + dbUsername + '\'' +
                 ", dbPwd='" + dbPwd + '\'' +
+                ", dbTickInterval=" + dbTickInterval +
                 ", collectFrequency=" + collectFrequency +
                 ", sendFrequency=" + sendFrequency +
                 ", pluginPath='" + pluginPath + '\'' +

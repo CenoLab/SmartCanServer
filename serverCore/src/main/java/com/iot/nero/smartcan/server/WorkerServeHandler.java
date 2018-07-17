@@ -99,7 +99,7 @@ public class WorkerServeHandler extends ServerHandler {
 
                         for (Method m : method) {
                             if (m.getName().contains("OnMessageReceived")) {
-                                m.invoke(clz.newInstance(), protocol);
+                                m.invoke(receivedClass.newInstance(), protocol);
                             }
                         }
                     }

@@ -6,6 +6,8 @@ import com.iot.nero.smartcan.exceptions.PackageBrokenException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
+import static com.iot.nero.smartcan.constant.CONSTANT.pInfo;
+
 /**
  * Author neroyang
  * Email  nerosoft@outlook.com
@@ -33,7 +35,7 @@ public class Protocol {
 
     public Protocol decode(byte[] data) throws PackageBrokenException {
 
-        System.out.print("received：");
+        pInfo("(RECEIVED) ");
         for (byte b : data) {
             System.out.print(" " + Integer.toHexString(b));
         }
@@ -120,10 +122,6 @@ public class Protocol {
 
         allData[allData.length - 1] = bcc;
 
-        for (byte b : allData) {
-            System.out.print(" " + Integer.toHexString(b));
-        }
-        System.out.println();
 
         return allData;
     }
