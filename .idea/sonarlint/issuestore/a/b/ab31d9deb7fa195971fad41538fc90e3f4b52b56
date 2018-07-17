@@ -1,8 +1,0 @@
-
-¹%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(øèüö8³¥ÅóÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8³¥ÅóÈ,
-@squid:S1659"%Declare "SENDING" on a separate line.(Ã’.8³¥ÅóÈ,
-¹%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(şë‚Ğ8³¥ÅóÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8³¥ÅóÈ,
-`squid:S2147"DCombine this catch with the one at line 54, which has the same body.(çÃÜµ8³¥ÅóÈ,
-¾%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(”İæıÿÿÿÿ8³¥ÅóÈ,

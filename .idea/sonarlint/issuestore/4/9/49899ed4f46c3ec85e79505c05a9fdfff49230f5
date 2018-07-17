@@ -1,0 +1,4 @@
+
+lsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(˜Š’ıÿÿÿÿ
+Osquid:S1118":Add a private constructor to hide the implicit public one.(ôÃ­ÿ
+¬%squid:RedundantThrowsDeclarationCheck"xRemove the declaration of thrown exception 'java.lang.NoSuchMethodException', as it cannot be thrown from method's body.(˜Š’ıÿÿÿÿ

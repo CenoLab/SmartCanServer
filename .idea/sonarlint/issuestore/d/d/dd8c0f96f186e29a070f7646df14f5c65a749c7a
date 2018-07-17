@@ -1,0 +1,13 @@
+
+Fsquid:S2116"%Use "Arrays.toString(array)" instead.(‹Û¯Ùøÿÿÿÿ8ƒ•ö¸Ê,
+_squid:UselessImportCheck"1Remove this unused import 'java.net.InetAddress'.(ë³ƒÒÿÿÿÿÿ8¯Óã³Ê,
+Gsquid:S1075"&Remove this hard-coded path-delimiter.(µñ„éÿÿÿÿÿ8Ã±ä¸Ê,
+asquid:S2147"ECombine this catch with the one at line 128, which has the same body.(çÃÜµ8¯Óã³Ê,
+¾%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(”ÝŽæýÿÿÿÿ8¯Óã³Ê,
+Isquid:S1481"-Remove this unused "response" local variable.(œ®Ñý8¯Óã³Ê,
+ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(©ò¹Öùÿÿÿÿ8Ã±ä¸Ê,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ8¯Óã³Ê,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ8¯Óã³Ê,
+¾%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'com.iot.nero.smartcan.exceptions.PackageBrokenException' which is a runtime exception.(º”¯Øýÿÿÿÿ8¯Óã³Ê,

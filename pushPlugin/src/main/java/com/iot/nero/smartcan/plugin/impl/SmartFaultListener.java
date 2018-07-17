@@ -12,6 +12,9 @@ import com.iot.nero.smartcan.spi.OnSmartFaultListener;
 public class SmartFaultListener implements OnSmartFaultListener {
     @Override
     public void onFault(SmartFaultRequestMessage smartFaultRequestMessage) {
+
+        // 推送 短信 或者 邮件 通知
+
         System.out.println("this from plugin2 smart fault");
         
     }

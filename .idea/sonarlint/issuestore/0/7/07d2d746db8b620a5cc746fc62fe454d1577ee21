@@ -1,60 +1,0 @@
-
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€·¸óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-nsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(É«Ö8€·¸óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¯¯«óÈ,
-ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(úµÜßøÿÿÿÿ8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8­¦ÁóÈ,
-asquid:S2147"ECombine this catch with the one at line 166, which has the same body.(ıàÑÎ8·Ò±óÈ,
-squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ÂÖÒ†8·Ò±óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(é™úŸ8¯¯«óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(¥‘ ëúÿÿÿÿ8€·¸óÈ,
-asquid:S2147"ECombine this catch with the one at line 103, which has the same body.(ıàÑÎ8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8­¦ÁóÈ,
-asquid:S2147"ECombine this catch with the one at line 297, which has the same body.(¯áè8€·¸óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(Šşİè8¯¯«óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Ò±óÈ,
-msquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(çìÇ/8ß ‰óÈ,
-asquid:S2147"ECombine this catch with the one at line 146, which has the same body.(Å¡ß8·Ò±óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(é™úŸ8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(ªá¦ˆøÿÿÿÿ8ß ‰óÈ,
-asquid:S2147"ECombine this catch with the one at line 212, which has the same body.(Å¡ß8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€·¸óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(é™úŸ8ß ‰óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(ªá¦ˆøÿÿÿÿ8€·¸óÈ,
-asquid:S2147"ECombine this catch with the one at line 297, which has the same body.(Å¡ß8€·¸óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(Šşİè8ß ‰óÈ,
-`squid:S2147"DCombine this catch with the one at line 83, which has the same body.(Å¡ß8ß ‰óÈ,
-`squid:S2147"DCombine this catch with the one at line 83, which has the same body.(¯áè8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¯¯«óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(ªá¦ˆøÿÿÿÿ8·Ò±óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(é™úŸ8€·¸óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(Šşİè8€·¸óÈ,
-asquid:S2147"ECombine this catch with the one at line 146, which has the same body.(¯áè8¯¯«óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(¥‘ ëúÿÿÿÿ8ß ‰óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(ªá¦ˆøÿÿÿÿ8·Ò±óÈ,
-Fsquid:S00108")Either remove or fill this block of code.(Šşİè8ß ‰óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(¥‘ ëúÿÿÿÿ8¯¯«óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€·¸óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€·¸óÈ,
-†squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ûãßúÿÿÿÿ8­¦ÁóÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-asquid:S2147"ECombine this catch with the one at line 343, which has the same body.(ıàÑÎ8­¦ÁóÈ,
-ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ªîìıÿÿÿÿ8¯¯«óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¯¯«óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€·¸óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Ò±óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-asquid:S2147"ECombine this catch with the one at line 212, which has the same body.(¯áè8ß ‰óÈ,
-Ksquid:S00108")Either remove or fill this block of code.(¥‘ ëúÿÿÿÿ8ß ‰óÈ,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ß ‰óÈ,
-asquid:S2147"ECombine this catch with the one at line 250, which has the same body.(ıàÑÎ8·Ò±óÈ,
-squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ÂÖÒ†8€·¸óÈ,

@@ -1,39 +1,0 @@
-
-ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒÉ“†şÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ûøÀüÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ûøÀüÿÿÿÿ
-ƒsquid:S4165"oRemove this useless assignment; "preparedStatement" already holds the assigned value along all execution paths.(Ú«ó
-psquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½ñ…¶ùÿÿÿÿ8Ã¼ÒÒÂ,
-dsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Â”µ„
-Isquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(ÇŒÇô
-gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¡•ê
-L
-squid:S106"9Replace this use of System.out or System.err by a logger.(ôş™q
-Usquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(ÄÙ–Éıÿÿÿÿ8£ÄÀ×Â,
-dsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÇŒÇô
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
-ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÈĞêŞøÿÿÿÿ
-Usquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(½ñ…¶ùÿÿÿÿ8Ã¼ÒÒÂ,
-L
-squid:S106"9Replace this use of System.out or System.err by a logger.(š˜İ[
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(µ™Óªúÿÿÿÿ8€ÈÉ½Ç,
-L
-squid:S106"9Replace this use of System.out or System.err by a logger.(ôş™q
-ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒÉ“†şÿÿÿÿ
-‰squid:S4165"oRemove this useless assignment; "preparedStatement" already holds the assigned value along all execution paths.(Ä¯Ïøÿÿÿÿ
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(µ™Óªúÿÿÿÿ8Èì¡ÅÇ,
-Fsquid:S1481",Remove this unused "coldesc" local variable.(“Ù²—üÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(Á”‰ç
-Nsquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(ÄÙ–Éıÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(š¤½Âşÿÿÿÿ
-Nsquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(Ìˆ¾ùÿÿÿÿ
-Nsquid:S1905"4Remove this unnecessary cast to "PreparedStatement".(Ìˆ¾ùÿÿÿÿ

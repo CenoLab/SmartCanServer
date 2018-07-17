@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build/asn/protocol.asn">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build/bin/scServer.sh">
           <value>
             <set />
@@ -273,7 +278,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/OnMessageDecodeListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/classloader/SPIClassLoader.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/impl/MessageDecodeListener.java">
           <value>
             <set />
           </value>
