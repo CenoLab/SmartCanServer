@@ -4,7 +4,7 @@ import com.iot.nero.smartcan.annotation.Service;
 import com.iot.nero.smartcan.annotation.ServiceMethod;
 import com.iot.nero.smartcan.constant.CONSTANT;
 import com.iot.nero.smartcan.factory.ConfigFactory;
-import com.iot.nero.smartcan.license.entity.License;
+import com.iot.nero.smartcan.license.core.LicenseVertify;
 import com.iot.nero.smartcan.server.CanServer;
 import com.iot.nero.smartcan.server.IServer;
 import com.iot.nero.smartcan.utils.classandjar.ClassUtil;
@@ -19,7 +19,6 @@ import java.sql.SQLException;
 import java.util.*;
 
 import static com.iot.nero.smartcan.constant.CONSTANT.*;
-import static com.iot.nero.smartcan.constant.LicenseType.FREE;
 
 /**
  * Author neroyang
@@ -31,7 +30,7 @@ public class SmartCanBootstrap {
 
     private Integer CAN_SERVER_LISTEN_PORT = 1080;
 
-    public  Map<Byte,Method> autoBrainServiceMap;
+    public static  Map<Byte,Method> autoBrainServiceMap;
 
     private void initService(){
         autoBrainServiceMap = new HashMap<>();// 服务容器
@@ -54,27 +53,21 @@ public class SmartCanBootstrap {
 
     // license checker
     private void initLicense() {
-        switch (getLicense().getLicenseType()){
-            case ENTERPRISE:
-                pInfo("(LICENSE) "+CONSTANT.ENTERPRISE_LICENSE);
-
+        LicenseVertify vlicense=new LicenseVertify("license"); // 项目唯一识别码，对应生成配置文件的subject
+        vlicense.install(System.getProperty("user.dir")+"/build/license/");
+        switch (vlicense.vertify()){
+            case 0:
+                pInfo("(LICENSE) CHECKED!");
                 break;
-
-            case FREE:
-                pInfo("(LICENSE) "+CONSTANT.FREE_LICENSE);
-
+            case 1:
+                pInfo("(LICENSE) EXPERIED!");
                 break;
-
-            case TRIAL:
-                pInfo("(LICENSE) "+CONSTANT.TRIAL_LICENSE);
-
+            case 2:
+                pInfo("(LICENSE) FAILED!");
                 break;
         }
     }
 
-    private License getLicense() {
-        return new License(FREE,"","");
-    }
 
     private void runListener() throws IOException, IllegalAccessException, NoSuchMethodException, InstantiationException, InvocationTargetException {
 

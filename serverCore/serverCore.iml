@@ -6,6 +6,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -25,6 +26,10 @@
     <orderEntry type="library" name="Maven: org.apache.ant:ant:1.9.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ant:ant-launcher:1.9.6" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.35" level="project" />
+    <orderEntry type="library" name="Maven: de.schlichtherle.truelicense:truelicense-core:1.33" level="project" />
+    <orderEntry type="library" name="Maven: de.schlichtherle.truelicense:truelicense-xml:1.33" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: de.schlichtherle.truelicense:truelicense-swing:1.33" level="project" />
   </component>
   <component name="sonarModuleSettings">
     <option name="alternativeWorkingDirPath" value="" />

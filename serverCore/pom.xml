@@ -75,6 +75,34 @@
             <version>5.1.35</version>
             <scope>runtime</scope>
         </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-core -->
+        <dependency>
+            <groupId>de.schlichtherle.truelicense</groupId>
+            <artifactId>truelicense-core</artifactId>
+            <version>1.33</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-xml -->
+        <dependency>
+            <groupId>de.schlichtherle.truelicense</groupId>
+            <artifactId>truelicense-xml</artifactId>
+            <version>1.33</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-swing -->
+        <dependency>
+            <groupId>de.schlichtherle.truelicense</groupId>
+            <artifactId>truelicense-swing</artifactId>
+            <version>1.33</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

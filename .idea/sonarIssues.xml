@@ -48,12 +48,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build/config/licenseMakeConf.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build/doc/PluginDevelopGuide.md">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/config/config.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/config/licenseMakeConf.properties">
           <value>
             <set />
           </value>
@@ -318,6 +328,36 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/LicenseManagerHolder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/LicenseVertify.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/a.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/aa.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/entity/License.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/entity/LicenseMake.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/CanServer.java">
           <value>
             <set />
@@ -369,6 +409,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/DataBase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/resources/config/licenseMakeConf.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/serverCore/src/main/resources/config/licenseVertifyConf.properties">
           <value>
             <set />
           </value>
