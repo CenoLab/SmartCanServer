@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -14,7 +15,7 @@ public class SqlSessionFactoryUtil {
 
     static {//用一个静态块读取配置文件，获取返回的文件流。静态块在编译时就初始化
         try {
-            is = Resources.getResourceAsStream("config/mybatis-config.xml");
+            is = new FileInputStream(System.getProperty("user.dir") + "/plugin/pushPlugin/config/mybatis-config.xml");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

@@ -7,7 +7,6 @@ import com.iot.nero.smartcan.plugin.entity.User;
 import com.iot.nero.smartcan.plugin.utils.AiyunSDK;
 import com.iot.nero.smartcan.plugin.utils.SqlSessionFactoryUtil;
 import com.iot.nero.smartcan.spi.OnSmartFaultListener;
-import com.iot.nero.smartcan.utils.bytes.ByteUtils;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class SmartFaultListener implements OnSmartFaultListener {
         pInfo("(PUSH_PLUGIN) 车辆异常推送触发.");
         // 推送 短信 或者 邮件 通知
         byte[] vid = smartFaultRequestMessage.vid;
-        String vidString = ByteUtils.bytesToString(vid);
+        String vidString = bytesToString(vid);
 
         SqlSession sqlSession = SqlSessionFactoryUtil.getSqlSession();
         CarAdminDao carAdminDao = sqlSession.getMapper(CarAdminDao.class);
@@ -36,7 +35,6 @@ public class SmartFaultListener implements OnSmartFaultListener {
             for (CarAdmin carAdmin : vidUserList) {
                 if (carAdmin.getIdEmailOpen() == 1 || carAdmin.getIsPhoneOpen() == 1) {
                     User user = carAdminDao.getUserById(carAdmin.getUserId());
-
                         if (carAdmin.getIsPhoneOpen() == 1) {
 
                         }
@@ -51,5 +49,13 @@ public class SmartFaultListener implements OnSmartFaultListener {
 
         sqlSession.commit();
         sqlSession.close();
+    }
+
+    public String bytesToString(byte[] bytes){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(byte b:bytes){
+            stringBuilder.append((char) b);
+        }
+        return stringBuilder.toString();
     }
 }
