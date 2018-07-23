@@ -1,7 +1,6 @@
 package com.iot.nero.smartcan.spi;
 
 import com.iot.nero.smartcan.entity.platoon.*;
-import sun.plugin2.message.HeartbeatMessage;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -31,11 +30,11 @@ public interface OnMessageDecodeListener {
 
     /**
      * 心跳
-     * @param heartbeatMessage
+     * @param syncRequestMessage
      * @param socketChannel
      * @throws IOException
      */
-    void onHeartBeat(HeartbeatMessage heartbeatMessage, final SocketChannel socketChannel) throws IOException;
+    void onHeartBeat(SyncRequestMessage syncRequestMessage, final SocketChannel socketChannel) throws IOException;
 
     /**
      * 车身数据集

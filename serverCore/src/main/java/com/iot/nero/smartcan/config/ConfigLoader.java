@@ -4,7 +4,7 @@ package com.iot.nero.smartcan.config;
 import com.iot.nero.smartcan.App;
 import com.iot.nero.smartcan.annotation.ConfigClass;
 import com.iot.nero.smartcan.annotation.ConfigField;
-import com.iot.nero.smartcan.utils.ClassUtil;
+import com.iot.nero.smartcan.utils.classandjar.ClassUtil;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

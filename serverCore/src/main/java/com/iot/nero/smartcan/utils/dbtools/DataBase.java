@@ -1,7 +1,6 @@
 package com.iot.nero.smartcan.utils.dbtools;
 
 
-import com.iot.nero.CONSTANT;
 import com.iot.nero.smartcan.utils.dbtools.connection.DBConnection;
 import com.iot.nero.smartcan.utils.dbtools.entity.Condition;
 import com.iot.nero.smartcan.utils.dbtools.entity.Conditions;

@@ -9,7 +9,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        SmartCanBootstrap dfsBootstrap = new SmartCanBootstrap();
-        dfsBootstrap.start();
+        SmartCanBootstrap canBootstrap = new SmartCanBootstrap();
+        canBootstrap.start();
     }
 }

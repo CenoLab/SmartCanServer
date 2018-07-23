@@ -7,4 +7,8 @@ package com.iot.nero.smartcan.plugin;
  * Time   4:11 PM
  */
 public class App {
+
+    public static void main(String[] args){
+        System.out.println("push plugin ....");
+    }
 }

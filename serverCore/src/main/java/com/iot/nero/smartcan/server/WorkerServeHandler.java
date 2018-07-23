@@ -8,7 +8,7 @@ import com.iot.nero.smartcan.exceptions.PackageBrokenException;
 import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.factory.ServiceFactory;
 import com.iot.nero.smartcan.spi.OnMessageReceivedListener;
-import com.iot.nero.smartcan.utils.JarUtils;
+import com.iot.nero.smartcan.utils.classandjar.JarUtils;
 import net.sf.cglib.reflect.FastClass;
 import net.sf.cglib.reflect.FastMethod;
 
@@ -16,7 +16,6 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.InetAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;

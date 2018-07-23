@@ -10,8 +10,9 @@ import java.util.Date;
  */
 public class CONSTANT {
     public static final String VERSION = "2.1.3";
+    public static final String WEB_SITE = "https://www.cenocloud.com";
     public static final String INDEX_NODE = "智能网联车数据采集 Server";
-    public static final String COPY_RIGHT = "www.cenocloud.com All Right Reserved";
+    public static final String COPY_RIGHT = WEB_SITE+" All Right Reserved";
     public static final String CLIENT_OFFLINE = "客户端掉线";
 
     public static void printNdfsInfo() {
@@ -50,4 +51,8 @@ public class CONSTANT {
     public static final String PLUGIN_PATH_ERROR = "错误的插件路径";
     public static final String FIND_PLUGIN = "find plugin：";
 
+
+    public static final String FREE_LICENSE = "Your license is a free license, which means a maximum of 20 client connections are allowed. If this does not meet your needs, please purchase a commercial license at "+WEB_SITE;
+    public static final String ENTERPRISE_LICENSE = "Your license is a commercial license, thank you for your use, we provide you with 7×24 product support, see "+WEB_SITE+" for details.";
+    public static final String TRIAL_LICENSE = "Your license is a trial license, which will expire in 14 days. To ensure your normal use, you are advised to purchase a commercial license. See "+WEB_SITE+" for details.";
 }

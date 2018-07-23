@@ -36,8 +36,6 @@ DserverCore/src/main/java/com/iot/nero/smartcan/server/CanServer.java,0/f/0fc6a
 LserverCore/src/main/java/com/iot/nero/smartcan/service/IProtocolService.java,3/3/33fbfc893b8ec9151c3e933230f8fd6524d31079
 H
 build/doc/drop_table.sql,6/f/6f4c94d3a8d6bf4786a4e492ced1624921c360ec
-r
-BserverCore/src/main/java/com/iot/nero/smartcan/utils/JarUtils.java,5/6/56ff4aaf80584a4ebcb917475d53eee06b8b73e8
 Å
 QserverCore/src/main/java/com/iot/nero/smartcan/spi/OnMessageReceivedListener.java,0/2/0203dd52035f0a273ced74508aee3a455233ba51
 Ç
@@ -98,3 +96,5 @@ F
 build/asn/protocol.asn,4/9/4958806bd0cd5054755408bd30e377426268c3c4
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+â
+YserverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/connection/DBConnection.java,1/a/1afff093e733e3696ff73bdc41b872f05aa141c3

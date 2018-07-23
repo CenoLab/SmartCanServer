@@ -15,7 +15,7 @@
     <bytecodeTargetLevel>
       <module name="middleware.dfs.index" target="1.7" />
       <module name="pushPlugin" target="1.7" />
-      <module name="serverCore" target="1.7" />
+      <module name="serverCore" target="8" />
       <module name="smartCanServer" target="1.5" />
       <module name="testPlugin" target="1.7" />
     </bytecodeTargetLevel>

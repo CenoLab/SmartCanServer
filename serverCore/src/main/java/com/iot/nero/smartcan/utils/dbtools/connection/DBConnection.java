@@ -17,9 +17,11 @@ public class DBConnection {
     public static Connection getConn(String driver,String url,String username,String password) throws ClassNotFoundException, SQLException {
         if(simpleConnectionPool.getConnection(url) == null) {
             Class.forName(driver);
-            Connection connection = (Connection) DriverManager.getConnection(url, username, password);
-            simpleConnectionPool.addConnection(url,new CountableConnection(connection));
-            return simpleConnectionPool.getConnection(url).getConnection();
+
+                Connection connection = (Connection) DriverManager.getConnection(url, username, password);
+                simpleConnectionPool.addConnection(url, new CountableConnection(connection));
+                return simpleConnectionPool.getConnection(url).getConnection();
+
         }
         return simpleConnectionPool.getConnection(url).getConnection();
     }

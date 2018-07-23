@@ -8,7 +8,7 @@ import com.iot.nero.smartcan.entity.platoon.*;
 import com.iot.nero.smartcan.factory.ConfigFactory;
 import com.iot.nero.smartcan.service.IProtocolService;
 import com.iot.nero.smartcan.spi.OnSmartFaultListener;
-import com.iot.nero.smartcan.utils.JarUtils;
+import com.iot.nero.smartcan.utils.classandjar.JarUtils;
 import com.iot.nero.smartcan.utils.dbtools.DataBase;
 import com.iot.nero.smartcan.utils.dbtools.entity.Condition;
 import com.iot.nero.smartcan.utils.dbtools.entity.Conditions;
@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static com.iot.nero.smartcan.constant.CONSTANT.*;
-import static com.iot.nero.smartcan.utils.ByteUtils.bytesToString;
-import static com.iot.nero.smartcan.utils.ByteUtils.longToBytes;
+import static com.iot.nero.smartcan.utils.bytes.ByteUtils.bytesToString;
+import static com.iot.nero.smartcan.utils.bytes.ByteUtils.longToBytes;
 
 /**
  * Author neroyang

@@ -2,7 +2,6 @@ package com.iot.nero.smartcan.spi.impl;
 
 import com.iot.nero.smartcan.entity.platoon.*;
 import com.iot.nero.smartcan.spi.OnMessageDecodeListener;
-import sun.plugin2.message.HeartbeatMessage;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -27,7 +26,7 @@ public class MessageDecodeListener implements OnMessageDecodeListener {
     }
 
     @Override
-    public void onHeartBeat(HeartbeatMessage heartbeatMessage, SocketChannel socketChannel) throws IOException {
+    public void onHeartBeat(SyncRequestMessage syncRequestMessage, SocketChannel socketChannel) throws IOException {
 
     }
 
