@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="serverCore:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="25100650-1e26-43a0-9aec-4ae91eed1305" name="Default" comment="" />
+    <list default="true" id="25100650-1e26-43a0-9aec-4ae91eed1305" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/smartCanServer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/serverCore_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/core/serverCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/core/serverCore.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCore/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/testPlugin/target/" />
     <ignored path="$PROJECT_DIR$/serverCore/target/" />
@@ -20,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SmartCanBootstrap.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SmartCanBootstrap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2192">
-              <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+            <state relative-caret-position="328">
+              <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,11 +43,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuiltinClassLoader.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///opt/jdk-10.0.2/lib/src.zip!/java.base/jdk/internal/loader/BuiltinClassLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3223">
+              <caret line="326" column="37" lean-forward="true" selection-start-line="326" selection-start-column="37" selection-end-line="326" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="licenseMakeConf.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serverCore/src/main/resources/config/licenseMakeConf.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -57,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-36">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -78,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
-              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,9 +118,10 @@
       <file leaf-file-name="LicenseVertify.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/LicenseVertify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1470">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="-477">
+              <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1077#1078#0" expanded="true" />
                 <element signature="e#1118#1119#0" expanded="true" />
                 <element signature="e#1183#1184#0" expanded="true" />
@@ -103,20 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LicenseManager.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/de/schlichtherle/truelicense/truelicense-core/1.33/truelicense-core-1.33.jar!/de/schlichtherle/license/LicenseManager.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="licenseVertifyConf.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverCore/src/main/resources/config/licenseVertifyConf.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="126">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -178,8 +199,8 @@
         <option value="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/a.java" />
         <option value="$PROJECT_DIR$/serverCore/src/main/resources/config/licenseVertifyConf.properties" />
         <option value="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/LicenseVertify.java" />
-        <option value="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java" />
       </list>
     </option>
   </component>
@@ -223,6 +244,93 @@
               <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smartcan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smartcan" type="462c0819:PsiDirectoryNode" />
+              <item name="license" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smartcan" type="462c0819:PsiDirectoryNode" />
+              <item name="license" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="license" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -230,6 +338,11 @@
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -355,15 +468,16 @@
       <workItem from="1532317819403" duration="356000" />
       <workItem from="1532318211013" duration="554000" />
       <workItem from="1532318805746" duration="575000" />
-      <workItem from="1532319516953" duration="25541000" />
+      <workItem from="1532319516953" duration="26341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180346000" />
+    <option name="totallyTimeSpent" value="181146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -384,7 +498,7 @@
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4226695" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.31779662" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31779662" />
       <window_info anchor="right" id="Jenkins" order="0" weight="0.32994652" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16203208" />
       <window_info anchor="right" id="Bean Validation" order="15" weight="0.32994652" />
@@ -427,13 +541,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/entity/platoon/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///opt/jdk-10.0.2/lib/src.zip!/java.base/jdk/internal/reflect/NativeConstructorAccessorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
@@ -730,49 +837,10 @@
     <entry file="file://$PROJECT_DIR$/build/config/config.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/resources/config/licenseMakeConf.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="6" selection-start-column="14" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/de/schlichtherle/truelicense/truelicense-core/1.33/truelicense-core-1.33.jar!/de/schlichtherle/license/LicenseManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/resources/config/licenseVertifyConf.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/LicenseVertify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1470">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1224#1225#0" expanded="true" />
-            <element signature="e#2520#2521#0" expanded="true" />
-            <element signature="e#2602#2603#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2192">
-          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,7 +857,7 @@
     <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-36">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -806,7 +874,7 @@
     <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -823,7 +891,54 @@
     <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/jdk-10.0.2/lib/src.zip!/java.base/jdk/internal/loader/BuiltinClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3223">
+          <caret line="326" column="37" lean-forward="true" selection-start-line="326" selection-start-column="37" selection-end-line="326" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverCore/src/main/resources/config/licenseMakeConf.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverCore/src/main/resources/config/licenseVertifyConf.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/core/LicenseVertify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-477">
+          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="e#2520#2521#0" expanded="true" />
+            <element signature="e#2602#2603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -844,7 +959,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>pushPlugin</last-edited>
+          <last-edited>serverCore:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -893,7 +1008,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>serverCore</last-edited>
+          <last-edited>smartCanServer</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

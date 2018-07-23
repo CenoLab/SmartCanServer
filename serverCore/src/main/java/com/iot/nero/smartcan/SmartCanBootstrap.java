@@ -55,7 +55,7 @@ public class SmartCanBootstrap {
     // license checker
     private void initLicense() {
         LicenseVertify vlicense=new LicenseVertify("license"); // 项目唯一识别码，对应生成配置文件的subject
-        vlicense.install(System.getProperty("user.dir")+"/build/license/");
+        vlicense.install(System.getProperty("user.dir")+"/license/");
         switch (vlicense.vertify()){
             case 0:
                 pInfo("(LICENSE) CHECKED!");
