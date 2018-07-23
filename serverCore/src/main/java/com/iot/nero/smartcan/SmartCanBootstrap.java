@@ -31,7 +31,7 @@ public class SmartCanBootstrap {
 
     private Integer CAN_SERVER_LISTEN_PORT = 1080;
 
-    public  Map<Byte,Method> autoBrainServiceMap;
+    public static Map<Byte,Method> autoBrainServiceMap;
 
     private void initService(){
         autoBrainServiceMap = new HashMap<>();// 服务容器

@@ -8,17 +8,7 @@
             <set />
           </value>
         </entry>
-        <entry key="/a.dummy">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="/a.regexp">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="/fragment.java">
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/9db1bef9-7a5d-4d5a-a9ec-244908104aeb/console.sql">
           <value>
             <set />
           </value>
@@ -58,12 +48,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/config/mybatis-config.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/licenseAgent/main.cpp">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/config/mybatis-config.xml">
           <value>
             <set />
           </value>
@@ -128,7 +128,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/resources/mybatis-config.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/pushPlugin/src/test/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/test/resources/mybatis-config.xml">
           <value>
             <set />
           </value>
@@ -1593,7 +1603,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/9db1bef9-7a5d-4d5a-a9ec-244908104aeb/console.sql">
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.regexp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
           <value>
             <set />
           </value>

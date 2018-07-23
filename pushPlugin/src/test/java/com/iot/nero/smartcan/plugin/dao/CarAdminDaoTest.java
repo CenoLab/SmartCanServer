@@ -3,6 +3,7 @@ package com.iot.nero.smartcan.plugin.dao;
 
 import com.iot.nero.smartcan.plugin.utils.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
 
 public class CarAdminDaoTest {
 
