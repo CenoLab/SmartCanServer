@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.gitignore">
           <value>
             <set />
@@ -73,6 +78,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/CarAdmin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/MessageReceivedListener.java">
           <value>
             <set />
@@ -99,6 +124,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pushPlugin/src/test/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoTest.java">
           <value>
             <set />
           </value>

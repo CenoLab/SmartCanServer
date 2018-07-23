@@ -7,208 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25100650-1e26-43a0-9aec-4ae91eed1305" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/pushPlugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jenkinsSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dm_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pushPlugin/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/AiyunSDK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/LicenseType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/license/entity/License.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9db1bef9-7a5d-4d5a-a9ec-244908104aeb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9db1bef9-7a5d-4d5a-a9ec-244908104aeb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/CarAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pushPlugin/src/test/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd8c0f96f186e29a070f7646df14f5c65a749c7a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd8c0f96f186e29a070f7646df14f5c65a749c7a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pushPlugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pushPlugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pushPlugin/pushPlugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pushPlugin/pushPlugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/serverCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/serverCore.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/config/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/config/ConfigLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/CONSTANT.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/constant/CONSTANT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/WorkerServeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/server/WorkerServeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/service/impl/ProtocolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/OnMessageDecodeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/OnMessageDecodeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/impl/MessageDecodeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/spi/impl/MessageDecodeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/ByteUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/bytes/ByteUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/ClassUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/classandjar/ClassUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/file/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/JarUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/classandjar/JarUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/ProtoStuffUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/serialization/ProtoStuffUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/connection/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/dbtools/connection/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/SmartCanBootstrap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/SmartCanBootstrap$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/SmartCanBootstrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/SmartCanBootstrap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/ConfigClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/ConfigClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/ConfigField.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/ConfigField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/ServiceMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/annotation/ServiceMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/config/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/config/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/config/ConfigLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/constant/CONSTANT.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/constant/CONSTANT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/constant/CompressionAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/constant/CompressionAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/core/Protocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/core/Protocol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/TokenPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/TokenPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ABSOPERATING.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ABSOPERATING.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/AutoHorn.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/AutoHorn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/BRAKELIGHTLEFTACTIVE.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/BRAKELIGHTLEFTACTIVE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/BRAKELIGHTRIGHTACTIVE.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/BRAKELIGHTRIGHTACTIVE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/BreakPadelSwtichSts.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/BreakPadelSwtichSts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/CollectConfigMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/CollectConfigMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/DRIVEBEHAVIOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/DRIVEBEHAVIOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/EPSSTA.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/EPSSTA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ESPAEBactive.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ESPAEBactive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ESPOPERATING.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ESPOPERATING.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/EXTERIORLAMPSWITCH.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/EXTERIORLAMPSWITCH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ExteriorLights.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ExteriorLights.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/FOGLAMPSWITCH.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/FOGLAMPSWITCH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/FRONTWIPERSWITCH.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/FRONTWIPERSWITCH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/HANDBRAKE.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/HANDBRAKE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/HIGHBEAMINDICATOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/HIGHBEAMINDICATOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/HornStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/HornStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ISFLEET.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ISFLEET.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LOWBEAMINDICATOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LOWBEAMINDICATOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Light.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LoginRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LoginRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LoginResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LoginResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LogoutRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LogoutRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LogoutResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/LogoutResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/MODEL.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/MODEL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Other.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Other.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/PARKLIGHTONWARNING.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/PARKLIGHTONWARNING.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Platoon.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Platoon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Position2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Position2D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Position3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Position3D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/REARWIPER.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/REARWIPER.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ROLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ROLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/RecongnizeObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/RecongnizeObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ResponseErrorCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/ResponseErrorCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Running.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Running.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Safety.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Safety.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCanRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCanRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCanResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCanResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartControlRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartControlRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartControlResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartControlResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCtrlFeedBackRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCtrlFeedBackRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCtrlFeedBackResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartCtrlFeedBackResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartDissolveRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartDissolveRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartDissolveResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartDissolveResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFTeamSuccessRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFTeamSuccessRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFTeamSuccessResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFTeamSuccessResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFaultRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFaultRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFaultResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFaultResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFromATeamRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFromATeamRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFromATeamResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartFromATeamResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartPlatonningRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartPlatonningRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartPlatonningResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartPlatonningResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartRecognizeRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartRecognizeRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartRecognizeResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartRecognizeResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartStrategyRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartStrategyRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartStrategyResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartStrategyResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartTeamRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartTeamRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartTeamResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SmartTeamResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SyncRequestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SyncRequestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SyncResponseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/SyncResponseMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TCSOPERATING.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TCSOPERATING.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TCUTGSMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TCUTGSMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TELLTALEFRONTFOGLIGHT.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TELLTALEFRONTFOGLIGHT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TELLTALEREARFOGLIGHT.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TELLTALEREARFOGLIGHT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TURNINGLAMPSWITCH.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TURNINGLAMPSWITCH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TimeStamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TimeStamp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TransmissionState.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/TransmissionState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDACCELERATOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDACCELERATOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDVEHICLESPEED.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDVEHICLESPEED.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDFL.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDFL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDFR.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDFR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDRL.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDRL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDRR.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VALIDWHEELSPEEDRR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VehicleList.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/VehicleList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/WINWASHFLUID.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/WINWASHFLUID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Wiper.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/Wiper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/XTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon/XTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/request/InvokeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/request/InvokeEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/request/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/request/Request.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/response/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/response/Response.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/exceptions/InvalidHostNameException.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/exceptions/InvalidHostNameException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/exceptions/InvalidPostException.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/exceptions/InvalidPostException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/exceptions/PackageBrokenException.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/exceptions/PackageBrokenException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/factory/ConfigFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/factory/ConfigFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/factory/ServiceFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/factory/ServiceFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/CanServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/CanServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/CanServerAcceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/CanServerAcceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/IHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/IHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/IServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/IServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/NioServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/NioServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/ServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/ServerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler$Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler$Processor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/server/WorkerServeHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/IProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/IProtocolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$23.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$24.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$24.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$25.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$25.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$26.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$26.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$27.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$27.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$28.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$28.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$29.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$29.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/service/impl/ProtocolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/OnMessageReceivedListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/OnMessageReceivedListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/OnSmartFaultListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/OnSmartFaultListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/classloader/SPIClassLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/classloader/SPIClassLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/impl/SmartFaultListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/spi/impl/SmartFaultListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/ByteUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/ClassUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/ClassUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/JarUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/ProtoStuffUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/DataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/connection/CountableConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/connection/CountableConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/connection/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/connection/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/connection/SimpleConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/connection/SimpleConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/entity/Condition.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/entity/Condition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/entity/Conditions.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/entity/Conditions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/list/DbArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/utils/dbtools/list/DbArrayList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCore/target/test-classes/com/iot/nero/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCore/target/test-classes/com/iot/nero/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smartCanServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smartCanServer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testPlugin/testPlugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/testPlugin/testPlugin.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/testPlugin/target/" />
@@ -265,78 +71,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SmartCanBootstrap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/SmartCanBootstrap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/licenseAgent/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="389">
+              <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pushPlugin/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmartFaultListener.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SmartFaultListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-              <folding>
-                <element signature="e#201#202#0" expanded="true" />
-                <element signature="e#237#238#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AiyunSDK.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/AiyunSDK.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlSession.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/session/SqlSession.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="44" column="76" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -344,8 +92,8 @@
       <file leaf-file-name="SqlSessionFactoryUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="588">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#970#971#0" expanded="true" />
@@ -355,20 +103,107 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ByteUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/bytes/ByteUtils.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serverCore/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+            <state relative-caret-position="420">
+              <caret line="29" column="21" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="29" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/licenseAgent/CMakeLists.txt">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pushPlugin/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="1050">
+              <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarAdminDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarAdminDaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pushPlugin/src/test/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+              <folding>
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#497#498#0" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
+                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#594#595#0" expanded="true" />
+                <element signature="e#622#623#0" expanded="true" />
+                <element signature="e#664#665#0" expanded="true" />
+                <element signature="e#698#699#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+                <element signature="e#804#805#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#873#874#0" expanded="true" />
+                <element signature="e#902#903#0" expanded="true" />
+                <element signature="e#946#947#0" expanded="true" />
+                <element signature="e#982#983#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarAdmin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/CarAdmin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+              <folding>
+                <element signature="e#573#574#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#797#798#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#876#877#0" expanded="true" />
+                <element signature="e#910#911#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+                <element signature="e#1050#1051#0" expanded="true" />
+                <element signature="e#1084#1085#0" expanded="true" />
+                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1185#1186#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -378,9 +213,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -419,11 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java" />
-        <option value="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/impl/MessageReceivedListener.java" />
-        <option value="$PROJECT_DIR$/testPlugin/src/main/java/com/iot/nero/smartcan/spi/impl/SmartFaultListener.java" />
-        <option value="$PROJECT_DIR$/testPlugin/src/test/java/com/iot/nero/AppTest.java" />
-        <option value="$PROJECT_DIR$/serverCore/src/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener" />
         <option value="$PROJECT_DIR$/serverCore/src/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener" />
         <option value="$PROJECT_DIR$/target/classes/META-INF/services/com.iot.nero.smartcan.spi.OnMessageReceivedListener" />
         <option value="$PROJECT_DIR$/target/classes/META-INF/services/com.iot.nero.smartcan.spi.OnSmartFaultListener" />
@@ -465,11 +296,16 @@
         <option value="$PROJECT_DIR$/licenseAgent/main.cpp" />
         <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionUtils.java" />
         <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java" />
-        <option value="$PROJECT_DIR$/pushPlugin/pom.xml" />
         <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/AiyunSMS.java" />
         <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java" />
-        <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java" />
         <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/AiyunSDK.java" />
+        <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/CarAdmin.java" />
+        <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/User.java" />
+        <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoImpl.java" />
+        <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDao.java" />
+        <option value="$PROJECT_DIR$/pushPlugin/src/test/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoTest.java" />
+        <option value="$PROJECT_DIR$/pushPlugin/pom.xml" />
+        <option value="$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java" />
       </list>
     </option>
   </component>
@@ -528,6 +364,11 @@
             <path>
               <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
               <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="licenseAgent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
               <item name="pushPlugin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -559,6 +400,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="pushPlugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="pushPlugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
@@ -580,6 +441,11 @@
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="middleware.dfs.index" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCanServer" type="462c0819:PsiDirectoryNode" />
+              <item name="serverCore" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -593,6 +459,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;MySQL?" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js-jscs-package" value="/usr/local/lib/node_modules/jscs" />
@@ -606,16 +474,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.Jenkins" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon" />
-      <recent name="$PROJECT_DIR$/pushPlugin/src/main/java" />
-      <recent name="$PROJECT_DIR$/build" />
-      <recent name="$PROJECT_DIR$/build/plugin" />
-      <recent name="$PROJECT_DIR$/plugin" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.iot.nero.smartcan.spi.plugin" />
-      <recent name="com.iot.nero.smartcan.factory" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.iot.nero.smartcan.plugin.dao" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/serverCore" />
@@ -623,6 +483,20 @@
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/build" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.iot.nero.smartcan.spi.plugin" />
+      <recent name="com.iot.nero.smartcan.factory" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/serverCore/target/classes/com/iot/nero/smartcan/entity/platoon" />
+      <recent name="$PROJECT_DIR$/pushPlugin/src/main/java" />
+      <recent name="$PROJECT_DIR$/build" />
+      <recent name="$PROJECT_DIR$/build/plugin" />
+      <recent name="$PROJECT_DIR$/plugin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -959,12 +833,12 @@
       <workItem from="1532317819403" duration="356000" />
       <workItem from="1532318211013" duration="554000" />
       <workItem from="1532318805746" duration="575000" />
-      <workItem from="1532319516953" duration="5624000" />
+      <workItem from="1532319516953" duration="11819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160429000" />
+    <option name="totallyTimeSpent" value="166624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
@@ -1027,48 +901,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/exceptions/InvalidHostNameException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/exceptions/InvalidPostException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/exceptions/PackageBrokenException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2934">
-          <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/config/ConfigLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/core/Protocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1080,13 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="23" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1296,13 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serverCore/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1327,13 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/licenseAgent/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serverCore/src/main/java/com/iot/nero/smartcan/utils/bytes/ByteUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1351,25 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pushPlugin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1381,20 +1173,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/AiyunSDK.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        <state relative-caret-position="357">
+          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/aliyun/aliyun-java-sdk-core/3.0.0/aliyun-java-sdk-core-3.0.0.jar!/com/aliyuncs/IAcsClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/licenseAgent/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/CarAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding>
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+          <folding>
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#664#665#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/utils/SqlSessionFactoryUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/dao/CarAdminDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/test/java/com/iot/nero/smartcan/plugin/dao/CarAdminDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverCore/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pushPlugin/src/main/java/com/iot/nero/smartcan/plugin/impl/SmartFaultListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="44" column="76" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
         </state>
       </provider>
     </entry>
