@@ -88,3 +88,7 @@ serverCore/target/generated-test-sources/
 testPlugin/target/generated-sources/
 testPlugin/target/generated-test-sources/
 testPlugin/target/test-classes/
+.idea/dataSources/1a23a452-0e20-4076-8480-d903d213dbcb/_src_/
+.idea/dataSources/1a23a452-0e20-4076-8480-d903d213dbcb/_staging_/
+pushPlugin/target/generated-sources/
+pushPlugin/target/generated-test-sources/
